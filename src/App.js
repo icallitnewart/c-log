@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route } from 'react-router-dom';
+import "./css/style.css";
+
+//common component
+import Header from "./components/common/Header";
+import Footer from "./components/common/Footer";
+
+//main component
+import Visual from "./components/main/Visual";
+
+//sub component
+import About from "./components/sub/About";
+import Blog from "./components/sub/Blog";
+import Gallery from "./components/sub/Gallery";
+import Playlist from "./components/sub/Playlist";
+import Join from "./components/sub/Join";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div id="wrap">
+      <Header />
+      <Route exact path="/">
+        <Visual />
+      </Route>
+      <Route exact path="/about" component={About}></Route>
+      <Route exact path="/blog" component={Blog}></Route>
+      <Route exact path="/gallery" component={Gallery}></Route>
+      <Route exact path="/playlist" component={Playlist}></Route>
+      <Route exact path="/join" component={Join}></Route>
+      <Footer />
     </div>
   );
 }
