@@ -13,7 +13,7 @@ import About from "./components/sub/About";
 import Blog from "./components/sub/Blog";
 import Gallery from "./components/sub/Gallery";
 import Playlist from "./components/sub/Playlist";
-import Join from "./components/sub/Join";
+import Contact from "./components/sub/Contact";
 
 function App() {
   return (
@@ -26,7 +26,7 @@ function App() {
       <Route exact path="/blog" component={Blog}></Route>
       <Route exact path="/gallery" component={Gallery}></Route>
       <Route exact path="/playlist" component={Playlist}></Route>
-      <Route exact path="/join" component={Join}></Route>
+      <Route exact path="/contact" component={Contact}></Route>
       <Footer />
     </div>
   );

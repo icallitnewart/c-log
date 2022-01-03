@@ -24,7 +24,7 @@ function Header() {
 					<li><NavLink activeStyle={active} exact to="/blog">BLOG</NavLink></li>
 					<li><NavLink activeStyle={active} exact to="/gallery">GALLERY</NavLink></li>
 					<li><NavLink activeStyle={active} exact to="/playlist">PLAYLIST</NavLink></li>
-					<li><NavLink activeStyle={active} exact to="/join">JOIN</NavLink></li>
+					<li><NavLink activeStyle={active} exact to="/contact">CONTACT</NavLink></li>
 				</ul>
 			</nav>
 		</div>

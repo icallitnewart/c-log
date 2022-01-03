@@ -111,6 +111,80 @@
             }
         }
     }
+
+    .popup {
+        position: fixed;
+        top: 0; left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: calc(100% - 300px);
+        margin-left: 300px;
+        height: 100vh;
+        background: rgba(186, 208, 239, 0.95);
+
+        .inner {
+            width: 500px;
+            height: 350px;
+            border: 2px solid $subColor;
+            border-radius: 10px;
+            background: #fff;
+
+            .tab {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                width: 100%;
+                height: 30px;
+                border-bottom: 2px solid $subColor;
+                padding: 0px 2px;
+
+                span {
+                    display: inline-flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 20px;
+                    height: 20px;
+                    border: 2px solid $subColor;
+                    border-radius: 50%;
+                    margin: 0px 3px;
+
+                    &:last-child {
+                        background: $subColor;
+                        color: #fff;
+                        font: 14px/20px $enFont1;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .wrap {
+                width: 100%;
+                height: calc(100% - 30px);
+                background: #a39cdc9c;
+                border-radius: 0px 0px 10px 10px;
+                text-align: center;
+
+                h1 {
+                    width: 100%;
+                    height: 35px;
+                    background: #5b38dc;
+                    font: 14px/35px $enFont1;
+                    color: pink;
+                    letter-spacing: 1px;
+                }
+            
+                img {
+                    width: calc(100% - 30px);
+                    height: calc(100% - 65px);
+                    margin: 15px;
+                    border: 1px solid #bbb;
+                    object-fit: cover;
+                    border-radius: 10px;
+                }
+            }
+        }
+    }
 }
 
 

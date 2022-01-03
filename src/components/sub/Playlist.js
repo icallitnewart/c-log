@@ -43,8 +43,9 @@ function Playlist() {
 					<span>x</span>
 				</div>
 				<div className="addressBar">
-					<span>←</span>
-					<span>→</span>
+					<span><i className="fas fa-arrow-left"></i></span>
+					<span><i className="fas fa-arrow-right"></i></span>
+					<span><i className="fas fa-redo-alt"></i></span>
 					<p>https://icallitnewart.github.io/c-log/playlist</p>
 				</div>
 			</div>
@@ -68,7 +69,14 @@ function Playlist() {
 										isVisible: true,
 										index
 									})}>
-										<img src={item.snippet.thumbnails.medium.url} alt="" />
+										<div className="pic">
+											<img src={item.snippet.thumbnails.medium.url} alt="" />
+											<ul>
+												<li><span></span></li>
+												<li><span></span></li>
+												<li><span></span></li>
+											</ul>
+										</div>
 										<div className="textBox">
 											<p>{item.snippet.title}</p>
 											<span>{item.snippet.videoOwnerChannelTitle}</span>

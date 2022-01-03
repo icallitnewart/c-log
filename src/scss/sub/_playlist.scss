@@ -17,12 +17,50 @@
                         transition: .5s;
                         cursor: pointer;
 
-                        img {
-                            width: calc(100% - 30px);
-                            aspect-ratio: 1.5 / 1;
-                            margin: 15px;
-                            filter: grayscale(.5);
-                            border: 1px solid #000;
+                        .pic {
+                            position: relative;
+                            width: 100%;
+                            padding: 15px;
+                            padding-bottom: 25px;
+
+                            img {
+                                width: 100%;
+                                aspect-ratio: 1.5 / 1;
+                                filter: grayscale(.5);
+                                border: 1px solid #000;
+                            }
+    
+                            ul {
+                                position: absolute;
+                                bottom: 10px; right: 17px;
+                                display: flex;
+    
+                                li {
+                                    width: 15px;
+                                    height: 15px;
+                                    margin: 0px 2px;
+    
+                                    span {
+                                        display: inline-block;
+                                        width: 15px;
+                                        height: 15px;
+                                        border: 1px solid $subColor;
+                                        border-radius: 50%;
+                                    }
+    
+                                    &:nth-of-type(1) span {
+                                        background: $subColor;
+                                    }
+    
+                                    &:nth-of-type(2) span {
+                                        background: hotpink;
+                                    }
+    
+                                    &:nth-of-type(3) span {
+                                        background: lightseagreen;
+                                    }
+                                }
+                            }
                         }
 
                         .textBox {
@@ -37,7 +75,7 @@
                                 color: $subColor;
                             }
 
-                            span {
+                            >span {
                                 position: absolute;
                                 bottom: 15px; right: 15px;
                                 font: 12px/1 $enFont1, "arial";
@@ -117,36 +155,51 @@
                 border-radius: 0px 0px 10px 10px;
 
                 .player {
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-content: center;
                     width: 40%;
+                    height: 100%;
                     float: left;
                     padding: 20px;
 
                     .vinyl {
+                        display: flex;
+                        align-items: center;
                         position: relative;
-                        width: 150px;
-                        height: 150px;
+                        width: 153px;
+                        height: 153px;
                         margin: 0 auto;
+                        margin-top: 20px;
+                        background: 
+                        #9ca4ff;
+                        //border: 2px solid pink; #a0c2c5
+                        border: 1px solid #555;
+                        border-radius: 10px;
+                        box-shadow: 7px 7px 14px rgba(0, 0, 0, 0.2);
 
                         .record {
                             position: relative;
-                            margin: 19px auto;
-                            width: 150px; 
-                            height: 150px;
+                            margin: 0px auto;
+                            width: 130px; 
+                            height: 130px;
                             border-radius: 50%;
                             background: linear-gradient(30deg, transparent 40%, rgba(42, 41, 40, .85) 40%) no-repeat 100% 0,
                             linear-gradient(60deg, rgba(42, 41, 40, .85) 60%, transparent 60%) no-repeat 0 100%,
-                            repeating-radial-gradient(#2a2928, #2a2928 4px, #ada9a0 5px, #2a2928 6px);
+                            repeating-radial-gradient(#2a2928, #2a2928 4px, $mainColor 5px, #2a2928 6px);
                             background-size: 50% 100%, 100% 50%, 100% 100%;
                             animation: spin .7s infinite;
+
+                            //#ada9a0
                         }
                         
                         &::before {
                             position: absolute;
-                            top: 0; left:0;
+                            top: 10px; left: 10px;
                             display: block;
                             content: "";
-                            width: inherit;
-                            height: inherit;
+                            width: 130px;
+                            height: 130px;
                             box-shadow:5px 5px 10px rgba(0, 0, 0, 0.4);
                             border-radius: 50%;
                         }
@@ -167,7 +220,7 @@
                         display: flex;
                         justify-content: center;
                         width: 100%;
-                        padding: 25px 0px;
+                        padding: 20px 0px;
 
                         li {
                             a {

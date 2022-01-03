@@ -13,6 +13,10 @@ function Gallery() {
 	let [ images, setImages ] = useState([]);
 	let [ loading, setLoading ] = useState(true);
 	let [ enableClick, setEnableClick ] = useState(true);
+	let [ popup, setPopup ] = useState({
+		isVisible: false,
+		index: null
+	});
 
 	useEffect(()=> {
 		getFlickr("fav");
@@ -32,8 +36,9 @@ function Gallery() {
 					<span>x</span>
 				</div>
 				<div className="addressBar">
-					<span>←</span>
-					<span>→</span>
+					<span><i className="fas fa-arrow-left"></i></span>
+					<span><i className="fas fa-arrow-right"></i></span>
+					<span><i className="fas fa-redo-alt"></i></span>
 					<p>https://icallitnewart.github.io/c-log/gallery</p>
 				</div>
 			</div>
@@ -44,16 +49,16 @@ function Gallery() {
 				</p>
 				<div className="wrap">
 					<ul className="category">
-						<li className="on"><a href="#" onMouseDown={(e)=>{clicked(e, "down")}} onMouseUp={(e)=> {clicked(e, "up")}} onClick={(e)=> {
-							e.preventDefault();
+						<li className="on"><a href="#" onMouseDown={(e)=>{clicked(e, "down")}} onClick={(e)=> {
+							e.preventDefault();clicked(e, "up");
 							getFlickr("fav");
 						}}>popular</a></li>
-						<li><a href="#" onMouseDown={(e)=>{clicked(e, "down")}} onMouseUp={(e)=> {clicked(e, "up")}} onClick={(e)=> {
-							e.preventDefault();
+						<li><a href="#" onMouseDown={(e)=>{clicked(e, "down")}} onClick={(e)=> {
+							e.preventDefault();clicked(e, "up");
 							getFlickr("cats");
 						}}>cats</a></li>
-						<li><a href="#" onMouseDown={(e)=>{clicked(e, "down")}} onMouseUp={(e)=> {clicked(e, "up")}} onClick={(e)=> {
-							e.preventDefault();
+						<li><a href="#" onMouseDown={(e)=>{clicked(e, "down")}} onClick={(e)=> {
+							e.preventDefault();clicked(e, "up");
 							getFlickr("dogs");
 						}}>dogs</a></li>
 					</ul>
@@ -72,7 +77,10 @@ function Gallery() {
 									let imgSrc = `https://live.staticflickr.com/${img.server}/${img.id}_${img.secret}_m.jpg`;
 
 									return(
-									<article className="item" key={index}>
+									<article className="item" key={index} onClick={()=> setPopup({
+										isVisible: true,
+										index
+									})}>
 										<img src={imgSrc} alt={img.title} />
 										<div className="desc">
 											<p><span>{img.title}</span></p>
@@ -89,13 +97,39 @@ function Gallery() {
 				</div>
 			</section>
 		</div>
+		{ (popup.isVisible) ? <Popup /> : null }
 	</main>
 	)
+
+	function Popup() {
+		const targetImg = images[popup.index];
+		const imgSrc = `https://live.staticflickr.com/${targetImg.server}/${targetImg.id}_${targetImg.secret}_b.jpg`;
+
+		return (
+		<aside className="popup">
+			<div className="inner">
+				<div className="tab">
+					<span></span>
+					<span></span>
+					<span onClick={()=> setPopup({
+						isVisible: false,
+						index: null
+					})}>x</span>
+				</div>
+				<div className="wrap">
+					<h1>{targetImg.title}</h1>
+					<img src={imgSrc} alt={targetImg.title} />
+				</div>
+			</div>
+		</aside>
+		)
+	}
 
 	function clicked(e, mouse) {
 		if(mouse==="down") {
 			e.preventDefault();
 			e.currentTarget.parentElement.classList.add("clicked");
+			e.currentTarget.parentElement.classList.add("on");
 		} 
 		else if(mouse==="up") {
 			e.currentTarget.parentElement.classList.remove("clicked");

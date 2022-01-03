@@ -214,18 +214,29 @@
                 .addressBar {
                     display: flex;
                     width: 100%;
-                    padding: 0px 30px;
+                    padding: 0px 30px 0px 20px;
 
                     span { 
-                        display: inline-block;
-                        width: 5%;
+                        display: inline-flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 30px;
                         height: 30px;
-                        font: 30px/30px $enFont1;
-                        color: #333;
+                        line-height: 30px;
+                        color: $pointColor;
+                        border: 1px solid #000;
+                        border-radius: 5px;
+                        margin-right: 4px;
+                        background: $mainColor;
+
+                        i {
+                            font-size: 15px;
+                            -webkit-text-stroke: 1px #000;
+                        }
                     }
 
                     p {
-                        width: 90%;
+                        width: calc(100% - 34px * 3);
                         height: 30px;
                         background: pink;
                         border: 1px solid #000;
