@@ -30,7 +30,15 @@ a {
     padding: 30px;
     text-align: center;
     background: #B69CDC;
-    border-right: 1px solid #000; }
+    border-right: 1px solid #000;
+    overflow-y: scroll; }
+    #wrap header::-webkit-scrollbar {
+      width: 2px;
+      background-color: black; }
+    #wrap header::-webkit-scrollbar-thumb {
+      background-color: #000; }
+    #wrap header::-webkit-scrollbar-track {
+      background-color: #7649b8; }
     #wrap header .inner h1 {
       display: inline-block;
       font: bold 28px/1 Courier;
