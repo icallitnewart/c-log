@@ -108,7 +108,7 @@ a {
     #wrap main > .inner {
       width: 100%;
       max-width: 1180px; }
-      #wrap main > .inner .tab {
+      #wrap main > .inner > .tab {
         position: relative;
         width: 100%;
         height: 100px;
@@ -116,7 +116,7 @@ a {
         margin-top: 30px;
         border: 1px solid #000;
         border-radius: 0px 10px 0px 0px; }
-        #wrap main > .inner .tab .topMark {
+        #wrap main > .inner > .tab .topMark {
           position: absolute;
           top: -30px;
           left: -1px;
@@ -128,7 +128,7 @@ a {
           border-bottom: 0;
           border-radius: 10px 10px 0px 0px;
           padding: 3px 7px; }
-          #wrap main > .inner .tab .topMark span:first-child {
+          #wrap main > .inner > .tab .topMark span:first-child {
             display: inline-flex;
             justify-content: center;
             align-items: center;
@@ -138,18 +138,18 @@ a {
             background: #000;
             border-radius: 3px;
             color: #fff; }
-          #wrap main > .inner .tab .topMark span:last-child {
+          #wrap main > .inner > .tab .topMark span:last-child {
             display: inline-block;
             font: bold 14px/16px Consolas;
             text-indent: 5px; }
-        #wrap main > .inner .tab .btns {
+        #wrap main > .inner > .tab .btns {
           display: flex;
           justify-content: flex-end;
           width: 100%;
           height: 50px;
           padding-top: 7px;
           padding-right: 5px; }
-          #wrap main > .inner .tab .btns span {
+          #wrap main > .inner > .tab .btns span {
             display: inline-flex;
             justify-content: center;
             align-items: center;
@@ -161,15 +161,15 @@ a {
             background: #c2baef;
             font: bold 10px/20px Consolas;
             color: #4219D7; }
-            #wrap main > .inner .tab .btns span:last-child {
+            #wrap main > .inner > .tab .btns span:last-child {
               background: #4219D7;
               color: #bad0ef;
               line-height: 15px; }
-        #wrap main > .inner .tab .addressBar {
+        #wrap main > .inner > .tab .addressBar {
           display: flex;
           width: 100%;
           padding: 0px 30px 0px 20px; }
-          #wrap main > .inner .tab .addressBar span {
+          #wrap main > .inner > .tab .addressBar span {
             display: inline-flex;
             justify-content: center;
             align-items: center;
@@ -181,10 +181,10 @@ a {
             border-radius: 5px;
             margin-right: 4px;
             background: #B69CDC; }
-            #wrap main > .inner .tab .addressBar span i {
+            #wrap main > .inner > .tab .addressBar span i {
               font-size: 15px;
               -webkit-text-stroke: 1px #000; }
-          #wrap main > .inner .tab .addressBar p {
+          #wrap main > .inner > .tab .addressBar p {
             width: calc(100% - 34px * 3);
             height: 30px;
             background: pink;
@@ -350,6 +350,156 @@ a {
     width: 85%; }
   100% {
     width: calc(100% - 10px); } }
+.blog .inner .content {
+  padding: 20px 30px !important; }
+  .blog .inner .content .wrap .viewType {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 15px; }
+    .blog .inner .content .wrap .viewType li {
+      display: flex;
+      align-items: center;
+      margin-left: 10px; }
+      .blog .inner .content .wrap .viewType li.on i {
+        color: #bad0ef; }
+      .blog .inner .content .wrap .viewType li input[type=radio] {
+        margin-right: 4px; }
+      .blog .inner .content .wrap .viewType li i {
+        display: inline-block;
+        padding: 5px;
+        background: #444;
+        font-size: 16px;
+        color: #B69CDC;
+        cursor: pointer; }
+  .blog .inner .content .wrap .list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%; }
+    .blog .inner .content .wrap .list.gridView article {
+      width: calc(100% / 4 - 20px);
+      height: 350px;
+      margin-right: 20px;
+      padding: 20px;
+      border: 1px solid #333;
+      box-shadow: 5px 5px 0px #000; }
+      .blog .inner .content .wrap .list.gridView article:hover {
+        transform: translateY(-10px); }
+      .blog .inner .content .wrap .list.gridView article .pic {
+        width: 100%;
+        margin-bottom: 15px; }
+      .blog .inner .content .wrap .list.gridView article .textBox {
+        width: 100%;
+        padding: 0; }
+        .blog .inner .content .wrap .list.gridView article .textBox h2 {
+          font: 18px/1.1 "arial";
+          white-space: inherit;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          margin-bottom: 10px; }
+        .blog .inner .content .wrap .list.gridView article .textBox p:nth-of-type(1) {
+          border-top: 1px solid #000;
+          margin-top: 10px;
+          padding-top: 10px; }
+        .blog .inner .content .wrap .list.gridView article .textBox p:nth-of-type(2) {
+          -webkit-line-clamp: 4; }
+    .blog .inner .content .wrap .list article {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      height: 150px;
+      border-top: 2px solid #333;
+      border-bottom: 2px solid #333;
+      background: #e0d2f6;
+      padding: 15px 20px;
+      margin-bottom: 25px;
+      cursor: pointer;
+      transition: .5s; }
+      .blog .inner .content .wrap .list article .pic {
+        width: 110px;
+        height: 110px;
+        background: #bad0ef;
+        border: 1px solid #000;
+        transition: .5s; }
+      .blog .inner .content .wrap .list article .textBox {
+        width: calc(100% - 110px);
+        height: 100%;
+        padding: 5px 15px;
+        word-break: break-all;
+        transition: .5s; }
+        .blog .inner .content .wrap .list article .textBox h2 {
+          width: 100%;
+          font: 18px/1 "arial";
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          margin-bottom: 15px;
+          transition: .5s; }
+        .blog .inner .content .wrap .list article .textBox p:nth-of-type(1) {
+          display: flex;
+          justify-content: space-between;
+          padding-bottom: 10px;
+          transition: .5s; }
+          .blog .inner .content .wrap .list article .textBox p:nth-of-type(1) span {
+            font: 12px/1 "arial";
+            color: #595867; }
+            .blog .inner .content .wrap .list article .textBox p:nth-of-type(1) span.writer {
+              color: #4219D7; }
+        .blog .inner .content .wrap .list article .textBox p:nth-of-type(2) {
+          font: 14px/1.3 Consolas;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          transition: .5s; }
+  .blog .inner .content .wrap .pagination {
+    display: flex;
+    padding: 10px 0px 40px;
+    justify-content: center; }
+    .blog .inner .content .wrap .pagination > a {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 1px solid #555;
+      margin: 0px 10px;
+      background: #B69CDC;
+      box-shadow: 2px 2px 0px #5e5b6b; }
+      .blog .inner .content .wrap .pagination > a i {
+        color: #bad0ef;
+        -webkit-text-stroke: 1px #555; }
+    .blog .inner .content .wrap .pagination ul {
+      display: flex;
+      align-items: center; }
+      .blog .inner .content .wrap .pagination ul li {
+        margin: 0px 10px; }
+        .blog .inner .content .wrap .pagination ul li.on a, .blog .inner .content .wrap .pagination ul li:hover a {
+          background: #B69CDC; }
+        .blog .inner .content .wrap .pagination ul li a {
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          font: bold 12px/1 Consolas;
+          color: #fff;
+          background: #bbbaef;
+          transition: .5s; }
+
+@media screen and (max-width: 1380px) {
+  .blog .gridView article {
+    width: calc(100% / 3 - 20px) !important; } }
+@media screen and (max-width: 1099px) {
+  .blog .gridView article {
+    width: calc(100% / 2 - 20px) !important; } }
+@media screen and (max-width: 799px) {
+  .blog .gridView article {
+    width: calc(100% / 1 - 20px) !important;
+    margin: 15px 1vw !important; } }
 .gallery .inner .content .wrap {
   width: 100%; }
   .gallery .inner .content .wrap .category {
@@ -439,7 +589,7 @@ a {
   .gallery .popup .inner {
     width: 500px;
     height: 350px;
-    border: 1px solid #4219D7;
+    border: 1px solid #5c67e2;
     border-radius: 10px;
     background: #fff; }
     .gallery .popup .inner .tab {
@@ -448,7 +598,7 @@ a {
       align-items: center;
       width: 100%;
       height: 30px;
-      border-bottom: 1px solid #4219D7;
+      border-bottom: 1px solid #5c67e2;
       padding: 0px 2px; }
       .gallery .popup .inner .tab span {
         display: inline-flex;
@@ -456,11 +606,11 @@ a {
         align-items: center;
         width: 20px;
         height: 20px;
-        border: 1px solid #4219D7;
+        border: 1px solid #5c67e2;
         border-radius: 50%;
         margin: 0px 3px; }
         .gallery .popup .inner .tab span:last-child {
-          background: #4219D7;
+          background: #5c67e2;
           color: #fff;
           font: 14px/20px Consolas;
           cursor: pointer; }
@@ -473,7 +623,7 @@ a {
       .gallery .popup .inner .wrap h1 {
         width: 100%;
         height: 35px;
-        background: #5b38dc;
+        background: #5c67e2;
         font: 14px/35px Consolas;
         color: pink;
         letter-spacing: 1px; }
@@ -482,8 +632,7 @@ a {
         height: calc(100% - 65px);
         margin: 15px;
         border: 1px solid #bbb;
-        object-fit: cover;
-        border-radius: 10px; }
+        object-fit: cover; }
 
 @media screen and (max-width: 1180px) {
   .gallery .item {
@@ -579,7 +728,7 @@ a {
   .playlist .popup .inner {
     width: 500px;
     height: 350px;
-    border: 1px solid #4219D7;
+    border: 1px solid #5c67e2;
     border-radius: 10px;
     background: #fff; }
     .playlist .popup .inner .tab {
@@ -588,7 +737,7 @@ a {
       align-items: center;
       width: 100%;
       height: 30px;
-      border-bottom: 1px solid #4219D7;
+      border-bottom: 1px solid #5c67e2;
       padding: 0px 2px; }
       .playlist .popup .inner .tab span {
         display: inline-flex;
@@ -596,11 +745,11 @@ a {
         align-items: center;
         width: 20px;
         height: 20px;
-        border: 1px solid #4219D7;
+        border: 1px solid #5c67e2;
         border-radius: 50%;
         margin: 0px 3px; }
         .playlist .popup .inner .tab span:last-child {
-          background: #4219D7;
+          background: #5c67e2;
           color: #fff;
           font: 14px/20px Consolas;
           cursor: pointer; }

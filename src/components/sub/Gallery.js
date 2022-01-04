@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Loading from "../common/Loading";
 import Masonry from 'react-masonry-component';
 
@@ -9,6 +9,8 @@ const masonryOptions = {
 	itemSelector: ".item"
 }
 
+const body = document.querySelector("body");
+
 function Gallery() {
 	let [ images, setImages ] = useState([]);
 	let [ loading, setLoading ] = useState(true);
@@ -17,6 +19,7 @@ function Gallery() {
 		isVisible: false,
 		index: null
 	});
+	const category = useRef(null);
 
 	useEffect(()=> {
 		getFlickr("fav");
@@ -48,19 +51,26 @@ function Gallery() {
 					<span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident facere explicabo necessitatibus nemo consequuntur delectus vel placeat cupiditate laborum quisquam?</span>
 				</p>
 				<div className="wrap">
-					<ul className="category">
+					<ul className="category" ref={category}>
 						<li className="on"><a href="#" onMouseDown={(e)=>{clicked(e, "down")}} onClick={(e)=> {
-							e.preventDefault();clicked(e, "up");
+							e.preventDefault();
+							clicked(e, "up");
+							activation(e);
 							getFlickr("fav");
 						}}>popular</a></li>
 						<li><a href="#" onMouseDown={(e)=>{clicked(e, "down")}} onClick={(e)=> {
-							e.preventDefault();clicked(e, "up");
+							e.preventDefault();
+							clicked(e, "up");
+							activation(e);
 							getFlickr("cats");
 						}}>cats</a></li>
 						<li><a href="#" onMouseDown={(e)=>{clicked(e, "down")}} onClick={(e)=> {
-							e.preventDefault();clicked(e, "up");
+							e.preventDefault();
+							clicked(e, "up");
+							activation(e);
 							getFlickr("dogs");
-						}}>dogs</a></li>
+						}} onDragEnd={(e)=> 
+							clicked(e, "up")}>dogs</a></li>
 					</ul>
 					{ loading ? <Loading />
 						: ( 
@@ -105,6 +115,14 @@ function Gallery() {
 		const targetImg = images[popup.index];
 		const imgSrc = `https://live.staticflickr.com/${targetImg.server}/${targetImg.id}_${targetImg.secret}_b.jpg`;
 
+		useEffect(()=> {
+			body.style.overflow = "hidden";
+
+			return ()=> {
+				body.style.overflow = "auto";
+			};
+		}, []);
+
 		return (
 		<aside className="popup">
 			<div className="inner">
@@ -129,11 +147,20 @@ function Gallery() {
 		if(mouse==="down") {
 			e.preventDefault();
 			e.currentTarget.parentElement.classList.add("clicked");
-			e.currentTarget.parentElement.classList.add("on");
+			
 		} 
 		else if(mouse==="up") {
 			e.currentTarget.parentElement.classList.remove("clicked");
 		}
+	}
+
+	function activation(e) {
+		const btns = category.current.querySelectorAll("li a");
+
+		for(let btn of btns) {
+			btn.parentElement.classList.remove("on");
+		}
+		e.currentTarget.parentElement.classList.add("on");
 	}
 
 	async function getFlickr(type) {
