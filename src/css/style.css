@@ -439,7 +439,7 @@ a {
   .gallery .popup .inner {
     width: 500px;
     height: 350px;
-    border: 2px solid #4219D7;
+    border: 1px solid #4219D7;
     border-radius: 10px;
     background: #fff; }
     .gallery .popup .inner .tab {
@@ -448,7 +448,7 @@ a {
       align-items: center;
       width: 100%;
       height: 30px;
-      border-bottom: 2px solid #4219D7;
+      border-bottom: 1px solid #4219D7;
       padding: 0px 2px; }
       .gallery .popup .inner .tab span {
         display: inline-flex;
@@ -456,7 +456,7 @@ a {
         align-items: center;
         width: 20px;
         height: 20px;
-        border: 2px solid #4219D7;
+        border: 1px solid #4219D7;
         border-radius: 50%;
         margin: 0px 3px; }
         .gallery .popup .inner .tab span:last-child {
@@ -579,7 +579,7 @@ a {
   .playlist .popup .inner {
     width: 500px;
     height: 350px;
-    border: 2px solid #4219D7;
+    border: 1px solid #4219D7;
     border-radius: 10px;
     background: #fff; }
     .playlist .popup .inner .tab {
@@ -588,7 +588,7 @@ a {
       align-items: center;
       width: 100%;
       height: 30px;
-      border-bottom: 2px solid #4219D7;
+      border-bottom: 1px solid #4219D7;
       padding: 0px 2px; }
       .playlist .popup .inner .tab span {
         display: inline-flex;
@@ -596,7 +596,7 @@ a {
         align-items: center;
         width: 20px;
         height: 20px;
-        border: 2px solid #4219D7;
+        border: 1px solid #4219D7;
         border-radius: 50%;
         margin: 0px 3px; }
         .playlist .popup .inner .tab span:last-child {
