@@ -112,6 +112,7 @@ function Playlist() {
 		return(
 		<div className="popup">
 			<div className="inner">
+			<div className="wrap">
 				<div className="tab">
 					<span></span>
 					<span></span>
@@ -120,7 +121,7 @@ function Playlist() {
 						index: null
 					})}>x</span>
 				</div>
-				<div className="wrap">
+				<div className="container">
 					<div className="player">
 						<div className="vinyl">
 							<div className='record'></div>
@@ -133,11 +134,12 @@ function Playlist() {
 						</ul>
 					</div>
 					<div className="video">
-						<iframe ref={vid} src={`https://www.youtube.com/embed/${vidId}?autoplay=1&controls=0&enablejsapi=1`} width="100%" height="100%" allowFullScreen></iframe> 
+						<iframe ref={vid} src={`https://www.youtube.com/embed/${vidId}?autoplay=1&controls=0`/*&enablejsapi=1*/} width="100%" height="100%" allowFullScreen></iframe> 
 						<p><span>{targetItem.snippet.title}</span></p>
 						<p><span>{targetItem.snippet.videoOwnerChannelTitle}</span></p>
 					</div>
 				</div>
+			</div>
 			</div>
 		</div>
 		)

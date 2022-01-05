@@ -7,7 +7,9 @@ const publicSrc = process.env.PUBLIC_URL;
 function Blog() {
     let [ loading, setLoading ] = useState(true);
     let [ posts, setPosts ] = useState([]);
+	let [ enableClick, setEnableClick ] = useState(true);
 	const list = useRef(null);
+	const view = useRef(null);
 
     useEffect(()=> {
         callData();
@@ -39,15 +41,15 @@ function Blog() {
                     <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident facere explicabo necessitatibus nemo consequuntur delectus vel placeat cupiditate laborum quisquam?</span>
                 </p>
                 <div className="wrap">
-                    <ul className="viewType">
+                    <ul className="viewType" ref={view}>
 						<li>
-							<input type="radio" id="listView" name="viewType" defaultChecked />
+							<input onClick={()=> callData("list")}  type="radio" id="listView" name="viewType" defaultChecked />
 							<label onClick={()=> callData("list")} htmlFor="listView">
 								<i className="fas fa-th-list"></i>
 							</label>
 						</li>
 						<li>
-							<input type="radio" id="gridView" name="viewType" />
+							<input onClick={()=> callData("grid")} type="radio" id="gridView" name="viewType" />
 							<label onClick={()=> callData("grid")} htmlFor="gridView">
 								<i className="fas fa-th"></i>
 							</label>
@@ -61,6 +63,7 @@ function Blog() {
 							posts.map((post, index)=> {
 							return(
 								<article key={index}>
+								<div className="wrap">
 									<div className="pic"></div>
 									<div className="textBox">
 										<h2>{post.title}</h2>
@@ -70,6 +73,7 @@ function Blog() {
 										</p>
 										<p>{post.content}</p>
 									</div>
+								</div>
 								</article>
 							)
 							})
@@ -100,20 +104,40 @@ function Blog() {
     )
 
     async function callData(viewType) {
+		const viewBtns = view.current.querySelectorAll("input[type=radio]");
+
+		//로딩되는 동안 중복 클릭방지
+		if(!enableClick) return;
+		setEnableClick(false);
+
+		//로딩바 띄우기
 		if(!loading) setLoading(true);
 
+		//데이터 불러오기
         await axios
         .get(`${publicSrc}/db/posts.json`)
         .then((data)=> {
 			let items = data.data.data;
 			items = items.reverse();
+
+			//데이터 불러오는 동안 버튼 비활성화
+			for(let btn of viewBtns) {
+				btn.disabled = true;
+			}
             setPosts(items);
         });
 		
 
 		setTimeout(()=> {	//임시로 1초
+			//로딩바 제거 및 클릭 가능하게 만들기
 			setLoading(false);
+			setEnableClick(true);
+			//버튼 활성화
+			for(let btn of viewBtns) {
+				btn.disabled = false;
+			}
 	
+			//리스트뷰나 그리드뷰 버튼 클릭시 스타일 변경
 			if(viewType==="list" && list) {
 				if(list.current.classList.contains("gridView")) list.current.classList.remove("gridView");
 			}

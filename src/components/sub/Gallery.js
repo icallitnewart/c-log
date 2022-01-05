@@ -126,6 +126,7 @@ function Gallery() {
 		return (
 		<aside className="popup">
 			<div className="inner">
+			<div className="wrap">
 				<div className="tab">
 					<span></span>
 					<span></span>
@@ -134,10 +135,11 @@ function Gallery() {
 						index: null
 					})}>x</span>
 				</div>
-				<div className="wrap">
+				<div className="imgBox">
 					<h1>{targetImg.title}</h1>
 					<img src={imgSrc} alt={targetImg.title} />
 				</div>
+			</div>
 			</div>
 		</aside>
 		)
