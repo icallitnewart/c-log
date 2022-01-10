@@ -1,0 +1,250 @@
+.visual {
+
+    .wrap {
+        width: 100%;
+        height: 800px;
+        padding: 30px 0px;
+
+        .intro {
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-start;
+            width: 40%; //calc(100% / 3);
+            height: 100%;
+            margin: 15px 0px;
+            float: left;
+
+            .title {
+                display: flex;
+                flex-wrap: wrap;
+                align-content: flex-start;
+                width: 100%;
+                height: calc(100% / 2);
+
+                h1 {
+                    width: 100%;
+                    text-align: center;
+                    font: bold 40px/1 Courier;
+                    -webkit-text-stroke: 2px black;
+                    color: #B69CDC;
+                    letter-spacing: 2px;
+                    margin-bottom: 10px;
+    
+                    &::before {
+                        content: "/*";
+                    }
+    
+                    &::after {
+                        content: "*/";
+                    }
+                }
+    
+                h2 {
+                    width: 100%;
+                    font: 16px/1.3 $koFont;
+                    background: #000;
+                    color: #d8c8f0;
+                    text-align: center;
+                }
+    
+                .pic {
+                    width: 100%;
+                }
+
+            }
+
+            .galleryBox, .playlistBox {
+                position: relative;
+                width: 100%;
+                height: calc(100% / 4 - 15px);
+                margin-bottom: 20px;
+                //border: 1px solid $subColor;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    filter: grayscale(.4);
+                    object-fit: cover;
+                }
+
+                &::after {
+                    position: absolute;
+                    top: 0; left: 0;
+                    display: block;
+                    content: "temporary";
+                    width: calc(100% - 40px);
+                    height: calc(100% - 40px);
+                    margin: 20px;
+                    background: #c5abec94;
+                }
+            }
+
+            .playlistBox {
+                margin-bottom: 0px;
+            }
+
+
+        }
+
+        .recent, .popular {
+            position: relative;
+            z-index: 1;
+            width: calc(60% - 30px); //calc(100% / 3 * 2 - 30px);
+            //width: calc(100% / 3 - 30px);
+            height: calc(50% - 15px);
+            float: left;
+            margin: 0px 0px 30px 30px;
+
+            &::before {
+                position: absolute;
+                top: 3px; left: 3px;
+                display: block;
+                content: "";
+                width: 100%;
+                height: 100%;
+                background: $mainColor;
+                border: 2px solid #333;
+            }
+
+        }
+
+        .popular {
+            margin-bottom: 0px;
+
+            ul li:first-child {
+                background: $pointColor;
+            }
+
+            ul li:not(:first-child) {
+                background: #ecf2fb;
+            }
+        }
+
+        ul {
+            position: absolute;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            border: 2px solid #333;
+            //aspect-ratio: 1 / 1;
+            //box-shadow: 5px 5px 0px $mainColor;
+            //border-radius: 20px;
+            //background: #dfdfe0;
+            transition: .5s;
+
+            &:hover {
+                transform: translateY(-5px);
+            }
+
+            li {
+                // /*
+                &:first-child {
+                    position: relative;
+                    width: 100%;
+                    height: 30px;
+                    border-bottom: 1px solid #000;
+                    background: pink;
+
+                    h3 {
+                        font: bold 16px/30px "arial";
+                        margin-left: 10px;
+                        color: #333;
+
+                        a {
+                            position: absolute;
+                            right: 0; top: 0;
+                            font: 12px/30px $enFont1;
+                            margin-right: 20px;
+                            color: #666;
+                        }
+                    }
+                }
+
+                &:not(:first-child) {
+                    height: calc((100% - 30px) / 4);
+                    padding: 15px 20px;
+                    background: #ffe8ec;
+                    word-break: break-all;
+                    cursor: pointer;
+                    border-bottom: 1px solid #555;
+
+                    h4 {
+                        width: 100%;
+                        height: 18px;
+                        overflow: hidden;
+                        margin-bottom: 10px;
+                        font: 18px/1.3 "arial";
+                        color: #444;
+                    }
+
+                    p {
+                        position: relative;
+                        font: 14px/1.3 $enFont1;
+
+                        span {
+                            position: absolute;
+
+                            &:first-child {
+                                left: 0;
+                                font-weight: bold;
+                                color: $subColor;
+                            }
+
+                            &:last-child {
+                                right: 20px;
+                                color: #777;
+                            }
+                        }
+                    }
+                }
+
+                &:last-child {
+                    margin-bottom: 0px;
+                }
+
+                /*
+                &:first-child {
+                    margin-top: 10px;
+                    margin-bottom: 5px;
+
+                    h3 {
+                        font: 20px/1 "arial";
+                    }
+                }
+
+                &:not(:first-child) {
+                    height: calc(50% - 28px);
+                    border-top: 2px solid #000;
+                    border-bottom: 2px solid #000;
+                    //padding: 15px;
+                    margin-bottom: 20px;
+                    word-break: break-all;
+                    //background: #d8c8f0;
+
+                    h4 {
+                        padding: 10px 15px;
+                        //margin-bottom: 15px;
+                        font: 18px/1.3 "arial";
+                        //background: $mainColor;
+                        border-bottom: 1px solid #333;
+                    }
+
+                    p {
+                        padding: 10px 15px;
+                        font: 14px/1.3 $enFont1;
+                    }
+                }
+
+                &:last-child {
+                    margin-bottom: 0px;
+                }*/
+            }
+        }
+
+        &::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+    }
+}

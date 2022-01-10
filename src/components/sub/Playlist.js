@@ -135,7 +135,14 @@ function Playlist() {
 					</div>
 					<div className="video">
 						<iframe ref={vid} src={`https://www.youtube.com/embed/${vidId}?autoplay=1&controls=0`/*&enablejsapi=1*/} width="100%" height="100%" allowFullScreen></iframe> 
-						<p><span>{targetItem.snippet.title}</span></p>
+						<p>
+							<span>
+							<span className="highlight">{targetItem.snippet.title}</span>
+							</span>
+							<span>
+							<span className="highlight">{targetItem.snippet.title}</span>
+							</span>
+						</p>
 						<p><span>{targetItem.snippet.videoOwnerChannelTitle}</span></p>
 					</div>
 				</div>

@@ -1,0 +1,162 @@
+#wrap .contact {
+>.inner {
+    .content {
+        width: 100%;
+
+        >.wrap {
+            opacity: 0;
+            transform: translateY(50px);
+            width: 80%;
+            max-width: 700px;
+            height: 500px;
+            margin: 60px auto 30px;
+            background: #dfdfe0;
+            //#e1d8f0;
+            //#F1EBDE;
+            border: 2px solid #555;
+            border-radius: 20px;
+            padding-top: 0;
+            box-shadow: 7px 7px 0px #444;
+            transition: 2s;
+
+            &.on {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            .tab {
+                display: flex;
+                align-items: center;
+                width: 100%;
+                height: 30px;
+                border-bottom: 1px solid #555;
+
+                &::before, &::after {
+                    content: "";
+                    display: block;
+                    width: 15px;
+                    height: 15px;
+                    border: 1px solid #555;
+                    border-radius: 50%;
+                    margin-left: 15px;
+                }
+
+                &::after {
+                    margin-left: 5px;
+                }
+            }
+
+            .container {
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%;
+                height: calc(100% - 30px);
+                padding: 30px 50px 30px 40px;
+
+                .pic {
+                    width: 35%;
+                    border: 1px solid #555;
+                    //background: repeating-linear-gradient(45deg, #fad3d9, #fad3d9 30px, #d2e8fc 30px, #d2e8fc 60px);
+                    animation: striped 0.5s steps(100) infinite;
+                }
+    
+                .formBox {
+                    width: 65%;
+                    height: 407px;
+                    padding: 0px 0px 0px 30px;
+
+                    h2 {
+                        font: 24px/1 $koFont;
+                        padding: 10px 0px 5px;
+                        color: #333;
+                        letter-spacing: 1px;
+                    }
+
+                    p {
+                        font: 12px/1 $enFont1;
+                        margin-bottom: 20px;
+                        color: #666;
+                        letter-spacing: 1px;
+                    }
+
+                    fieldset {
+                        border: 0;
+
+                        table {
+                            width: 100%;
+                            max-width: 400px;
+                            border-collapse: collapse;
+                            border-spacing: 0;
+
+                            tr {
+                                display: flex;
+                                flex-wrap: wrap;
+
+                                th {
+                                    width: 100%;
+                                    text-align: left;
+                                    font: 14px/1 $enFont1;
+                                    color: #555;
+                                    letter-spacing: 2px;
+
+                                    &:last-child {
+                                        text-align: right;
+
+                                        input[type=submit], input[type=reset] {
+                                            display: inline-block;
+                                            padding: 8px 15px;
+                                            border: 1px solid #555;
+                                            color: #555;
+                                            margin-right: 3px;
+                                            margin-left: 5px;
+                                            border-radius: 3px;
+                                            font: 12px/1 $enFont1;
+                                            letter-spacing: 1px;
+                                            cursor: pointer;
+                                            background: #ddd;
+                                        }
+                                    }
+                                }
+                                
+                                td {
+                                    width: 100%;
+
+                                    input[type=text] {
+                                        width: 100%;
+                                        height: 35px;
+                                        outline: none;
+                                        border: 0;
+                                        border-bottom: 1px solid #666;
+                                        background: transparent;
+                                        font: 14px/1 $enFont1, "arial";
+                                        color: #333;
+                                        margin-bottom: 20px;
+                                    }
+
+                                    textarea {
+                                        width: 100%;
+                                        height: 120px;
+                                        margin-top: 10px;
+                                        background: transparent;
+                                        border: 1px solid #666;
+                                        resize: none;
+                                        padding: 10px;
+                                        outline: none;
+                                        font: 14px/1 $enFont1, "arial";
+                                        color: #333;
+                                        margin-bottom: 15px;
+                                    }
+                                }
+                            }
+    
+                        }
+                    }
+                }
+
+
+            }
+
+        }
+    }
+}
+}
