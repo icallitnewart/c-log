@@ -1,4 +1,4 @@
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import "./css/style.css";
 
 //common component
@@ -24,6 +24,7 @@ function App() {
       </Route>
       <Route exact path="/about" component={About}></Route>
       <Route exact path="/blog" component={Blog}></Route>
+      <Route path="/blog/:no" component={Blog}></Route>
       <Route exact path="/gallery" component={Gallery}></Route>
       <Route exact path="/playlist" component={Playlist}></Route>
       <Route exact path="/contact" component={Contact}></Route>

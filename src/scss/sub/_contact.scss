@@ -160,3 +160,38 @@
     }
 }
 }
+
+
+@media screen and (max-width: $web) {
+    .contact {
+        .content>.wrap {
+            width: 95% !important;
+        }
+    }
+}
+
+@media screen and (max-width: $tablet) {
+    .contact {
+        .content>.wrap {
+            width: 100% !important;
+            box-shadow: 5px 5px 0px #444 !important;
+
+            .pic {
+                display: none !important;
+            }
+
+            .formBox {
+                width: 100% !important;
+                padding-left: 0px !important;
+
+                h2 {
+                    font-size: 1.3em !important;
+                }
+
+                table {
+                    max-width: none !important;
+                }
+            }
+        }
+    }
+}

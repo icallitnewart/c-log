@@ -82,7 +82,7 @@
                             }
                         }
 
-                        &:hover {
+                        /*&:hover {
                             transform: translateY(-10px);
 
                             /*p::after {
@@ -95,8 +95,8 @@
                                 background: pink;
                                 border-radius: 50%;
                                 border: 1px solid #000;
-                            }*/
-                        }
+                            }
+                        }*/
                     }
                 }
             }
@@ -117,6 +117,7 @@
             width: 100%;
             max-width: 1180px;
             height: 100vh;
+            min-height: calc(400px + 200px);
 
             .wrap {
                 width: 700px;
@@ -124,6 +125,7 @@
                 border: 1px solid #5c67e2;
                 border-radius: 10px;
                 background: #fff;
+                margin: 100px 0px;
 
                 .tab {
                     display: flex;
@@ -322,47 +324,83 @@
 
 }
 
-@media screen and (max-width: 1180px) {
+@media screen and (max-width: $web) {
     .playlist {
-        .item {
-            width: calc(100% / 3 - 2vw) !important;
+
+        .popup {
+            width: 100%;
+            z-index: 1000;
+            overflow-y: scroll;
+            left: 0px;
         }
     }
 }
 
-@media screen and (max-width: 1099px) {
+@media screen and (max-width: $tablet) {
     .playlist {
         .item {
-            width: calc(100% / 2 - 2vw) !important;
+            width: calc(100% / 2 - 3vw) !important;
+            margin: 15px 1.5vw !important;
         }
-
+        
         .popup {
-            .wrap {
-                width: 500px !important;
-                height: 350px !important;
-
-                .player {
-                    width: 40% !important;
-                }
-
-                .video {
-                    width: 60% !important;
-                    padding: 50px 20px 30px 0px !important;
-                }
-
-                iframe {
-                    height: 150px !important;
+            .inner {
+                min-height: calc(350px + 200px);
+                
+                .wrap {
+                    width: 500px !important;
+                    height: 350px !important;
+        
+                    .player {
+                        width: 40% !important;
+                    }
+        
+                    .video {
+                        width: 60% !important;
+                        padding: 50px 20px 30px 0px !important;
+                    }
+        
+                    iframe {
+                        height: 150px !important;
+                    }
                 }
             }
         }
     }
 }
 
-@media screen and (max-width: 799px) {
+@media screen and (max-width: $mobile) {
     .playlist {
         .item {
-            width: calc(100% / 1 - 2vw) !important;
-            margin: 15px 1vw !important;
+            width: calc(100% / 1 - 3vw) !important;
+            margin: 15px 1.5vw !important;
+        }
+        
+        .popup {
+
+            .inner {
+                min-height: calc(645px + 200px );
+                
+                .wrap {
+                    width: calc(100% - 20px) !important;
+                    margin: 0 auto;
+                    height: auto !important;
+        
+                    .player {
+                        width: 100% !important;
+                    }
+        
+                    .video {
+                        width: 100% !important;
+                        padding: 0px 20px 40px !important;
+                    }
+        
+                    iframe {
+                        height: 230px !important;
+                    }
+                }
+                
+            }
         }
     }
 }

@@ -12,6 +12,9 @@ $pointColor: #bad0ef;
 $koFont : NeoDunggeunmo;
 $enFont1 : Consolas;
 $enFont2 : Courier;
+$web: 1180px;
+$tablet: 799px;
+$mobile: 549px;
 
 //common
 @import "common/reset";
@@ -24,6 +27,7 @@ $enFont2 : Courier;
 //sub
 @import "sub/about";
 @import "sub/blog";
+@import "sub/postview";
 @import "sub/gallery";
 @import "sub/contact";
 @import "sub/playlist";
