@@ -1,0 +1,41 @@
+{
+    "data" : 
+        [
+            {
+                "type" : "Home",
+                "en" : "Greetings! Thanks for visiting <C-log/>. This website is a blog of an aspiring front-end developer. You can see what I've learned while studying, and there are also places to rest and heal as a break from studying. If you would like to know more about each page of this website, please click on the folders located around the computer picture!",
+                "ko" : "안녕하세요! <C-log/>에 오신 것을 환영합니다. 이 홈페이지는 프론트엔드 개발자 지망생의 개인 블로그입니다. 제가 코딩 공부를 하며 배운 것들을 기록한 글들을 보실 수 있으며, 그 외에 코딩하다가 힐링하며 쉴 수 있는 코너들이 마련되어 있습니다. 각 페이지에 대해 알고 싶으시면 컴퓨터 그림 옆의 폴더를 눌러보시길 바랍니다! *사용 스킬: HTML, CSS, JavaScript, React, Redux"
+            },
+            {
+                "type" : "About",
+                "en" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos autem soluta magni nobis quibusdam corrupti necessitatibus adipisci obcaecati laudantium corporis inventore sit possimus asperiores tempore suscipit, eum, vero voluptatem? Quis!",
+                "ko" : "About 페이지 설명입니다. About 페이지 설명입니다.About 페이지 설명입니다.About 페이지 설명입니다.About 페이지 설명입니다.About 페이지 설명입니다.About 페이지 설명입니다.About 페이지 설명입니다.About 페이지 설명입니다."
+            },
+            {
+                "type" : "Blog",
+                "en" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos autem soluta magni nobis quibusdam corrupti necessitatibus adipisci obcaecati laudantium corporis inventore sit possimus asperiores tempore suscipit, eum, vero voluptatem? Quis!",
+                "ko" : "Blog 페이지 설명입니다. Blog 페이지 설명입니다.Blog 페이지 설명입니다.Blog 페이지 설명입니다.Blog 페이지 설명입니다.Blog 페이지 설명입니다.Blog 페이지 설명입니다.Blog 페이지 설명입니다."
+            },
+            {
+                "type" : "Gallery",
+                "en" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos autem soluta magni nobis quibusdam corrupti necessitatibus adipisci obcaecati laudantium corporis inventore sit possimus asperiores tempore suscipit, eum, vero voluptatem? Quis!",
+                "ko" : "Gallery 페이지 설명입니다. Gallery 페이지 설명입니다. Gallery 페이지 설명입니다. Gallery 페이지 설명입니다. Gallery 페이지 설명입니다. Gallery 페이지 설명입니다. Gallery 페이지 설명입니다. "
+            },
+            {
+                "type" : "Playlist",
+                "en" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos autem soluta magni nobis quibusdam corrupti necessitatibus adipisci obcaecati laudantium corporis inventore sit possimus asperiores tempore suscipit, eum, vero voluptatem? Quis!",
+                "ko" : "Playlist 페이지 설명입니다.Playlist 페이지 설명입니다.Playlist 페이지 설명입니다.Playlist 페이지 설명입니다.Playlist 페이지 설명입니다.Playlist 페이지 설명입니다.Playlist 페이지 설명입니다.Playlist 페이지 설명입니다."
+            },
+            {
+                "type" : "Contact",
+                "en" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos autem soluta magni nobis quibusdam corrupti necessitatibus adipisci obcaecati laudantium corporis inventore sit possimus asperiores tempore suscipit, eum, vero voluptatem? Quis!",
+                "ko" : "Contact 페이지 설명입니다. Contact 페이지 설명입니다. Contact 페이지 설명입니다. Contact 페이지 설명입니다. Contact 페이지 설명입니다. Contact 페이지 설명입니다. Contact 페이지 설명입니다. "
+            },
+            {
+                "type" : "Study",
+                "en" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos autem soluta magni nobis quibusdam corrupti necessitatibus adipisci obcaecati laudantium corporis inventore sit possimus asperiores tempore suscipit, eum, vero voluptatem? Quis!",
+                "ko" : "Study 페이지 설명입니다. Study 페이지 설명입니다. Study 페이지 설명입니다. Study 페이지 설명입니다. Study 페이지 설명입니다. Study 페이지 설명입니다. Study 페이지 설명입니다. Study 페이지 설명입니다. "
+            }
+        ]
+        
+}
