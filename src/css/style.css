@@ -467,12 +467,14 @@ a {
   100% {
     width: calc(100% - 10px); } }
 .visual .wrap {
+  display: flex;
+  flex-wrap: wrap;
   width: 100%; }
   .visual .wrap .title {
-    width: 40%;
+    order: 1;
+    width: calc(55% - 30px);
     margin-left: 30px;
-    margin-bottom: 20px;
-    float: right; }
+    margin-bottom: 20px; }
     .visual .wrap .title h1 {
       width: 100%;
       text-align: center;
@@ -500,15 +502,124 @@ a {
         background: #000;
         font: 16px/1.3 NeoDunggeunmo;
         color: #d8c8f0; }
-  .visual .wrap .promptBox {
-    width: 40%;
-    height: calc(600px - 140px);
-    float: right;
-    margin-left: 30px;
-    margin-bottom: 30px; }
-    .visual .wrap .promptBox .prompt {
+    .visual .wrap .title .computer {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       width: 100%;
-      height: 100%;
+      height: calc(600px - 140px);
+      overflow: hidden;
+      float: left; }
+      .visual .wrap .title .computer .pic {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%; }
+        .visual .wrap .title .computer .pic img {
+          width: 100%;
+          max-width: 500px; }
+        .visual .wrap .title .computer .pic a {
+          transform: translateY(-200%);
+          font: 10px/1.2 Consolas;
+          color: #888; }
+  .visual .wrap .promptBox {
+    order: 0;
+    display: flex;
+    flex-wrap: wrap;
+    width: 45%;
+    max-width: 450px;
+    height: 600px;
+    margin-bottom: 30px; }
+    .visual .wrap .promptBox .folderBox {
+      order: 2;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 20px;
+      width: 100%;
+      height: 200px;
+      border: 2px solid #333;
+      background: #B69CDC; }
+      .visual .wrap .promptBox .folderBox::before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 25px;
+        border-bottom: 2px solid #333;
+        background: #bad0ef; }
+      .visual .wrap .promptBox .folderBox .folders {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        height: calc(100% - 25px);
+        padding: 10px; }
+        .visual .wrap .promptBox .folderBox .folders section {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          width: calc(100% / 3);
+          /*&:nth-of-type(1) {
+              top: 40px; left: 25%; 
+              //transform: translate(-170%, -250%);
+          }
+          &:nth-of-type(2) {
+              top: 50%; left: 5%; 
+              transform: translateY(-50%);
+              //transform: translate(-350%, 0%);
+          }
+          &:nth-of-type(3) {
+              bottom: 40px; left: 25%; 
+              //transform: translate(-170%, 250%);
+          }
+          &:nth-of-type(4) {
+              top: 40px; right: 25%; 
+              //transform: translate(170%, 250%);
+          }
+          &:nth-of-type(5) {
+              top: 50%; right: 5%; 
+              transform: translateY(-50%);
+              //transform: translate(350%, 0%);
+          }
+          &:nth-of-type(6) {
+              bottom: 40px; right: 25%; 
+              //transform: translate(170%, -250%);
+          }*/ }
+          .visual .wrap .promptBox .folderBox .folders section .folder {
+            position: relative;
+            width: 50px;
+            height: 50px; }
+            .visual .wrap .promptBox .folderBox .folders section .folder:hover i:first-child {
+              display: none; }
+            .visual .wrap .promptBox .folderBox .folders section .folder:hover i:last-child {
+              display: block; }
+            .visual .wrap .promptBox .folderBox .folders section .folder i {
+              font-size: 50px;
+              color: #bad0ef;
+              -webkit-text-stroke: 2px #333;
+              text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+              cursor: pointer; }
+              .visual .wrap .promptBox .folderBox .folders section .folder i:last-child {
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: none; }
+          .visual .wrap .promptBox .folderBox .folders section span {
+            display: inline-block;
+            padding: 3px;
+            font: 12px/1 Consolas;
+            background: #333;
+            color: #d8c8f0;
+            border-radius: 3px; }
+    .visual .wrap .promptBox .prompt {
+      order: 1;
+      width: 100%;
+      height: calc(100% - 230px);
       box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
       background: #fff; }
       .visual .wrap .promptBox .prompt .tab {
@@ -576,91 +687,6 @@ a {
             font: 14px/1.5 NeoDunggeunmo; }
           .visual .wrap .promptBox .prompt .textBox p.en {
             font: bold 14px/1.5 Consolas; }
-  .visual .wrap .computer {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: calc(60% - 30px);
-    height: 600px;
-    margin-bottom: 30px;
-    overflow: hidden;
-    float: left; }
-    .visual .wrap .computer .folders {
-      position: absolute;
-      z-index: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      height: 100%; }
-      .visual .wrap .computer .folders section {
-        position: absolute;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center; }
-        .visual .wrap .computer .folders section:nth-of-type(1) {
-          top: 40px;
-          left: 25%; }
-        .visual .wrap .computer .folders section:nth-of-type(2) {
-          top: 50%;
-          left: 5%;
-          transform: translateY(-50%); }
-        .visual .wrap .computer .folders section:nth-of-type(3) {
-          bottom: 40px;
-          left: 25%; }
-        .visual .wrap .computer .folders section:nth-of-type(4) {
-          top: 40px;
-          right: 25%; }
-        .visual .wrap .computer .folders section:nth-of-type(5) {
-          top: 50%;
-          right: 5%;
-          transform: translateY(-50%); }
-        .visual .wrap .computer .folders section:nth-of-type(6) {
-          bottom: 40px;
-          right: 25%; }
-        .visual .wrap .computer .folders section .folder {
-          position: relative;
-          width: 50px;
-          height: 50px; }
-          .visual .wrap .computer .folders section .folder:hover i:first-child {
-            display: none; }
-          .visual .wrap .computer .folders section .folder:hover i:last-child {
-            display: block; }
-          .visual .wrap .computer .folders section .folder i {
-            font-size: 50px;
-            color: #bad0ef;
-            -webkit-text-stroke: 3px #333;
-            cursor: pointer; }
-            .visual .wrap .computer .folders section .folder i:last-child {
-              position: absolute;
-              top: 0;
-              left: 0;
-              display: none; }
-        .visual .wrap .computer .folders section span {
-          display: inline-block;
-          padding: 3px;
-          font: 12px/1 Consolas;
-          background: #333;
-          color: #d8c8f0;
-          border-radius: 3px; }
-    .visual .wrap .computer .pic {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 80%;
-      max-width: 450px;
-      max-height: 450px; }
-      .visual .wrap .computer .pic img {
-        width: 100%; }
-    .visual .wrap .computer a {
-      position: absolute;
-      bottom: 0px;
-      z-index: 2;
-      font: 10px/1.2 Consolas;
-      color: #888; }
   .visual .wrap .recent, .visual .wrap .popular {
     position: relative;
     z-index: 1;
@@ -734,9 +760,10 @@ a {
       .visual .wrap .recent ul li:last-child, .visual .wrap .popular ul li:last-child {
         margin-bottom: 0px; }
   .visual .wrap .recent {
-    float: left; }
+    order: 2;
+    margin-right: 30px; }
   .visual .wrap .popular {
-    float: right; }
+    order: 3; }
     .visual .wrap .popular ul li:first-child {
       background: #bad0ef; }
     .visual .wrap .popular ul li:not(:first-child) {
@@ -746,71 +773,75 @@ a {
     display: block;
     clear: both; }
 
-@media screen and (max-width: 1180px) {
-  .visual .wrap .title {
-    width: calc(50% - 20px);
-    margin-left: 20px; }
-  .visual .wrap .computer {
-    display: flex;
-    flex-wrap: wrap;
-    width: 50%; }
-    .visual .wrap .computer .folders {
-      position: static;
-      display: flex;
-      flex-wrap: wrap;
-      height: auto; }
-      .visual .wrap .computer .folders section {
-        position: static;
-        transform: translateY(0) !important;
-        margin: 10px 1vw; }
-    .visual .wrap .computer .pic {
-      width: 80%; }
-  .visual .wrap .promptBox {
-    width: calc(50% - 20px);
-    margin-left: 20px; } }
 @media screen and (max-width: 799px) {
+  .visual .wrap .title {
+    order: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto; }
+    .visual .wrap .title .computer {
+      width: 80%;
+      height: auto; }
+      .visual .wrap .title .computer .pic a {
+        transform: translateY(-200%); }
+  .visual .wrap .promptBox {
+    width: 100%;
+    max-width: none;
+    height: 300px; }
+    .visual .wrap .promptBox .folderBox {
+      width: calc(40% - 20px);
+      height: 100%;
+      margin-left: 20px;
+      margin-top: 0px; }
+      .visual .wrap .promptBox .folderBox .folders section {
+        width: calc(100% / 2); }
+    .visual .wrap .promptBox .prompt {
+      width: 60%;
+      height: 100%; }
+  .visual .wrap .recent {
+    width: 100%;
+    margin-right: 0px;
+    margin-bottom: 30px; }
+  .visual .wrap .popular {
+    width: 100%; } }
+@media screen and (max-width: 549px) {
   .visual .wrap {
     padding: 0px 20px; }
     .visual .wrap .title {
-      width: 100%;
-      margin-left: 0px; }
-    .visual .wrap .computer {
+      order: 0;
       display: flex;
+      flex-direction: column;
+      align-items: center;
       width: 100%;
       height: auto; }
-      .visual .wrap .computer .folders {
-        display: flex;
-        flex-wrap: wrap;
-        align-content: space-between;
-        width: 40%;
-        height: 100%; }
-        .visual .wrap .computer .folders section {
-          margin: 10px 1.5vw; }
-      .visual .wrap .computer .pic {
+      .visual .wrap .title .computer {
         width: 100%;
-        aspect-ratio: 1 / 1;
         height: auto; }
+        .visual .wrap .title .computer .pic a {
+          transform: translateY(-100%); }
     .visual .wrap .promptBox {
       width: 100%;
-      height: 300px;
-      margin-left: 0px; }
+      height: auto; }
+      .visual .wrap .promptBox .folderBox {
+        order: 1;
+        width: 100%;
+        height: 200px;
+        margin-left: 0px;
+        margin-bottom: 20px; }
+        .visual .wrap .promptBox .folderBox .folders section {
+          width: calc(100% / 3); }
+      .visual .wrap .promptBox .prompt {
+        order: 2;
+        width: 100%;
+        height: 400px; }
     .visual .wrap .recent {
       width: 100%;
+      margin-right: 0px;
       margin-bottom: 30px; }
     .visual .wrap .popular {
       width: 100%; } }
-@media screen and (max-width: 549px) {
-  .visual .wrap {
-    padding: 0px; }
-    .visual .wrap .computer .folders {
-      width: 100%; }
-      .visual .wrap .computer .folders section {
-        margin: 10px 2.5vw; }
-    .visual .wrap .computer .pic {
-      width: 80%;
-      margin-bottom: 20px; }
-    .visual .wrap .recent {
-      margin-bottom: 30px; } }
 .about .inner .content > .wrap {
   position: relative;
   display: flex;

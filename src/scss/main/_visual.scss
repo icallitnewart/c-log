@@ -1,13 +1,16 @@
 .visual {
 
     .wrap {
+        display: flex;
+        flex-wrap: wrap;
         width: 100%;
         
         .title {
-            width: 40%;
+            order: 1;
+            width: calc(55% - 30px);
             margin-left: 30px;
             margin-bottom: 20px;
-            float: right;
+            //float: right;
     
             h1 {
                 width: 100%;
@@ -51,18 +54,167 @@
                     color: #d8c8f0;
                 }
             }
+
+            .computer {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: calc(600px - 140px);
+                //border: 2px solid #333;
+                //border-radius: 10px;
+                overflow: hidden;
+                float: left;
+
+                .pic {
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    //max-width: 450px;
+                    //max-height: 450px;
+
+                    img {
+                        width: 100%;
+                        max-width: 500px;
+                    }
+                    
+                    a {
+                        transform: translateY(-200%);
+                        font: 10px/1.2 $enFont1;
+                        color: #888;
+                    }
+                }
+                    
+                
+            }
         }
 
         .promptBox {
-            width: 40%;
-            height: calc(600px - 140px);
-            float: right;
-            margin-left: 30px;
+            order: 0;
+            display: flex;
+            flex-wrap: wrap;
+            width: 45%;
+            max-width:450px;
+            height: 600px;
+            //margin-top: 60px;
+            //float: right;
+            //margin-left: 30px;
             margin-bottom: 30px;
 
-            .prompt {
+            .folderBox {
+                //position: absolute;
+                order: 2;
+                z-index: 1;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                //transform: translateY(-10%);
+                margin-top: 20px;
                 width: 100%;
-                height: 100%;
+                height: 200px;
+                border: 2px solid #333;
+                background: $mainColor;
+
+                &::before {
+                    content: "";
+                    display: block;
+                    width: 100%;
+                    height: 25px;
+                    border-bottom: 2px solid #333;
+                    background: $pointColor;
+                }
+
+                .folders {
+                    display: flex;
+                    flex-wrap: wrap;
+                    width: 100%;
+                    height: calc(100% - 25px);
+                    padding: 10px;
+
+                    section {
+                        //position: absolute;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        text-align: center;
+                        width: calc(100% / 3);
+    
+                        /*&:nth-of-type(1) {
+                            top: 40px; left: 25%; 
+                            //transform: translate(-170%, -250%);
+                        }
+                        &:nth-of-type(2) {
+                            top: 50%; left: 5%; 
+                            transform: translateY(-50%);
+                            //transform: translate(-350%, 0%);
+                        }
+                        &:nth-of-type(3) {
+                            bottom: 40px; left: 25%; 
+                            //transform: translate(-170%, 250%);
+                        }
+                        &:nth-of-type(4) {
+                            top: 40px; right: 25%; 
+                            //transform: translate(170%, 250%);
+                        }
+                        &:nth-of-type(5) {
+                            top: 50%; right: 5%; 
+                            transform: translateY(-50%);
+                            //transform: translate(350%, 0%);
+                        }
+                        &:nth-of-type(6) {
+                            bottom: 40px; right: 25%; 
+                            //transform: translate(170%, -250%);
+                        }*/
+    
+                        .folder {
+                            position: relative;
+                            width: 50px;
+                            height: 50px;
+        
+                            &:hover i {
+                                &:first-child { display: none; }
+                                &:last-child { display: block; }
+                            }
+        
+                            i {
+                                font-size: 50px;
+                                color: $pointColor;
+                                -webkit-text-stroke: 2px #333;
+                                text-shadow: 5px 5px 10px rgba(0,0,0,.2);
+                                cursor: pointer;
+        
+                                &:last-child {
+                                    position: absolute;
+                                    top: 0; left: 0;
+                                    display: none;
+                                }
+                            }
+                        }
+    
+                        span {
+                            display: inline-block;
+                            padding: 3px;
+                            font: 12px/1 $enFont1;
+                            background: #333;
+                            color: #d8c8f0;
+                            border-radius: 3px;
+                        }
+    
+                    }
+
+                }
+
+            }
+
+            .prompt {
+                order: 1;
+                width: 100%;
+                height: calc(100% - 230px);
                 box-shadow: 5px 5px 20px rgba(0,0,0,.2);
                 background: #fff;
                 //border: 2px solid #555;
@@ -162,123 +314,6 @@
                         }
                     }
                 }
-            }
-        }
-
-        .computer {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: calc(60% - 30px);
-            height: 600px;
-            margin-bottom: 30px;
-            //border: 2px solid #333;
-            //border-radius: 10px;
-            overflow: hidden;
-            float: left;
-
-            .folders {
-                position: absolute;
-                z-index: 1;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 100%;
-                height: 100%;
-                //background: $mainColor;
-
-                section {
-                    position: absolute;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    text-align: center;
-
-                    &:nth-of-type(1) {
-                        top: 40px; left: 25%; 
-                        //transform: translate(-170%, -250%);
-                    }
-                    &:nth-of-type(2) {
-                        top: 50%; left: 5%; 
-                        transform: translateY(-50%);
-                        //transform: translate(-350%, 0%);
-                    }
-                    &:nth-of-type(3) {
-                        bottom: 40px; left: 25%; 
-                        //transform: translate(-170%, 250%);
-                    }
-                    &:nth-of-type(4) {
-                        top: 40px; right: 25%; 
-                        //transform: translate(170%, 250%);
-                    }
-                    &:nth-of-type(5) {
-                        top: 50%; right: 5%; 
-                        transform: translateY(-50%);
-                        //transform: translate(350%, 0%);
-                    }
-                    &:nth-of-type(6) {
-                        bottom: 40px; right: 25%; 
-                        //transform: translate(170%, -250%);
-                    }
-
-                    .folder {
-                        position: relative;
-                        width: 50px;
-                        height: 50px;
-    
-                        &:hover i {
-                            &:first-child { display: none; }
-                            &:last-child { display: block; }
-                        }
-    
-                        i {
-                            font-size: 50px;
-                            color: $pointColor;
-                            -webkit-text-stroke: 3px #333;
-                            cursor: pointer;
-    
-                            &:last-child {
-                                position: absolute;
-                                top: 0; left: 0;
-                                display: none;
-                            }
-                        }
-                    }
-
-                    span {
-                        display: inline-block;
-                        padding: 3px;
-                        font: 12px/1 $enFont1;
-                        background: #333;
-                        color: #d8c8f0;
-                        border-radius: 3px;
-                    }
-
-                }
-            }
-
-            .pic {
-                position: relative;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 80%;
-                max-width: 450px;
-                max-height: 450px;
-
-                img {
-                    width: 100%;
-                }
-            }
-            
-
-            a {
-                position: absolute;
-                bottom: 0px;
-                z-index: 2;
-                font: 10px/1.2 $enFont1;
-                color: #888;
             }
         }
 
@@ -387,11 +422,14 @@
         }
 
         .recent {
-            float: left;
+            order: 2;
+            margin-right: 30px;
+            //float: left;
         }
 
         .popular {
-            float: right;
+            order: 3;
+            //float: right;
 
             ul li:first-child {
                 background: $pointColor;
@@ -410,95 +448,58 @@
     }
 }
 
-@media screen and (max-width: $web) {
-.visual .wrap {
-    .title {
-        width: calc(50% - 20px);
-        margin-left: 20px;
-    }
-
-    .computer {
-        display: flex;
-        flex-wrap: wrap;
-        width: 50%;
-
-        .folders {
-            position: static;
-            display: flex;
-            flex-wrap: wrap;
-            height: auto;
-
-            section {
-                position: static;
-                transform: translateY(0) !important;
-                margin: 10px 1vw;
-            }
-        }
-
-        .pic {
-            width: 80%;
-        }
-    }
-
-    .promptBox {
-        width: calc(50% - 20px);
-        margin-left: 20px;
-    }
-
-    .recent {
-
-    }
-
-    .popular {
-
-    }
-}
-}
 
 @media screen and (max-width: $tablet) {
     .visual .wrap {
-        padding: 0px 20px; 
-
         .title {
-            width: 100%;
-            margin-left: 0px;
-        }
-    
-        .computer {
+            order: 0;
             display: flex;
+            flex-direction: column;
+            align-items: center;
+
             width: 100%;
             height: auto;
-    
-            .folders {
-                display: flex;
-                flex-wrap: wrap;
-                align-content: space-between;
-                width: 40%;
-                height: 100%;
-    
-                section {
-                    margin: 10px 1.5vw;
+            
+            .computer {
+                width: 80%;
+                height: auto;
+
+                .pic a {
+                    transform: translateY(-200%);
                 }
             }
-    
-            .pic {
-                width: 100%;
-                aspect-ratio: 1 / 1;
-                height: auto;
-            }
         }
-    
+
         .promptBox {
             width: 100%;
+            max-width: none;
             height: 300px;
-            margin-left: 0px;
+
+            .folderBox {
+                width: calc(40% - 20px);
+                height: 100%;
+                margin-left: 20px;
+                margin-top: 0px;
+                
+                .folders {
+                    section {
+                        width: calc(100% / 2);
+                    }
+                }
+            }
+
+            .prompt {
+                width: 60%;
+                height: 100%;
+            }
         }
-    
+
         .recent {
             width: 100%;
+            margin-right: 0px;
             margin-bottom: 30px;
         }
-    
+
         .popular {
             width: 100%;
         }
@@ -507,25 +508,60 @@
 
 @media screen and (max-width: $mobile) {
     .visual .wrap {
-        padding: 0px; 
-    
-        .computer {
-            .folders {
-                width: 100%;
-    
-                section {
-                    margin: 10px 2.5vw;
+        padding: 0px 20px;//
+
+        .title {
+            order: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            width: 100%;
+            height: auto;
+            
+            .computer {
+                width: 100%;//
+                height: auto;
+
+                .pic a {
+                    transform: translateY(-100%);//
                 }
             }
-    
-            .pic {
-                width: 80%;
-                margin-bottom: 20px;
+        }
+
+        .promptBox {
+            width: 100%;
+            height: auto;//
+
+            .folderBox {
+                order: 1;//
+                width: 100%;//
+                height: 200px;//
+                margin-left: 0px;//
+                margin-bottom: 20px;//
+                
+                .folders {
+                    section {
+                        width: calc(100% / 3);//
+                    }
+                }
+            }
+
+            .prompt {
+                order: 2;
+                width: 100%;//
+                height: 400px;//
             }
         }
-    
+
         .recent {
+            width: 100%;
+            margin-right: 0px;
             margin-bottom: 30px;
+        }
+
+        .popular {
+            width: 100%;
         }
     }
 }

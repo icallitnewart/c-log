@@ -25,61 +25,64 @@ function Visual() {
             <div className="title">
                 <h1><span>Coding Blog</span></h1>
                 <h2><span>초보 개발자의 우당탕탕 코딩 기록지</span></h2>
-            </div>
-            <div className="computer">
-                <a href='https://www.freepik.com/vectors/vintage'>Vintage vector created by macrovector - www.freepik.com</a>
-                <div className="pic">
-                    <img src={`${process.env.PUBLIC_URL}/img/computer.png`} alt="computer" />
-                </div>
-                <div className="folders">
-                    <section onClick={()=>{
-                        callData("About");
-                        }}>
-                        <div className="folder">
-                            <i className="fas fa-folder"></i>
-                            <i className="fas fa-folder-open"></i>
-                        </div>
-                        <span>About</span>
-                    </section>
-                    <section onClick={()=>callData("Blog")}>
-                        <div className="folder">
-                            <i className="fas fa-folder"></i>
-                            <i className="fas fa-folder-open"></i>
-                        </div>
-                        <span>Blog</span>
-                    </section>
-                    <section onClick={()=>callData("Gallery")}>
-                        <div className="folder">
-                            <i className="fas fa-folder"></i>
-                            <i className="fas fa-folder-open"></i>
-                        </div>
-                        <span>Gallery</span>
-                    </section>
-                    <section onClick={()=>callData("Home")}>
-                        <div className="folder">
-                            <i className="fas fa-folder"></i>
-                            <i className="fas fa-folder-open"></i>
-                        </div>
-                        <span>Home</span>
-                    </section>
-                    <section onClick={()=>callData("Playlist")}>
-                        <div className="folder">
-                            <i className="fas fa-folder"></i>
-                            <i className="fas fa-folder-open"></i>
-                        </div>
-                        <span>Playlist</span>
-                    </section>
-                    <section onClick={()=>callData("Contact")}>
-                        <div className="folder">
-                            <i className="fas fa-folder"></i>
-                            <i className="fas fa-folder-open"></i>
-                        </div>
-                        <span>Contact</span>
-                    </section>
-
+                <div className="computer">
+                    <div className="pic">
+                        <img src={`${process.env.PUBLIC_URL}/img/computer.png`} alt="computer" />
+                        <a href='https://www.freepik.com/vectors/vintage'>Vintage vector created by macrovector - www.freepik.com</a>
+                    </div>
                 </div>
             </div>
             <div className="promptBox">   
+                
+                <div className="folderBox">
+                    <div className="folders">
+                        <section onClick={()=>{
+                            callData("About");
+                            }}>
+                            <div className="folder">
+                                <i className="fas fa-folder"></i>
+                                <i className="fas fa-folder-open"></i>
+                            </div>
+                            <span>About</span>
+                        </section>
+                        <section onClick={()=>callData("Blog")}>
+                            <div className="folder">
+                                <i className="fas fa-folder"></i>
+                                <i className="fas fa-folder-open"></i>
+                            </div>
+                            <span>Blog</span>
+                        </section>
+                        <section onClick={()=>callData("Gallery")}>
+                            <div className="folder">
+                                <i className="fas fa-folder"></i>
+                                <i className="fas fa-folder-open"></i>
+                            </div>
+                            <span>Gallery</span>
+                        </section>
+                        <section onClick={()=>callData("Home")}>
+                            <div className="folder">
+                                <i className="fas fa-folder"></i>
+                                <i className="fas fa-folder-open"></i>
+                            </div>
+                            <span>Home</span>
+                        </section>
+                        <section onClick={()=>callData("Playlist")}>
+                            <div className="folder">
+                                <i className="fas fa-folder"></i>
+                                <i className="fas fa-folder-open"></i>
+                            </div>
+                            <span>Playlist</span>
+                        </section>
+                        <section onClick={()=>callData("Contact")}>
+                            <div className="folder">
+                                <i className="fas fa-folder"></i>
+                                <i className="fas fa-folder-open"></i>
+                            </div>
+                            <span>Contact</span>
+                        </section>
+                        
+                    </div>
+                </div>
                 <div className="prompt">
                     <div className="tab">
                         <p>COMMAND PROMPT</p>
