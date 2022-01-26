@@ -10,7 +10,6 @@
             width: calc(55% - 30px);
             margin-left: 30px;
             margin-bottom: 20px;
-            //float: right;
     
             h1 {
                 width: 100%;
@@ -29,14 +28,6 @@
                     border: 2px solid #333;
                     border-radius: 5px;
                     box-shadow: 4px 4px 0px #000;
-    
-                    // &::before {
-                    //     content: "/*";
-                    // }
-    
-                    // &::after {
-                    //     content: "*/";
-                    // }
                 }
             }
     
@@ -63,8 +54,6 @@
                 align-items: center;
                 width: 100%;
                 height: calc(600px - 140px);
-                //border: 2px solid #333;
-                //border-radius: 10px;
                 overflow: hidden;
                 float: left;
 
@@ -75,8 +64,6 @@
                     justify-content: center;
                     align-items: center;
                     width: 100%;
-                    //max-width: 450px;
-                    //max-height: 450px;
 
                     img {
                         width: 100%;
@@ -90,7 +77,6 @@
                     }
                 }
                     
-                
             }
         }
 
@@ -101,32 +87,39 @@
             width: 45%;
             max-width:450px;
             height: 600px;
-            //margin-top: 60px;
-            //float: right;
-            //margin-left: 30px;
             margin-bottom: 30px;
 
             .folderBox {
-                //position: absolute;
                 order: 2;
                 z-index: 1;
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: center;
-                //transform: translateY(-10%);
                 margin-top: 20px;
                 width: 100%;
                 height: 200px;
                 border: 2px solid #333;
                 background: $mainColor;
 
-                &::before {
-                    content: "";
-                    display: block;
+                .tab {
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
                     width: 100%;
                     height: 25px;
                     border-bottom: 2px solid #333;
                     background: $pointColor;
+
+                    &::before, &::after {
+                        content: "";
+                        display: block;
+                        width: 13px;
+                        height: 13px;
+                        border: 2px solid #333;
+                        background: pink;
+                        border-radius: 50%;
+                        margin-right: 5px;
+                    }
                 }
 
                 .folders {
@@ -137,39 +130,11 @@
                     padding: 10px;
 
                     section {
-                        //position: absolute;
                         display: flex;
                         flex-direction: column;
                         align-items: center;
                         text-align: center;
                         width: calc(100% / 3);
-    
-                        /*&:nth-of-type(1) {
-                            top: 40px; left: 25%; 
-                            //transform: translate(-170%, -250%);
-                        }
-                        &:nth-of-type(2) {
-                            top: 50%; left: 5%; 
-                            transform: translateY(-50%);
-                            //transform: translate(-350%, 0%);
-                        }
-                        &:nth-of-type(3) {
-                            bottom: 40px; left: 25%; 
-                            //transform: translate(-170%, 250%);
-                        }
-                        &:nth-of-type(4) {
-                            top: 40px; right: 25%; 
-                            //transform: translate(170%, 250%);
-                        }
-                        &:nth-of-type(5) {
-                            top: 50%; right: 5%; 
-                            transform: translateY(-50%);
-                            //transform: translate(350%, 0%);
-                        }
-                        &:nth-of-type(6) {
-                            bottom: 40px; right: 25%; 
-                            //transform: translate(170%, -250%);
-                        }*/
     
                         .folder {
                             position: relative;
@@ -217,7 +182,6 @@
                 height: calc(100% - 230px);
                 box-shadow: 5px 5px 20px rgba(0,0,0,.2);
                 background: #fff;
-                //border: 2px solid #555;
 
                 .tab {
                     display: flex;
@@ -424,12 +388,10 @@
         .recent {
             order: 2;
             margin-right: 30px;
-            //float: left;
         }
 
         .popular {
             order: 3;
-            //float: right;
 
             ul li:first-child {
                 background: $pointColor;
@@ -508,60 +470,40 @@
 
 @media screen and (max-width: $mobile) {
     .visual .wrap {
-        padding: 0px 20px;//
+        padding: 0px 20px;
 
         .title {
-            order: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-
-            width: 100%;
-            height: auto;
             
             .computer {
-                width: 100%;//
-                height: auto;
+                width: 100%;
 
                 .pic a {
-                    transform: translateY(-100%);//
+                    transform: translateY(-100%);
                 }
             }
         }
 
         .promptBox {
-            width: 100%;
-            height: auto;//
+            height: auto;
 
             .folderBox {
-                order: 1;//
-                width: 100%;//
-                height: 200px;//
-                margin-left: 0px;//
-                margin-bottom: 20px;//
+                order: 1;
+                width: 100%;
+                height: 200px;
+                margin-left: 0px;
+                margin-bottom: 20px;
                 
                 .folders {
                     section {
-                        width: calc(100% / 3);//
+                        width: calc(100% / 3);
                     }
                 }
             }
 
             .prompt {
-                order: 2;
-                width: 100%;//
-                height: 400px;//
+                width: 100%;
+                height: 400px;
             }
-        }
-
-        .recent {
-            width: 100%;
-            margin-right: 0px;
-            margin-bottom: 30px;
-        }
-
-        .popular {
-            width: 100%;
         }
     }
 }

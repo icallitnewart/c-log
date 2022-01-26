@@ -10,11 +10,8 @@ function Blog({ history, match }) {
     let [ loading, setLoading ] = useState(true);
     let [ posts, setPosts ] = useState([]);
 	let [ enableClick, setEnableClick ] = useState(true);
-	//const [ enableWrite, setEnableWrite] = useState(false);
 	const list = useRef(null);
 	const view = useRef(null);
-	const inputTitle = useRef(null);
-	const textareaContent = useRef(null);
 
     const iconTypes = {
         HTML : "fab fa-html5",
@@ -32,21 +29,6 @@ function Blog({ history, match }) {
 		} else {
 			return null;
 		}
-	};
-
-	const savePost = ()=> {
-		setPosts([
-			{
-				title: inputTitle.current.value,
-				index: "",
-				writer: "",
-				date: "",
-				content: textareaContent.current.value
-			},
-			...posts
-		]);
-
-		//setEnableWrite(false);
 	};
 
     useEffect(()=> {
@@ -91,15 +73,6 @@ function Blog({ history, match }) {
 						<div className="btns">
 							<div className="writeBtns">
 								<button onClick={()=> history.push(`/blog/0`)}>Write</button>
-							{/* { (enableWrite) //setEnableWrite(true)
-								?
-								<>
-								<button onClick={savePost}>Save</button>
-								<button onClick={()=>setEnableWrite(false)}>Cancel</button>
-								</>
-								:
-								<button onClick={()=> history.push(`/blog/0`)}>Write</button>
-							} */}
 							</div>
 							<ul className="viewType" ref={view}>
 								<li>
@@ -116,14 +89,7 @@ function Blog({ history, match }) {
 								</li>
 							</ul>
 						</div>
-						{/* { (enableWrite) && (
-							<div className="writeBox">
-								<input type="text" placeholder="Title" ref={inputTitle} />
-								<input type="text" placeholder="Writer" ref={inputTitle} />
-								<textarea placeholder="Content" ref={textareaContent} ></textarea>
-							</div>
-						)} */}
-						{ (loading) ? <Loading /> : (
+						{ (loading && !no) ? <Loading /> : (
 							<>
 							<div className="list" ref={list}>
 							{
@@ -212,27 +178,35 @@ function Blog({ history, match }) {
 			
 		});
 
-
-
-		setTimeout(()=> {	//임시로 .5초
-			//로딩바 제거 및 클릭 가능하게 만들기
+		//게시글 보기 및 작성 페이지
+		if(no) {
 			setLoading(false);
 			setEnableClick(true);
+		} else {	//게시글 목록
 
-			//버튼 활성화
-			for(let btn of viewBtns) {
-				btn.disabled = false;
-			}
+			//로딩 모션 보여주기
+			setTimeout(()=> {	//임시로 .5초
+				//로딩바 제거 및 클릭 가능하게 만들기
+				setLoading(false);
+				setEnableClick(true);
 	
-			//리스트뷰나 그리드뷰 버튼 클릭시 스타일 변경
-			if(viewType==="list" && list) {
-				if(list.current.classList.contains("gridView")) list.current.classList.remove("gridView");
-			}
-			else if(viewType==="grid" && list) {
-				list.current.classList.add("gridView");
-			}
+				//버튼 활성화
+				for(let btn of viewBtns) {
+					btn.disabled = false;
+				}
+		
+				//리스트뷰나 그리드뷰 버튼 클릭시 스타일 변경
+				if(viewType==="list" && list) {
+					if(list.current.classList.contains("gridView")) list.current.classList.remove("gridView");
+				}
+				else if(viewType==="grid" && list) {
+					list.current.classList.add("gridView");
+				}
+	
+			}, 500)
 
-		}, 500)
+		}
+
     }
 }
 

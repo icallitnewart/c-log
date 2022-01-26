@@ -545,13 +545,23 @@ a {
       height: 200px;
       border: 2px solid #333;
       background: #B69CDC; }
-      .visual .wrap .promptBox .folderBox::before {
-        content: "";
-        display: block;
+      .visual .wrap .promptBox .folderBox .tab {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
         width: 100%;
         height: 25px;
         border-bottom: 2px solid #333;
         background: #bad0ef; }
+        .visual .wrap .promptBox .folderBox .tab::before, .visual .wrap .promptBox .folderBox .tab::after {
+          content: "";
+          display: block;
+          width: 13px;
+          height: 13px;
+          border: 2px solid #333;
+          background: pink;
+          border-radius: 50%;
+          margin-right: 5px; }
       .visual .wrap .promptBox .folderBox .folders {
         display: flex;
         flex-wrap: wrap;
@@ -563,33 +573,7 @@ a {
           flex-direction: column;
           align-items: center;
           text-align: center;
-          width: calc(100% / 3);
-          /*&:nth-of-type(1) {
-              top: 40px; left: 25%; 
-              //transform: translate(-170%, -250%);
-          }
-          &:nth-of-type(2) {
-              top: 50%; left: 5%; 
-              transform: translateY(-50%);
-              //transform: translate(-350%, 0%);
-          }
-          &:nth-of-type(3) {
-              bottom: 40px; left: 25%; 
-              //transform: translate(-170%, 250%);
-          }
-          &:nth-of-type(4) {
-              top: 40px; right: 25%; 
-              //transform: translate(170%, 250%);
-          }
-          &:nth-of-type(5) {
-              top: 50%; right: 5%; 
-              transform: translateY(-50%);
-              //transform: translate(350%, 0%);
-          }
-          &:nth-of-type(6) {
-              bottom: 40px; right: 25%; 
-              //transform: translate(170%, -250%);
-          }*/ }
+          width: calc(100% / 3); }
           .visual .wrap .promptBox .folderBox .folders section .folder {
             position: relative;
             width: 50px;
@@ -809,20 +793,11 @@ a {
 @media screen and (max-width: 549px) {
   .visual .wrap {
     padding: 0px 20px; }
-    .visual .wrap .title {
-      order: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-      height: auto; }
-      .visual .wrap .title .computer {
-        width: 100%;
-        height: auto; }
-        .visual .wrap .title .computer .pic a {
-          transform: translateY(-100%); }
+    .visual .wrap .title .computer {
+      width: 100%; }
+      .visual .wrap .title .computer .pic a {
+        transform: translateY(-100%); }
     .visual .wrap .promptBox {
-      width: 100%;
       height: auto; }
       .visual .wrap .promptBox .folderBox {
         order: 1;
@@ -833,15 +808,8 @@ a {
         .visual .wrap .promptBox .folderBox .folders section {
           width: calc(100% / 3); }
       .visual .wrap .promptBox .prompt {
-        order: 2;
         width: 100%;
-        height: 400px; }
-    .visual .wrap .recent {
-      width: 100%;
-      margin-right: 0px;
-      margin-bottom: 30px; }
-    .visual .wrap .popular {
-      width: 100%; } }
+        height: 400px; } }
 .about .inner .content > .wrap {
   position: relative;
   display: flex;
@@ -1788,9 +1756,24 @@ a {
       height: calc(100% - 30px);
       padding: 30px 50px 30px 40px; }
       #wrap .contact > .inner .content > .wrap .container .pic {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 35%;
         border: 1px solid #555;
         animation: striped 0.5s steps(100) infinite; }
+        #wrap .contact > .inner .content > .wrap .container .pic img {
+          width: 100%; }
+        #wrap .contact > .inner .content > .wrap .container .pic a {
+          position: absolute;
+          bottom: 3px;
+          left: 3px;
+          display: block;
+          width: 100%;
+          text-align: center;
+          font: 10px/1.2 Consolas;
+          color: #888; }
       #wrap .contact > .inner .content > .wrap .container .formBox {
         width: 65%;
         height: 407px;
@@ -1867,15 +1850,20 @@ a {
   .contact .content > .wrap {
     width: 100% !important;
     box-shadow: 5px 5px 0px #444 !important; }
-    .contact .content > .wrap .pic {
-      display: none !important; }
-    .contact .content > .wrap .formBox {
-      width: 100% !important;
-      padding-left: 0px !important; }
-      .contact .content > .wrap .formBox h2 {
-        font-size: 1.3em !important; }
-      .contact .content > .wrap .formBox table {
+    .contact .content > .wrap .container {
+      padding: 30px 30px 30px 20px !important; }
+      .contact .content > .wrap .container .formBox h2 {
+        font-size: 1.1em !important; }
+      .contact .content > .wrap .container .formBox table {
         max-width: none !important; } }
+@media screen and (max-width: 549px) {
+  .contact .content > .wrap .container {
+    padding: 30px 30px !important; }
+    .contact .content > .wrap .container .pic {
+      display: none !important; }
+    .contact .content > .wrap .container .formBox {
+      width: 100% !important;
+      padding-left: 0px !important; } }
 .playlist .inner .content .wrap {
   width: 100%; }
   .playlist .inner .content .wrap .frame {

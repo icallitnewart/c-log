@@ -2,6 +2,14 @@ import { useEffect, useRef } from "react";
 
 function Join() {
     const box = useRef(null);
+    
+    const sendMail = (e)=> {
+        e.preventDefault();
+
+        if(window.confirm("Would you like to send an email?")) {
+            alert("Your mail has been sent!");
+        }
+    }
     useEffect(()=> {
         box.current.classList.add("on");
     }, []);
@@ -33,7 +41,10 @@ function Join() {
             <div className="wrap" ref={box}>
                 <div className="tab"></div>
                 <div className="container">
-                    <div className="pic"></div>
+                    <div className="pic">
+                        <img src={process.env.PUBLIC_URL+"/img/computer.png"} alt="computer" />
+                        <a href='https://www.freepik.com/vectors/vintage' target="_blank">Vintage vector created by macrovector - www.freepik.com</a>
+                    </div>
                     <div className="formBox">
                         <h2>Want to leave a message?</h2>
                         <p>*All fields are mandatory.</p>
@@ -41,6 +52,7 @@ function Join() {
                             <fieldset>
                                 <legend className="hidden">Contact Form</legend>
                                 <table summary="Visitor's name, email, comment">
+                                    <caption className="hidden">Contact Mail</caption>
                                     <tbody>
                                     <tr>
                                         <th scope="row">
@@ -68,8 +80,8 @@ function Join() {
                                     </tr>
                                     <tr>
                                         <th>
-                                            <input type="submit" value="RESET" />
-                                            <input type="submit" value="SUBMIT" />
+                                            <input type="reset" value="RESET" />
+                                            <input type="submit" value="SUBMIT" onClick={(e)=> sendMail(e)} />
                                         </th>
                                     </tr>
                                     </tbody>

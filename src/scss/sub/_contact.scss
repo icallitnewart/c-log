@@ -54,10 +54,27 @@
                 padding: 30px 50px 30px 40px;
 
                 .pic {
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
                     width: 35%;
                     border: 1px solid #555;
-                    //background: repeating-linear-gradient(45deg, #fad3d9, #fad3d9 30px, #d2e8fc 30px, #d2e8fc 60px);
                     animation: striped 0.5s steps(100) infinite;
+                    
+                    img {
+                        width: 100%;
+                    }
+
+                    a {
+                        position: absolute;
+                        bottom: 3px; left: 3px;
+                        display: block;
+                        width: 100%;
+                        text-align: center;
+                        font: 10px/1.2 $enFont1;
+                        color: #888;
+                    }
                 }
     
                 .formBox {
@@ -176,21 +193,47 @@
             width: 100% !important;
             box-shadow: 5px 5px 0px #444 !important;
 
-            .pic {
-                display: none !important;
+            .container {
+                padding: 30px 30px 30px 20px !important;
+
+                .pic {
+                    //display: none !important;
+                }
+    
+                .formBox {
+                    //width: 100% !important;
+                    //padding-left: 0px !important;
+    
+                    h2 {
+                        font-size: 1.1em !important;
+                    }
+    
+                    table {
+                        max-width: none !important;
+                    }
+                }
+
             }
+        }
+    }
+}
 
-            .formBox {
-                width: 100% !important;
-                padding-left: 0px !important;
+@media screen and (max-width: $mobile) {
+    .contact {
+        .content>.wrap {
 
-                h2 {
-                    font-size: 1.3em !important;
+            .container {
+                padding: 30px 30px !important;
+
+                .pic {
+                    display: none !important;
+                }
+    
+                .formBox {
+                    width: 100% !important;
+                    padding-left: 0px !important;
                 }
 
-                table {
-                    max-width: none !important;
-                }
             }
         }
     }

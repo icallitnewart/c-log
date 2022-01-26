@@ -28,13 +28,14 @@ function Visual() {
                 <div className="computer">
                     <div className="pic">
                         <img src={`${process.env.PUBLIC_URL}/img/computer.png`} alt="computer" />
-                        <a href='https://www.freepik.com/vectors/vintage'>Vintage vector created by macrovector - www.freepik.com</a>
+                        <a href='https://www.freepik.com/vectors/vintage' target="_blank">Vintage vector created by macrovector - www.freepik.com</a>
                     </div>
                 </div>
             </div>
             <div className="promptBox">   
                 
                 <div className="folderBox">
+                    <div className="tab"></div>
                     <div className="folders">
                         <section onClick={()=>{
                             callData("About");
