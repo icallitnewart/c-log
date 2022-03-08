@@ -339,6 +339,10 @@
                         padding: 0px 10px;
                         border-radius: 5px;
                         overflow: hidden;
+
+                        &::before {
+                            content: "https://icallitnewart.github.io/c-log/"
+                        }
                     }
                 }
             }
@@ -371,17 +375,24 @@
                 }
 
                 .intro {
-                    display: none;
-                    margin: 20px 0px 10px;
-                    padding: 10px;
-                    width: 400px;
-                    margin-left: calc(100% - 400px);
-                    font: 14px/1.3 $enFont1;
+                    //display: none;
+                    margin: 20px auto;
+                    width: calc(100% - 100px);
+                    max-width: 600px;
+                    font: 14px/1.5 $enFont1, $koFont;
                     word-break: break-all;
-                    color: #fff;
+                    //color: #fff;
+                    color: #333;
+                    background: #dfdfe0;
+                    padding: 20px;
+                    border: 1px solid #333;
+                    //border-radius: 5px;
+                    text-align: center;
+                    box-shadow: 5px 5px 0px #b4b4b7, 5px 5px 0px 1px #333;
+                    animation: fadeIn 3s;
 
                     span {
-                        background: rgba(0, 0, 0, 0.7);
+                        //background: #333;
                     }
 
                 }
@@ -465,6 +476,12 @@
     #wrap {
         main {
             padding: 100px 5px 30px;
+
+            .tab .addressBar {
+                p::before {
+                    content: "Welcome to " !important;
+                }
+            }
         }
     }
 }
@@ -532,6 +549,16 @@
     
         }
     }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes shaking {
+    0% { transform: rotate(-15deg); }
+    100% { transform: rotate(15deg); }
 }
 
 @keyframes typingCursor {

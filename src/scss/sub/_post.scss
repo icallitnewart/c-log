@@ -56,7 +56,7 @@
                 .title {
                     display: flex;
                     flex-wrap: wrap;
-                    justify-content: space-between;
+                    //justify-content: space-between;
                     order: 1;
                     width: calc(100% - 100px);
                     padding: 10px 20px;
@@ -70,15 +70,55 @@
                     }
                     
                     span {
+                        display: inline-block;
+                        height: 26px;
     
-                        &:nth-of-type(1) {
-                            font: bold 16px/1 $enFont1;
-                            color: $subColor;
+                        &.writer {
+                            font: bold 14px/26px "arial";
+                            color: purple;
+                            margin-right: 10px;
                         }
     
-                        &:nth-of-type(2) {
-                            font: bold 14px/1 "arial";
-                            color: #8e5cd6;
+                        &.date {
+                            font: bold 14px/26px "arial";
+                            color: rebeccapurple;
+                            margin-left: auto;
+                            margin-right: 10px;
+                        }
+
+                        &.likes {
+                            color: #555;
+                            //margin-left: auto;
+                            font: bold 12px/14px "arial";
+                            cursor: pointer;
+                            border: 1px solid #555;
+                            border-radius: 30px;
+                            padding: 5px 7px;
+                            background: $pointColor;
+                            box-shadow: 2px 2px 0px #333;
+
+                            i {
+                                display: inline-block;
+                                font-size: 12px;
+                                border-radius: 50%;
+                                color: pink;
+                                //color: $subColor;
+                                -webkit-text-stroke: 1px #000;
+                                //background: pink;
+                                margin-right: 3px;
+                                animation: shaking .5s steps(5) infinite;
+                            }
+
+                            &.on {
+                                transform: translate(2px, 2px);
+                                box-shadow: none;
+
+                                i {
+                                    color: darkred;
+                                    -webkit-text-stroke: 0px;
+                                    animation: none;
+                                }
+                            }
                         }
                     }
                 }

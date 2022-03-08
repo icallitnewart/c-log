@@ -1,5 +1,10 @@
 .playlist {
     .inner {
+        .tab .addressBar {
+            p::after {
+                content: "playlist";
+            }
+        }
         .content {
             .wrap {
                 width: 100%;
@@ -371,6 +376,12 @@
 
 @media screen and (max-width: $mobile) {
     .playlist {
+        .tab .addressBar {
+            p::after {
+                content: "playlist!" !important;
+            }
+        }
+
         .item {
             width: calc(100% / 1 - 3vw) !important;
             margin: 15px 1.5vw !important;

@@ -1,5 +1,10 @@
 .about {
 .inner {
+    .tab .addressBar {
+        p::after {
+            content: "about";
+        }
+    }
     .content {
         >.wrap {
             position: relative;
@@ -272,6 +277,11 @@
 }
 
 @media screen and (max-width: $mobile) {
+    .tab .addressBar {
+        p::after {
+            content: "about page!" !important;
+        }
+    }
     .about {
         >.inner .content {
             >.wrap {

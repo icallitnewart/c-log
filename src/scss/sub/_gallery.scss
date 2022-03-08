@@ -1,5 +1,10 @@
 .gallery {
     .inner {
+        .tab .addressBar {
+            p::after {
+                content: "gallery";
+            }
+        }
         .content {
             .wrap {
                 width: 100%;
@@ -236,6 +241,11 @@
 
 @media screen and (max-width: $mobile) {
     .gallery {
+        .tab .addressBar {
+            p::after {
+                content: "gallery!" !important;
+            }
+        }
         .item {
             width: calc(100% / 1 - 2vw) !important;
             margin: 15px 1vw !important;

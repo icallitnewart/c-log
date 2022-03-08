@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import Tab from "../common/Tab";
 
 function Join() {
     const box = useRef(null);
@@ -16,23 +17,7 @@ function Join() {
     return(
     <main className="contact">
     <div className="inner">
-        <div className="tab">
-            <div className="topMark">
-                <span>C/</span>
-                <span>Contact</span>
-            </div>
-            <div className="btns">
-                <span>─</span>
-                <span>ㅁ</span>
-                <span>x</span>
-            </div>
-            <div className="addressBar">
-                <span><i className="fas fa-arrow-left"></i></span>
-                <span><i className="fas fa-arrow-right"></i></span>
-                <span><i className="fas fa-redo-alt"></i></span>
-                <p>https://icallitnewart.github.io/c-log/contact</p>
-            </div>
-        </div>
+        <Tab />
         <section className="content">
             <h1>CONTACT</h1>
             <p className="intro">

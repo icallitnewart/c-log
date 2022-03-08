@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
+import Tab from "../common/Tab";
 
 const publicURL = process.env.PUBLIC_URL;
 
@@ -18,23 +19,7 @@ function About() {
     return(
     <main className="about">
     	<div className="inner">
-            <div className="tab">
-                <div className="topMark">
-                    <span>C/</span>
-                    <span>ABOUT</span>
-                </div>
-                <div className="btns">
-                    <span>─</span>
-                    <span>ㅁ</span>
-                    <span>x</span>
-                </div>
-                <div className="addressBar">
-                    <span><i className="fas fa-arrow-left"></i></span>
-                    <span><i className="fas fa-arrow-right"></i></span>
-                    <span><i className="fas fa-redo-alt"></i></span>
-                    <p>https://icallitnewart.github.io/c-log/about</p>
-                </div>
-            </div>
+            <Tab />
             <section className="content">
                 <h1>ABOUT</h1>
                 <p className="intro">
