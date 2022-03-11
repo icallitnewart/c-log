@@ -286,18 +286,32 @@ a {
           #wrap main > .inner .content h1::after {
             content: "*/"; }
         #wrap main > .inner .content .intro {
+          position: relative;
           margin: 20px auto;
           width: calc(100% - 100px);
           max-width: 600px;
           font: 14px/1.5 Consolas, NeoDunggeunmo;
           word-break: break-all;
-          color: #333;
-          background: #dfdfe0;
-          padding: 20px;
-          border: 1px solid #333;
-          text-align: center;
-          box-shadow: 5px 5px 0px #b4b4b7, 5px 5px 0px 1px #333;
-          animation: fadeIn 3s; }
+          color: #333; }
+          #wrap main > .inner .content .intro::before {
+            position: absolute;
+            display: block;
+            content: "";
+            width: 100%;
+            height: 100%;
+            transform: translate(5px, 5px);
+            background-color: #b4b4b7;
+            border: 1px solid #333; }
+          #wrap main > .inner .content .intro p {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            background: #dfdfe0;
+            padding: 20px;
+            border: 1px solid #333;
+            text-align: center;
+            animation: fadeIn  1.2s; }
         #wrap main > .inner .content > .wrap {
           width: 100%;
           padding-top: 20px; }
@@ -395,10 +409,11 @@ a {
       font: 14px/1 Consolas; }
 
 @keyframes fadeIn {
-  0% {
-    opacity: 0; }
+  0%, 20% {
+    transform: rotate(-1deg);
+    transform-origin: left bottom; }
   100% {
-    opacity: 1; } }
+    transform: rotate(0deg); } }
 @keyframes shaking {
   0% {
     transform: rotate(-15deg); }
@@ -1872,6 +1887,26 @@ a {
           text-align: center;
           font: 10px/1.2 Consolas;
           color: #888; }
+      #wrap .contact > .inner .content > .wrap .container .success {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: flex-start;
+        width: 65%;
+        padding: 30px 0px 0px 30px; }
+        #wrap .contact > .inner .content > .wrap .container .success h2 {
+          font: bold 26px/1.4 Consolas;
+          margin-bottom: 40px;
+          text-align: center;
+          color: #333; }
+        #wrap .contact > .inner .content > .wrap .container .success p {
+          color: #444;
+          padding: 0px 10px; }
+          #wrap .contact > .inner .content > .wrap .container .success p.en {
+            font: 16px/1.5 NeoDunggeunmo;
+            margin-bottom: 20px; }
+          #wrap .contact > .inner .content > .wrap .container .success p.ko {
+            font: 14px/1.5 NeoDunggeunmo; }
       #wrap .contact > .inner .content > .wrap .container .formBox {
         width: 65%;
         height: 407px;
@@ -1897,6 +1932,8 @@ a {
               display: flex;
               flex-wrap: wrap; }
               #wrap .contact > .inner .content > .wrap .container .formBox fieldset table tr th {
+                display: flex;
+                justify-content: space-between;
                 width: 100%;
                 text-align: left;
                 font: 14px/1 Consolas;
@@ -1916,6 +1953,11 @@ a {
                     letter-spacing: 1px;
                     cursor: pointer;
                     background: #ddd; }
+                #wrap .contact > .inner .content > .wrap .container .formBox fieldset table tr th .errs {
+                  margin: 0;
+                  font: 11px/1 "arial"; }
+                  #wrap .contact > .inner .content > .wrap .container .formBox fieldset table tr th .errs::before {
+                    content: "*"; }
               #wrap .contact > .inner .content > .wrap .container .formBox fieldset table tr td {
                 width: 100%; }
                 #wrap .contact > .inner .content > .wrap .container .formBox fieldset table tr td input[type=text] {
@@ -1925,7 +1967,7 @@ a {
                   border: 0;
                   border-bottom: 1px solid #666;
                   background: transparent;
-                  font: 14px/1 Consolas, "arial";
+                  font: 14px/1 Consolas, NeoDunggeunmo;
                   color: #333;
                   margin-bottom: 20px; }
                 #wrap .contact > .inner .content > .wrap .container .formBox fieldset table tr td textarea {
@@ -1950,6 +1992,8 @@ a {
     box-shadow: 5px 5px 0px #444 !important; }
     .contact .content > .wrap .container {
       padding: 30px 30px 30px 20px !important; }
+      .contact .content > .wrap .container .success {
+        padding: 20px 0px 0px 20px !important; }
       .contact .content > .wrap .container .formBox h2 {
         font-size: 1.1em !important; }
       .contact .content > .wrap .container .formBox table {
@@ -1961,6 +2005,9 @@ a {
     padding: 30px 30px !important; }
     .contact .content > .wrap .container .pic {
       display: none !important; }
+    .contact .content > .wrap .container .success {
+      width: 100% !important;
+      padding: 20px !important; }
     .contact .content > .wrap .container .formBox {
       width: 100% !important;
       padding-left: 0px !important; } }

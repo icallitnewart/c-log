@@ -42,9 +42,9 @@ function Blog({ history, match }) {
 			<Tab />
             <section className="content">
                 <h1>BLOG</h1>
-                <p className="intro">
-                    <span>코딩 공부를 기록한 블로그 페이지입니다. 로컬스토리지로 구현한 CRUD 기능, 좋아요 버튼 클릭, 페이지 번호 이동, 게시글 목록 보기 타입 변경 등이 지원됩니다.</span>
-                </p>
+                <div className="intro">
+                    <p>코딩 공부를 기록한 블로그 페이지입니다. 로컬스토리지로 구현한 CRUD 기능, 좋아요 버튼 클릭, 페이지 번호 이동, 게시글 목록 보기 타입 변경 등이 지원됩니다.</p>
+                </div>
 				{(!loading && no)
 				? 	<Post post={posts[posts.length - no]} no={no} history={history} />
 				: 	<PostList loading={loading} posts={posts} history={history} no={no} ref={view} callData={callData} />

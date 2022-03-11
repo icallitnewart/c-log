@@ -376,6 +376,7 @@
 
                 .intro {
                     //display: none;
+                    position: relative;
                     margin: 20px auto;
                     width: calc(100% - 100px);
                     max-width: 600px;
@@ -383,17 +384,33 @@
                     word-break: break-all;
                     //color: #fff;
                     color: #333;
-                    background: #dfdfe0;
-                    padding: 20px;
-                    border: 1px solid #333;
-                    //border-radius: 5px;
-                    text-align: center;
-                    box-shadow: 5px 5px 0px #b4b4b7, 5px 5px 0px 1px #333;
-                    animation: fadeIn 3s;
 
-                    span {
-                        //background: #333;
+                    
+                    &::before {
+                        position: absolute;
+                        display: block;
+                        content: "";
+                        width: 100%;
+                        height: 100%;
+                        transform: translate(5px, 5px);
+                        background-color: #b4b4b7;
+                        border: 1px solid #333;
                     }
+
+                    p {
+                        position: relative;
+                        z-index: 1;
+                        width: 100%;
+                        height: 100%;
+                        background: #dfdfe0;
+                        padding: 20px;
+                        border: 1px solid #333;
+                        //border-radius: 5px;
+                        text-align: center;
+                        //box-shadow: 5px 5px 0px #b4b4b7, 5px 5px 0px 1px #333;
+                        animation: fadeIn  1.2s;
+                    }
+
 
                 }
 
@@ -552,8 +569,19 @@
 }
 
 @keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+    0%, 20% { 
+        transform: rotate(-1deg); 
+        transform-origin: left bottom;
+    }
+    // 70% {
+    //     transform: rotate(1deg); 
+    //     transform-origin: center center;
+    // }
+    100% { 
+        transform: rotate(0deg);
+    }
+    // 0% { opacity: 0; }
+    // 100% { opacity: 1; }
 }
 
 @keyframes shaking {

@@ -13,7 +13,7 @@ const masonryOptions = {
 
 function Playlist() {
 	const key = process.env.REACT_APP_YOUTUBE_KEY;
-	const playListId = "PL3LaS8gF6Q5vLmQJCVTd8XESoGGVgwvUl";
+	const playListId = process.env.REACT_APP_YOUTUBE_PLAYLIST;
 	const num = 25;
 	const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=${key}&playlistId=${playListId}&maxResults=${num}`;
 
@@ -36,6 +36,9 @@ function Playlist() {
 			<Tab />
 			<section className="content">
 				<h1>PLAYLIST</h1>
+                <div className="intro">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident facere explicabo necessitatibus nemo consequuntur delectus vel placeat cupiditate laborum quisquam?</p>
+                </div>
 				<div className="wrap">
 					{ loading ? <Loading />
 						: ( 
