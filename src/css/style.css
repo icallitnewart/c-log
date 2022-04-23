@@ -904,6 +904,7 @@ a {
       .about .inner .content > .wrap .conversation li.answer {
         justify-content: flex-end; }
         .about .inner .content > .wrap .conversation li.answer .pic {
+          order: 1;
           background: #f6cea4; }
         .about .inner .content > .wrap .conversation li.answer .speechBubble .inner span {
           background: #c0c3e3; }
