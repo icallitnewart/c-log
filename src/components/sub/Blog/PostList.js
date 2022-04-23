@@ -1,6 +1,6 @@
 import { useRef, forwardRef, useState } from "react";
 import Pagination from "./Pagination";
-import Loading from "../common/Loading";
+import Loading from "../../common/Loading";
 
 const PostList = forwardRef(({ loading, posts, history, no, callData }, view) => {
 	const list = useRef(null);

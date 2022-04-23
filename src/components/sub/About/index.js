@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import Tab from "../common/Tab";
+import Tab from "../../common/Tab";
 
 const publicURL = process.env.PUBLIC_URL;
 

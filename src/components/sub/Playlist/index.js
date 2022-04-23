@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
-import Loading from "../common/Loading";
-import Tab from "../common/Tab";
+import Loading from "../../common/Loading";
+import Tab from "../../common/Tab";
 import Masonry from 'react-masonry-component';
 import axios from "axios";
 

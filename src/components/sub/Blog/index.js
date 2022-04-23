@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState, useEffect, useRef } from "react";
 import Post from "./Post";
 import PostList from "./PostList";
-import Tab from "../common/Tab";
+import Tab from "../../common/Tab";
 
 const publicSrc = process.env.PUBLIC_URL;
 

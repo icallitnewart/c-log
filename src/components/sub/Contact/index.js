@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import{ init } from '@emailjs/browser';
-import Tab from "../common/Tab";
+import Tab from "../../common/Tab";
 import Success from "./Success";
 import FormBox from "./FormBox";
 
