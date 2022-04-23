@@ -1,60 +1,82 @@
-import { useRef, forwardRef, useState } from "react";
+import { useState } from "react";
 import Pagination from "./Pagination";
 import Loading from "../../common/Loading";
 
-const PostList = forwardRef(({ loading, posts, history, no, callData }, view) => {
-	const list = useRef(null);
+const PostList = ({ loading, posts, history, no, callData }) => {
 	const [ viewType, setViewType ] = useState("list");
+    const [ activeCategory, setActiveCategory ] = useState(null);
     
-	//Pagination
+	//페이지네이션 옵션
 	const [ page, setPage ] = useState(1);
 	const itemsPerPage = 5;
 	let indexStart = page * itemsPerPage - (itemsPerPage - 1) - 1; 
 	let indexEnd = page * itemsPerPage - 1;
 
-    const iconTypes = {
-        HTML : "fab fa-html5",
-        CSS : "fab fa-css3-alt",
-        JS : "fab fa-js",
-        REACT : "fab fa-react"
-    }
+    const iconTypes = [
+        { HTML : "fab fa-html5" },
+        { CSS : "fab fa-css3-alt" },
+        { JS : "fab fa-js" },
+        { REACT : "fab fa-react" }
+    ];
 
+    //카테고리 버튼 클릭시
     const classifyByCategory = (e)=> {
-        //클릭한 카테고리 버튼이 이미 활성화된 상태면 작동 종료
+        //중복 클릭 방지
         if(e.currentTarget.classList.contains("on")) return;
-        
-        //클릭한 카테고리 버튼만 활성화
-        const categoryBtns = e.currentTarget.closest("ul").querySelectorAll("li");
-        for(let btn of categoryBtns) btn.classList.remove("on");
-        e.currentTarget.classList.add("on");
 
         //카테고리 타입에 따른 데이터 호출
         const category = e.currentTarget.dataset.type;
         callData(category);
+        setActiveCategory(category);
     }
 
     return (
         <div className="wrap">
             <ul className="category">
-                <li onClick={classifyByCategory} data-type="HTML"><span>HTML</span></li>
-                <li onClick={classifyByCategory} data-type="CSS"><span>CSS</span></li>
-                <li onClick={classifyByCategory} data-type="JS"><span>JS</span></li>
-                <li onClick={classifyByCategory} data-type="REACT"><span>REACT</span></li>
+                {iconTypes.map((item, index)=>
+                    <li 
+                        key={index}
+                        onClick={classifyByCategory} 
+                        className={activeCategory===Object.keys(item).toString() ? "on" : ""}
+                        data-type={Object.keys(item)}
+                    >
+                        <span>{Object.keys(item)}</span>
+                    </li>
+                )}
             </ul>
             <div className="btns">
                 <div className="writeBtns">
                     <button onClick={()=> history.push(`/blog/0`)}>Write</button>
                 </div>
-                <ul className="viewType" ref={view}>
+                <ul className="viewType">
                     <li>
-                        <input onClick={()=> setViewType("list")}  type="radio" id="listView" name="viewType" defaultChecked />
-                        <label onClick={()=> setViewType("list")} htmlFor="listView">
+                        <input 
+                            onClick={()=> setViewType("list")}  
+                            type="radio" 
+                            id="listView" 
+                            name="viewType" 
+                            disabled={loading}
+                            defaultChecked 
+                        />
+                        <label 
+                            onClick={()=> setViewType("list")} 
+                            htmlFor="listView"
+                        >
                             <i className="fas fa-th-list"></i>
                         </label>
                     </li>
                     <li>
-                        <input onClick={()=> setViewType("grid")} type="radio" id="gridView" name="viewType" />
-                        <label onClick={()=> setViewType("grid")} htmlFor="gridView">
+                        <input 
+                            onClick={()=> setViewType("grid")} 
+                            type="radio" 
+                            id="gridView" 
+                            disabled={loading}
+                            name="viewType" 
+                        />
+                        <label 
+                            onClick={()=> setViewType("grid")} 
+                            htmlFor="gridView"
+                        >
                             <i className="fas fa-th"></i>
                         </label>
                     </li>
@@ -64,15 +86,20 @@ const PostList = forwardRef(({ loading, posts, history, no, callData }, view) =>
                 ? <Loading /> 
                 : (
                 <>
-                    <div className={(viewType === "list") ? "list" : "list gridView"} ref={list}>
+                    <div className={(viewType === "list") ? "list" : "list gridView"}>
                     {
-                        posts.map((post, index)=> {
-                        if(index>=indexStart && index<=indexEnd) {
+                        posts.slice(indexStart, indexEnd + 1).map((post, index)=> {
+                            const category = iconTypes.find((type)=> Object.keys(type).toString
+                            () === post.category);
+                            
                             return(
-                                <article key={index} onClick={()=> history.push(`/blog/${post.index}`)}>
+                                <article 
+                                    key={index} 
+                                    onClick={()=> history.push(`/blog/${post.index}`)}
+                                >
                                 <div className="wrap">
                                     <div className={`pic ${post.category.toLowerCase()}`}>
-                                        <i className={iconTypes[post.category]}></i>
+                                        <i className={Object.values(category)}></i>
                                         <span>{post.category}</span>
                                     </div>
                                     <div className="textBox">
@@ -87,16 +114,20 @@ const PostList = forwardRef(({ loading, posts, history, no, callData }, view) =>
                                 </div>
                                 </article>
                             )
-                        }
                         })
                     }
                     </div>
                     
-                    <Pagination itemsPerPage={itemsPerPage} totalItems={posts.length} setPage={setPage} currentPage={page} />
+                    <Pagination 
+                        itemsPerPage={itemsPerPage} 
+                        totalItems={posts.length} 
+                        setPage={setPage} 
+                        currentPage={page} 
+                    />
                 </> 
                 )}
         </div>
     )
-});
+};
 
 export default PostList;

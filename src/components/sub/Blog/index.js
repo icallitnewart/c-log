@@ -11,7 +11,6 @@ function Blog({ history, match }) {
     let [ loading, setLoading ] = useState(true);
     let [ posts, setPosts ] = useState([]);
 	let [ enableClick, setEnableClick ] = useState(true);
-	const view = useRef();
 
 	//로컬스토리지에 저장된 값 가져오기
 	const getLocalItems = ()=> {
@@ -46,8 +45,18 @@ function Blog({ history, match }) {
                     <p>코딩 공부를 기록한 블로그 페이지입니다. 로컬스토리지로 구현한 CRUD 기능, 좋아요 버튼 클릭, 페이지 번호 이동, 게시글 목록 보기 타입 변경 등이 지원됩니다.</p>
                 </div>
 				{(!loading && no)
-				? 	<Post post={posts[posts.length - no]} no={no} history={history} />
-				: 	<PostList loading={loading} posts={posts} history={history} no={no} ref={view} callData={callData} />
+				? 	<Post 
+						post={posts[posts.length - no]} 
+						no={no} 
+						history={history} 
+					/>
+				: 	<PostList 
+						loading={loading} 
+						posts={posts} 
+						history={history} 
+						no={no} 
+						callData={callData} 
+					/>
 				}
             </section>
         </div>
@@ -55,8 +64,6 @@ function Blog({ history, match }) {
     )
 
     async function callData(type) {
-		const viewBtns = view.current.querySelectorAll("input[type=radio]");
-
 
 		//로딩되는 동안 중복 클릭방지
 		if(!enableClick) return;
@@ -73,11 +80,6 @@ function Blog({ history, match }) {
 		.then((data)=> {
 			let items = data.data.data;
 			items = items.reverse();
-
-			//데이터 불러오는 동안 버튼 비활성화
-			for(let btn of viewBtns) {
-				btn.disabled = true;
-			}
 			
 			//로컬스토리지에 저장된 값이 있을 경우
 			if(getLocalItems() && getLocalItems().length!==0) {
@@ -117,12 +119,6 @@ function Blog({ history, match }) {
 				//로딩바 제거 및 클릭 가능하게 만들기
 				setLoading(false);
 				setEnableClick(true);
-	
-				//버튼 활성화
-				for(let btn of viewBtns) {
-					btn.disabled = false;
-				}
-	
 			}, 500)
 
 		}
