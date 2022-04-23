@@ -1,20 +1,83 @@
 import axios from "axios";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Tab from "../common/Tab";
 
 const publicURL = process.env.PUBLIC_URL;
 
 function About() {
-    const dialogue = useRef(null);
-    const [ items, setItems ] = useState({
+    const [ data, setData ] = useState({
         category: null,
         items: []
     });
-    const [ enableClick, setEnableClick ] = useState(false);
+    const [ activeEffect, setActiveEffect ] = useState(null);
+    const category = [ "Intro", "About me", "Blog", "Gallery", "Playlist", "Contact" ];
 
+    //카테고리 버튼 클릭시
+    const clickTab =(e)=> {
+
+        //클릭한 카테고리의 내용이 이미 보여지고 있는 상태라면 작동 불가 
+        const targetCategory = e.currentTarget.querySelector("span").innerText;
+        if(data.category===targetCategory) return;
+
+        //카테고리에 따른 데이터 불러오기
+        callData(targetCategory);
+    }
+
+    //데이터 호출
+    const callData = async(category)=> {
+        //모션 이펙트 초기화
+        setActiveEffect(null);
+
+        //데이터 호출
+        await axios
+        .get(`${publicURL}/db/about.json`)
+        .then((json)=> {
+            const data = json.data.data;
+
+            //해당 카테고리의 데이터만 불러오기
+            data.map((el)=> {
+                if(el.category===category) {
+                    //데이터 정돈
+                    let arr = [];
+                    el.items.forEach((item)=> {
+                        arr.push({ question: item.question });
+                        item.answer.map((el)=> arr.push({ answer: el }));
+                    });
+                    
+                    //데이터 state로 저장
+                    setData({
+                        category: category,
+                        items: arr
+                    })
+                };
+            });
+        })
+    } 
+
+    //첫 로드시 데이터 호출
     useEffect(()=> {
         callData("Intro");
     }, []);
+
+    //말풍선 모션 이펙트 적용
+    useEffect(()=> {
+        if(!activeEffect) {     //처음 로드시
+            setActiveEffect(true);
+            //참고: 처음부터 setTimeout을 이용하여 [0]으로 설정하면 모션이 제대로 적용되지 않으므로 처음엔 true로 설정
+        } else {
+            if(activeEffect===true) {
+                const timer = setTimeout(()=> setActiveEffect([0]), 0);
+
+                return ()=> clearTimeout(timer);
+            }
+
+            if(activeEffect[activeEffect.length - 1] < data.items.length - 1) {
+                const timer = setTimeout(()=> setActiveEffect(prev=> [ ...prev, prev[prev.length - 1] + 1]), 1000);
+    
+                return ()=> clearTimeout(timer);
+            }
+        }
+    }, [data, activeEffect]);
 
     return(
     <main className="about">
@@ -26,131 +89,46 @@ function About() {
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident facere explicabo necessitatibus nemo consequuntur delectus vel placeat cupiditate laborum quisquam?</p>
                 </div>
                 <div className="wrap">
-                    <ul className="conversation" ref={dialogue}>
-                    {
-                        items.items.map((item, index)=>{
+                    <ul className="conversation">
+                    {activeEffect && data.items.map((item, index)=> {
+                        //말풍선 모션 이펙트 적용 여부
+                        const isActive = (!activeEffect || activeEffect === true) ? false : ((activeEffect.indexOf(index) === -1) ? false : true);
+
                         return (
-                            <React.Fragment key={index}>
-                            <li className="question">
+                            <li 
+                                key={index} 
+                                className={
+                                    isActive 
+                                    ? `${Object.keys(item)} on`
+                                    : Object.keys(item)
+                                }
+                            >
                                 <div className="pic"></div>
                                 <div className="speechBubble">
                                     <div className="inner">
-                                    <span>{item.question}</span>
+                                    <span>{Object.values(item)}</span>
                                     </div>
                                 </div>
                             </li>
-                            {
-                                item.answer.map((el, index)=> {
-                                return(
-                                    <li key={index} className="answer">
-                                        <div className="speechBubble">
-                                            <div className="inner"><span>{el}</span>
-                                            </div>
-                                        </div>
-                                        <div className="pic"></div>
-                                    </li>
-                                )
-                                })
-                            }
-                            </React.Fragment>
                         )
-                        })
-                    }
+                    })}
                     </ul>
                     <ul className="category">
-                        <li onClick={(e)=> clickTab(e)} className="on">
-                            <span>Intro</span>
-                        </li>
-                        <li onClick={(e)=> clickTab(e)}>
-                            <span>About me</span>
-                        </li>
-                        <li onClick={(e)=> clickTab(e)}>
-                            <span>Blog</span>
-                        </li>
-                        <li onClick={(e)=> clickTab(e)}>
-                            <span>Gallery</span>
-                        </li>
-                        <li onClick={(e)=> clickTab(e)}>
-                            <span>Playlist</span>
-                        </li>
-                        <li onClick={(e)=> clickTab(e)}>
-                            <span>Contact</span>
-                        </li>
+                        {category.map((item, index)=>
+                            <li 
+                                key={index} 
+                                onClick={clickTab} 
+                                className={(data.category === item) ? "on" : ""}
+                            >
+                                <span>{item}</span>
+                            </li>
+                        )}
                     </ul>
                 </div>
             </section>
         </div>
     </main>
     )
-
-    //카테고리 버튼 누를시 그에 해당하는 내용 보여주기
-    function clickTab(e) {
-        //아직 내용이 다 보여지지 않은 (모션이 완료되지 않은) 상태면 작동 불가
-        if(!enableClick) return;
-
-        //클릭한 카테고리의 내용이 이미 보여지고 있는 상태라면 작동 불가 
-        const targetCategory = e.currentTarget.querySelector("span").innerText;
-        if(items.category===targetCategory) return;
-
-        //대화창 대화 모션을 위해 미리 on 제거
-        const allItems = dialogue.current.querySelectorAll("li");
-
-        for(let item of allItems) {
-            if(item.classList.contains("on")) item.classList.remove("on"); 
-        }
-
-        //카테고리에 따른 데이터 불러오기
-        callData(targetCategory);
-
-
-        //카테고리 버튼 활성화
-        const allBtns = e.currentTarget.parentElement.children;
-        for(let btn of allBtns) btn.classList.remove("on");
-        e.currentTarget.classList.add("on");
-    }
-
-
-    //말풍선 모션 효과
-    function motionEffect() {
-        const targetItems = dialogue.current.querySelectorAll("li");
-        const speed = 500;
-
-        //몇 초(speed)에 한번씩 on 클래스 추가하여 차례대로 아이템에 모션 추가
-        for(let i = 0; i<targetItems.length; i++) {
-            ((i)=>{
-                setTimeout(()=> {
-                    targetItems[i].classList.add("on");
-                    
-                    //마지막 아이템까지 다 보여지면 다른 카테고리 버튼 클릭 가능
-                    if(i===targetItems.length - 1) setTimeout(()=>{setEnableClick(true)}, speed);
-                }, speed * i);
-            })(i);
-        }
-        
-    }
-
-    async function callData(category) {
-        //모든 내용이 보여지기 전까진 카테고리 버튼 클릭 불가능
-        if(enableClick) setEnableClick(false);
-
-        //데이터 호출
-        await axios
-        .get(`${publicURL}/db/about.json`)
-        .then((json)=> {
-            const data = json.data.data;
-
-            //해당 카테고리의 데이터만 불러오기
-            data.map((el, index)=> {
-                if(el.category===category) setItems({
-                    category: category,
-                    items: el.items
-                });
-            });
-        })
-
-        //모션 효과 추가
-        motionEffect();
-    } 
 }
 
 export default About;
