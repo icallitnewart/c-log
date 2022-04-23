@@ -11,8 +11,9 @@ function Prompt() {
     }
     const [ items, setItems ] = useState(initVal);
     const [ enableClick, setEnableClick ] = useState(true);
-
     const promptBox = useRef(null);
+
+    const folders = [ "Home", "About", "Blog", "Gallery", "Playlist", "Contact" ];
 
     useEffect(()=> {
         callPromptData("Home");
@@ -23,66 +24,35 @@ function Prompt() {
             <div className="folderBox">
                 <div className="tab"></div>
                 <div className="folders">
-                    <section onClick={()=>{
-                        callPromptData("About");
-                        }}>
-                        <div className="folder">
-                            <i className="fas fa-folder"></i>
-                            <i className="fas fa-folder-open"></i>
-                        </div>
-                        <span>About</span>
-                    </section>
-                    <section onClick={()=>callPromptData("Blog")}>
-                        <div className="folder">
-                            <i className="fas fa-folder"></i>
-                            <i className="fas fa-folder-open"></i>
-                        </div>
-                        <span>Blog</span>
-                    </section>
-                    <section onClick={()=>callPromptData("Gallery")}>
-                        <div className="folder">
-                            <i className="fas fa-folder"></i>
-                            <i className="fas fa-folder-open"></i>
-                        </div>
-                        <span>Gallery</span>
-                    </section>
-                    <section onClick={()=>callPromptData("Home")}>
-                        <div className="folder">
-                            <i className="fas fa-folder"></i>
-                            <i className="fas fa-folder-open"></i>
-                        </div>
-                        <span>Home</span>
-                    </section>
-                    <section onClick={()=>callPromptData("Playlist")}>
-                        <div className="folder">
-                            <i className="fas fa-folder"></i>
-                            <i className="fas fa-folder-open"></i>
-                        </div>
-                        <span>Playlist</span>
-                    </section>
-                    <section onClick={()=>callPromptData("Contact")}>
-                        <div className="folder">
-                            <i className="fas fa-folder"></i>
-                            <i className="fas fa-folder-open"></i>
-                        </div>
-                        <span>Contact</span>
-                    </section>
-                    
+                    {folders.map((folder, index)=> 
+                        <section 
+                            key={index} 
+                            onClick={()=>{
+                                callPromptData(folder);
+                            }}
+                        >
+                            <div className="folder">
+                                <i className="fas fa-folder"></i>
+                                <i className="fas fa-folder-open"></i>
+                            </div>
+                            <span>{folder}</span>
+                        </section>
+                    )}
                 </div>
             </div>
             <div className="prompt">
                 <div className="tab">
                     <p>COMMAND PROMPT</p>
                     <div className="icons">
-                    <span>
-                        <i className="far fa-window-minimize"></i>
-                    </span>
-                    <span>
-                        <i className="far fa-square"></i>
-                    </span>
-                    <span>
-                        <i className="fas fa-times"></i>
-                    </span>
+                        <span>
+                            <i className="far fa-window-minimize"></i>
+                        </span>
+                        <span>
+                            <i className="far fa-square"></i>
+                        </span>
+                        <span>
+                            <i className="fas fa-times"></i>
+                        </span>
                     </div>
                 </div>
                 <div className="textBox">
