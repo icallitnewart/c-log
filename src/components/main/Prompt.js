@@ -48,8 +48,6 @@ function Prompt() {
         }
     }, [data, type]);
 
-    console.log(targetItem);
-
     //3. 타이핑 이펙트
     useEffect(()=> {
         if(txt.type) {
