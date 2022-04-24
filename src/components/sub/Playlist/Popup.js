@@ -1,14 +1,14 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 
 function Popup({ items, popup, setPopup }) {
     const body = document.querySelector("body");
-	const vid = useRef(null);
+    const [ play, setPlay ] = useState(null);
 
     const targetItem = items[popup.index];
     const vidId = targetItem.snippet.resourceId.videoId;
+    const url = `https://www.youtube.com/embed/${vidId}?controls=0`;
 
     useEffect(()=> {
-        //vid.current.playVideo();
         body.style.overflow = "hidden";
 
         return ()=> {
@@ -31,17 +31,42 @@ function Popup({ items, popup, setPopup }) {
             <div className="container">
                 <div className="player">
                     <div className="vinyl">
-                        <div className='record'></div>
+                        <div className="record"></div>
                     </div>
                     <ul className="btns">
-                        <li className="on"><a href="
-                        #"><i className="fas fa-play"></i></a></li>
-                        <li><a href="
-                        #"><i className="fas fa-pause"></i></a></li>
+                        <li className={play ? "on" : ""}>
+                            <a 
+                                href="#"
+                                onClick={(e)=> {
+                                    e.preventDefault();
+                                    setPlay(true);
+                                }}
+                                aria-label="Play"
+                            >
+                                <i className="fas fa-play"></i>
+                            </a>
+                        </li>
+                        <li className={play===false ? "on" : ""}>
+                            <a 
+                                href="#"
+                                onClick={(e)=> {
+                                    e.preventDefault();
+                                    setPlay(false);
+                                }}
+                                aria-label="Pause"
+                            >
+                                <i className="fas fa-pause"></i>
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <div className="video">
-                    <iframe ref={vid} src={`https://www.youtube.com/embed/${vidId}?autoplay=1&controls=0`/*&enablejsapi=1*/} width="100%" height="100%" allowFullScreen></iframe> 
+                    <iframe 
+                        src={play ? `${url}
+                        &autoplay=1&mute=1` : url} 
+                        width="100%" 
+                        height="100%" allowFullScreen
+                    ></iframe> 
                     <p>
                         <span>
                         <span className="highlight">{targetItem.snippet.title}</span>

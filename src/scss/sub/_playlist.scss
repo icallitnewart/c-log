@@ -185,7 +185,6 @@
                             margin-top: 20px;
                             background: 
                             #9ca4ff;
-                            //border: 2px solid pink; #a0c2c5
                             border: 1px solid #555;
                             border-radius: 10px;
                             box-shadow: 7px 7px 14px rgba(0, 0, 0, 0.2);
@@ -201,8 +200,6 @@
                                 repeating-radial-gradient(#2a2928, #2a2928 4px, $mainColor 5px, #2a2928 6px);
                                 background-size: 50% 100%, 100% 50%, 100% 100%;
                                 animation: spin .7s infinite;
-    
-                                //#ada9a0
                             }
                             
                             &::before {
@@ -235,6 +232,11 @@
                             padding: 20px 0px;
     
                             li {
+                                &.on a {
+                                    box-shadow: none !important;
+                                    transform: translateX(3px);
+                                }
+
                                 a {
                                     display: inline-flex;
                                     justify-content: center;
@@ -246,7 +248,7 @@
                                     margin: 0px 5px;
                                     border-radius: 50%;
                                     background: $pointColor;
-                                    box-shadow: 2px 2px 0px $subColor;
+                                    box-shadow: 3px 1px 0px $subColor;
     
                                     i { 
                                         transition: .5s;

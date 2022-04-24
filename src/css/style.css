@@ -2200,6 +2200,9 @@ a {
             justify-content: center;
             width: 100%;
             padding: 20px 0px; }
+            .playlist .popup .inner .wrap .container .player .btns li.on a {
+              box-shadow: none !important;
+              transform: translateX(3px); }
             .playlist .popup .inner .wrap .container .player .btns li a {
               display: inline-flex;
               justify-content: center;
@@ -2211,7 +2214,7 @@ a {
               margin: 0px 5px;
               border-radius: 50%;
               background: #bad0ef;
-              box-shadow: 2px 2px 0px #4219D7; }
+              box-shadow: 3px 1px 0px #4219D7; }
               .playlist .popup .inner .wrap .container .player .btns li a i {
                 transition: .5s;
                 font-size: 20px;
