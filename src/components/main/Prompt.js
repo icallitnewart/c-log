@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 
 const publicURL = process.env.PUBLIC_URL;
 
@@ -9,15 +9,78 @@ function Prompt() {
         ko: "",
         en: ""
     }
-    const [ items, setItems ] = useState(initVal);
-    const [ enableClick, setEnableClick ] = useState(true);
-    const promptBox = useRef(null);
+    const [ data, setData ] = useState([]);
+    const [ txt, setTxt ] = useState(initVal);
+    const [ type, setType ] = useState("Home");
+    const [ targetItem, setTargetItem ] = useState({}); 
+    const [ count, setCount ] = useState({ ko : 0, en : 0});
+    const [ cursor, setCursor ] = useState(false);
 
     const folders = [ "Home", "About", "Blog", "Gallery", "Playlist", "Contact" ];
 
+    //데이터 호출 함수
+    const callData = async()=> {
+        await axios
+        .get(`${publicURL}/db/visual.json`)
+        .catch((error)=> console.error(error))
+        .then((json)=> {
+            const response = json.data.data;
+            setData(response);
+        });
+    };
+
+    //1. 데이터 호출 후 상태 관리
     useEffect(()=> {
-        callPromptData("Home");
+        callData();
     }, []);
+
+    //2. 데이터 호출 직후 / 폴더 버튼 클릭시 설정
+    useEffect(()=> {
+        if(data.length > 0) {
+            //type 설정 및 txt, count, cursor 초기화
+            setTxt({ ...initVal, type : type });
+            setCount({ ko: 0, en: 0 });
+            setCursor(false);
+
+            //필요한 데이터만 뽑아서 상태 관리
+            const targetData = data.filter((item)=> item.type === type)[0];
+            setTargetItem(targetData);
+        }
+    }, [data, type]);
+
+    console.log(targetItem);
+
+    //3. 타이핑 이펙트
+    useEffect(()=> {
+        if(txt.type) {
+            //한국어 인트로 시작
+            const interval1 = setInterval(()=> {
+                setTxt({ ...txt, ko : txt.ko + targetItem.ko[count.ko] });
+                setCount({ ...count, ko: count.ko + 1 });
+            }, 100);
+
+            //한국어 인트로 끝
+            if(count.ko === targetItem.ko.length) {
+                clearInterval(interval1);
+                
+                //영어 인트로 시작
+                const interval2 = setInterval(()=> {
+                    setTxt({ ...txt, en : txt.en + targetItem.en[count.en] });
+                    setCount({ ...count, en: count.en + 1 });
+                }, 100);
+
+                //영어 인트로 끝
+                if(count.en === targetItem.en.length) {
+                    clearInterval(interval2);
+                    setCursor(true);
+                }
+
+                return ()=> clearInterval(interval2);
+            }
+
+            return ()=> clearInterval(interval1);
+        }
+    }, [txt.type, count, targetItem]);
 
     return (
         <div className="promptBox">               
@@ -27,9 +90,7 @@ function Prompt() {
                     {folders.map((folder, index)=> 
                         <section 
                             key={index} 
-                            onClick={()=>{
-                                callPromptData(folder);
-                            }}
+                            onClick={()=> setType(folder)}
                         >
                             <div className="folder">
                                 <i className="fas fa-folder"></i>
@@ -56,78 +117,19 @@ function Prompt() {
                     </div>
                 </div>
                 <div className="textBox">
-                    <div ref={promptBox}>
+                    <div>
                     <p className="ko">
-                        {items.ko}
+                        {txt.ko}
                     </p>
                     <p className="en">
-                        {items.en}
+                        {txt.en}
+                        <span className={cursor ? "cursor on" : ""}></span>
                     </p>
-                    {/* <span className="cursor on"></span> */}
                     </div>
                 </div>
             </div>
         </div>
     )
-
-    async function callPromptData(type) {
-        
-        setEnableClick(false);
-        if(!enableClick) return;
-
-        await axios
-        .get(`${publicURL}/db/visual.json`)
-        .then((json)=> {
-            const txts = json.data.data;
-            const data = txts.filter((txt, index)=> txt.type === type);
-            const category = data[0].type;
-            const enText = data[0].en.split("");
-            const koText = data[0].ko.split("");
-
-            
-            let koStr = "";
-            let enStr = "";
-            const speed = 50;
-
-            for(let i = 0; i<koText.length; i++) {
-                (()=>{
-
-                    setTimeout(()=> {
-                        koStr += koText[i];
-
-                        setItems({
-                            type: category,
-                            ko: koStr,
-                            en: enStr
-                        });
-
-                        if(i===koText.length - 1) {
-                            for(let k=0; k<enText.length; k++ ) {
-                                (()=> {
-
-                                    setTimeout(()=> {
-                
-                                        enStr += enText[k];
-                                        setItems({
-                                            type: category,
-                                            ko: koStr,
-                                            en: enStr
-                                        })
-
-                                        if(k===enText.length - 1) setEnableClick(true);
-                                    }, speed * k)
-                                })(k);
-                            }
-                        }
-                    }, speed * i);
-                    
-                })(i);
-            }
-
-            //console.log(items);
-
-        });
-    }
 }
 
 export default Prompt;
