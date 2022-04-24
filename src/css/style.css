@@ -800,12 +800,16 @@ a {
   .visual .wrap .recent {
     order: 2;
     margin-right: 30px; }
+    .visual .wrap .recent ul li:hover {
+      background: #f2c9d0; }
   .visual .wrap .popular {
     order: 3; }
     .visual .wrap .popular ul li:first-child {
       background: #bad0ef; }
     .visual .wrap .popular ul li:not(:first-child) {
       background: #ecf2fb; }
+    .visual .wrap .popular ul li:hover {
+      background: #cdddf4; }
   .visual .wrap::after {
     content: "";
     display: block;

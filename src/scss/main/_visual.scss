@@ -417,6 +417,10 @@
         .recent {
             order: 2;
             margin-right: 30px;
+
+            ul  li:hover {
+                background: #f2c9d0;
+            }
         }
 
         .popular {
@@ -428,6 +432,10 @@
 
             ul li:not(:first-child) {
                 background: #ecf2fb;
+            }
+
+            ul li:hover {
+                background: #cdddf4;
             }
         }
 
