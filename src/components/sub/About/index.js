@@ -59,8 +59,6 @@ function About() {
         callData("Intro");
     }, []);
 
-    console.log(activeEffect);
-
     //말풍선 모션 이펙트 적용
     useEffect(()=> {
         if(!activeEffect) {     //처음 로드시
