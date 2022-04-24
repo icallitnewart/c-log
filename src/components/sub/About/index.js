@@ -59,20 +59,20 @@ function About() {
         callData("Intro");
     }, []);
 
+    console.log(activeEffect);
+
     //말풍선 모션 이펙트 적용
     useEffect(()=> {
         if(!activeEffect) {     //처음 로드시
-            setActiveEffect(true);
-            //참고: 처음부터 setTimeout을 이용하여 [0]으로 설정하면 모션이 제대로 적용되지 않으므로 처음엔 true로 설정
+            setActiveEffect([-1]);
         } else {
-            if(activeEffect===true) {
-                const timer = setTimeout(()=> setActiveEffect([0]), 0);
-
-                return ()=> clearTimeout(timer);
-            }
+            let speed = 1000;
 
             if(activeEffect[activeEffect.length - 1] < data.items.length - 1) {
-                const timer = setTimeout(()=> setActiveEffect(prev=> [ ...prev, prev[prev.length - 1] + 1]), 1000);
+                //첫 말풍선만 빠르게
+                if(activeEffect.length === 1) speed = 50;
+                //말풍선 모션 이펙트 주기
+                const timer = setTimeout(()=> setActiveEffect(prev=> [ ...prev, prev[prev.length - 1] + 1]), speed);
     
                 return ()=> clearTimeout(timer);
             }
@@ -92,7 +92,7 @@ function About() {
                     <ul className="conversation">
                     {activeEffect && data.items.map((item, index)=> {
                         //말풍선 모션 이펙트 적용 여부
-                        const isActive = (!activeEffect || activeEffect === true) ? false : ((activeEffect.indexOf(index) === -1) ? false : true);
+                        const isActive =  (activeEffect.indexOf(index) === -1) ? false : true;
 
                         return (
                             <li 
