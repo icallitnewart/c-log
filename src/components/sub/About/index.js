@@ -83,9 +83,6 @@ function About() {
             <Tab />
             <section className="content">
                 <h1>ABOUT</h1>
-                <div className="intro">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident facere explicabo necessitatibus nemo consequuntur delectus vel placeat cupiditate laborum quisquam?</p>
-                </div>
                 <div className="wrap">
                     <ul className="conversation">
                     {activeEffect && data.items.map((item, index)=> {

@@ -49,9 +49,6 @@ function Playlist() {
 			<Tab />
 			<section className="content">
 				<h1>PLAYLIST</h1>
-                <div className="intro">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident facere explicabo necessitatibus nemo consequuntur delectus vel placeat cupiditate laborum quisquam?</p>
-                </div>
 				<div className="wrap">
 					{ loading ? <Loading />
 						: ( 
