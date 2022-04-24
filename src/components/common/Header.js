@@ -32,6 +32,7 @@ function Header() {
 					<p>Welcome! I am an aspiring front-end developer and this is my coding blog. Feel free to look around!</p>
 				</div>
 				<ul id="gnb">
+					<li><NavLink activeStyle={active} exact to="/">HOME</NavLink></li>
 					<li><NavLink activeStyle={active} exact to="/about">ABOUT</NavLink></li>
 					<li><NavLink activeStyle={active} exact to="/blog">BLOG</NavLink></li>
 					<li><NavLink activeStyle={active} exact to="/gallery">GALLERY</NavLink></li>
@@ -43,6 +44,7 @@ function Header() {
 			<nav className="menuMobile" ref={sideMenu}>
 				<h1><NavLink exact to="/">&lt;C-log/&gt;</NavLink></h1>
 				<ul id="gnbMobile">
+					<li><NavLink activeStyle={activeMobile} exact to="/">HOME</NavLink></li>
 					<li><NavLink activeStyle={activeMobile} exact to="/about">ABOUT</NavLink></li>
 					<li><NavLink activeStyle={activeMobile} exact to="/blog">BLOG</NavLink></li>
 					<li><NavLink activeStyle={activeMobile} exact to="/gallery">GALLERY</NavLink></li>
