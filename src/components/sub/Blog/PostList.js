@@ -5,19 +5,18 @@ import Loading from "../../common/Loading";
 const PostList = ({ loading, posts, history, no, callData }) => {
 	const [ viewType, setViewType ] = useState("list");
     const [ activeCategory, setActiveCategory ] = useState(null);
-    
-	//페이지네이션 옵션
-	const [ page, setPage ] = useState(1);
-	const itemsPerPage = 5;
-	let indexStart = page * itemsPerPage - (itemsPerPage - 1) - 1; 
-	let indexEnd = page * itemsPerPage - 1;
-
     const iconTypes = [
         { HTML : "fab fa-html5" },
         { CSS : "fab fa-css3-alt" },
         { JS : "fab fa-js" },
         { REACT : "fab fa-react" }
     ];
+    
+	//페이지네이션 옵션
+	const [ page, setPage ] = useState(1);
+	const itemsPerPage = 5;
+	let indexStart = page * itemsPerPage - (itemsPerPage - 1) - 1; 
+	let indexEnd = page * itemsPerPage - 1;
 
     //카테고리 버튼 클릭시
     const classifyByCategory = (e)=> {
@@ -46,7 +45,7 @@ const PostList = ({ loading, posts, history, no, callData }) => {
             </ul>
             <div className="btns">
                 <div className="writeBtns">
-                    <button onClick={()=> history.push(`/blog/0`)}>Write</button>
+                    <button onClick={()=> history.push(`/blog/new`)}>Write</button>
                 </div>
                 <ul className="viewType">
                     <li>
