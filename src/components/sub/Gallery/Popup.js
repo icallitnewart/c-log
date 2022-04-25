@@ -20,10 +20,14 @@ function Popup({ images, popup, setPopup }) {
                 <div className="tab">
                     <span></span>
                     <span></span>
-                    <span onClick={()=> setPopup({
-                        isVisible: false,
-                        index: null
-                    })}>x</span>
+                    <span 
+                        aria-label="Close"
+                        role="button"
+                        onClick={()=> setPopup({
+                            isVisible: false,
+                            index: null
+                        })}
+                    >x</span>
                 </div>
                 <div className="imgBox">
                     <h1>{targetImg.title}</h1>

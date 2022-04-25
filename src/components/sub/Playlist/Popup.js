@@ -23,10 +23,14 @@ function Popup({ items, popup, setPopup }) {
             <div className="tab">
                 <span></span>
                 <span></span>
-                <span onClick={()=> setPopup({
-                    isVisible: false,
-                    index: null
-                })}>x</span>
+                <span 
+                    aria-label="Close"
+                    role="button"
+                    onClick={()=> setPopup({
+                        isVisible: false,
+                        index: null
+                    })}
+                >x</span>
             </div>
             <div className="container">
                 <div className="player">

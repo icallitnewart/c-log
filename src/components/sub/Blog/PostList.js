@@ -60,7 +60,8 @@ const PostList = ({ loading, posts, history, no, callData }) => {
                         <label 
                             onClick={()=> setViewType("list")} 
                             htmlFor="listView"
-                        >
+                        > 
+                            <span className="hidden">List View</span>
                             <i className="fas fa-th-list"></i>
                         </label>
                     </li>
@@ -76,6 +77,7 @@ const PostList = ({ loading, posts, history, no, callData }) => {
                             onClick={()=> setViewType("grid")} 
                             htmlFor="gridView"
                         >
+                            <span className="hidden">Grid View</span>
                             <i className="fas fa-th"></i>
                         </label>
                     </li>
