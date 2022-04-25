@@ -77,7 +77,7 @@ function PostView({
                 </div>
             </div>
             <div className="contentBox">
-                <p>{postContent.content}</p>
+                <p dangerouslySetInnerHTML={ {__html: postContent.content} }></p>
             </div>
             <ul className="btns">
                 <li>

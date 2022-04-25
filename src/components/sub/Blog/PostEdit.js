@@ -1,4 +1,6 @@
 import { useEffect, useState, useRef } from "react";
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 function PostEdit({ 
     postContent, 
@@ -34,9 +36,13 @@ function PostEdit({
         return `${year}/${month}/${day} ${hour}:${minute}`;
     };
 
-    const handleChange = (e)=> {
-        const { value, name } = e.target;
-        setInputs({ ...inputs, [name] : value });
+    const handleChange = (e, data)=> {
+        if(data !== undefined) {
+            setInputs({ ...inputs, "postContent" : data });
+        } else {
+            const { value, name } = e.target;
+            setInputs({ ...inputs, [name] : value });
+        }
     };
 
     //글 저장 함수
@@ -182,14 +188,45 @@ function PostEdit({
                         <th>
                             <label htmlFor="postContent">Content</label>
                         </th>
-                        <td>
-                            <textarea 
-                                name="postContent" 
-                                id="postContent"
-                                defaultValue={postContent && postContent.content}  
-                                value={inputs.content} 
-                                onChange={handleChange}
-                            ></textarea>
+                        <td className="ckeditor">
+                            <CKEditor
+                                editor={ ClassicEditor }
+                                data={postContent && postContent.content}
+                                onReady={(editor) => {
+                                    editor.editing.view.change((writer) => {
+                                        writer.setStyle(
+                                            "height",
+                                            "500px",
+                                            editor.editing.view.document.getRoot()
+                                        );
+                                        writer.setStyle(
+                                            "background",
+                                            "#dee9f8",
+                                            editor.editing.view.document.getRoot()
+                                        );
+                                        writer.setStyle(
+                                            "border",
+                                            "none",
+                                            editor.editing.view.document.getRoot()
+                                        );
+                                        writer.setStyle(
+                                            "border-top",
+                                            "1px solid #333 !important",
+                                            editor.editing.view.document.getRoot()
+                                        );
+                                    });
+                                }}
+                                onChange={ ( event, editor ) => {
+                                    const data = editor.getData();
+                                    handleChange(null, data);
+                                }}
+                                config={{
+                                    toolbar : {
+                                        items: [ 'heading', 'bold', 'italic', '|', 'undo', 'redo', '|', 'numberedList', 'bulletedList'],
+                                        shouldNotGroupWhenFull: true
+                                    }
+                                }}
+                            />
                         </td>
                     </tr>
 
