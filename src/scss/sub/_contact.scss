@@ -16,8 +16,6 @@
             height: 500px;
             margin: 60px auto 30px;
             background: #dfdfe0;
-            //#e1d8f0;
-            //#F1EBDE;
             border: 2px solid #555;
             border-radius: 20px;
             padding-top: 0;
@@ -243,18 +241,11 @@
             .container {
                 padding: 30px 30px 30px 20px !important;
 
-                .pic {
-                    //display: none !important;
-                }
-
                 .success {
                     padding: 20px 0px 0px 20px !important;
                 }
     
                 .formBox {
-                    //width: 100% !important;
-                    //padding-left: 0px !important;
-    
                     h2 {
                         font-size: 1.1em !important;
                     }
@@ -277,7 +268,6 @@
             }
         }
         .content>.wrap {
-
             .container {
                 padding: 30px 30px !important;
 

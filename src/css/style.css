@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @font-face {
   font-family: 'NeoDunggeunmo';
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.3/NeoDunggeunmo.woff") format("woff");
@@ -285,33 +284,6 @@ a {
             content: "/*"; }
           #wrap main > .inner .content h1::after {
             content: "*/"; }
-        #wrap main > .inner .content .intro {
-          position: relative;
-          margin: 20px auto;
-          width: calc(100% - 100px);
-          max-width: 600px;
-          font: 14px/1.5 Consolas, NeoDunggeunmo;
-          word-break: break-all;
-          color: #333; }
-          #wrap main > .inner .content .intro::before {
-            position: absolute;
-            display: block;
-            content: "";
-            width: 100%;
-            height: 100%;
-            transform: translate(5px, 5px);
-            background-color: #b4b4b7;
-            border: 1px solid #333; }
-          #wrap main > .inner .content .intro p {
-            position: relative;
-            z-index: 1;
-            width: 100%;
-            height: 100%;
-            background: #dfdfe0;
-            padding: 20px;
-            border: 1px solid #333;
-            text-align: center;
-            animation: fadeIn  1.2s; }
         #wrap main > .inner .content > .wrap {
           width: 100%;
           padding-top: 20px; }
@@ -408,12 +380,6 @@ a {
       animation: loading 1s infinite;
       font: 14px/1 Consolas; }
 
-@keyframes fadeIn {
-  0%, 20% {
-    transform: rotate(-1deg);
-    transform-origin: left bottom; }
-  100% {
-    transform: rotate(0deg); } }
 @keyframes shaking {
   0% {
     transform: rotate(-15deg); }
@@ -437,44 +403,6 @@ a {
 @keyframes spin {
   0% {
     transform: rotate(0deg); }
-  5% {
-    transform: rotate(18deg); }
-  10% {
-    transform: rotate(36deg); }
-  15% {
-    transform: rotate(54deg); }
-  20% {
-    transform: rotate(72deg); }
-  25% {
-    transform: rotate(90deg); }
-  30% {
-    transform: rotate(108deg); }
-  35% {
-    transform: rotate(120deg); }
-  40% {
-    transform: rotate(144deg); }
-  45% {
-    transform: rotate(162deg); }
-  50% {
-    transform: rotate(180deg); }
-  55% {
-    transform: rotate(198deg); }
-  60% {
-    transform: rotate(216deg); }
-  65% {
-    transform: rotate(234deg); }
-  70% {
-    transform: rotate(252deg); }
-  75% {
-    transform: rotate(270deg); }
-  80% {
-    transform: rotate(288deg); }
-  85% {
-    transform: rotate(306deg); }
-  90% {
-    transform: rotate(324deg); }
-  95% {
-    transform: rotate(342deg); }
   100% {
     transform: rotate(360deg); } }
 @keyframes loading {
@@ -2040,22 +1968,7 @@ a {
       box-shadow: 5px 5px 0px #4219D7;
       background: #B69CDC;
       transition: .5s;
-      cursor: pointer;
-                        /*&:hover {
-                            transform: translateY(-10px);
-
-                            /*p::after {
-                                display: inline-block;
-                                content: "👀";
-                                width: 25px;
-                                height: 25px;
-                                color: #000;
-                                margin-left: 5px;
-                                background: pink;
-                                border-radius: 50%;
-                                border: 1px solid #000;
-                            }
-                        }*/ }
+      cursor: pointer; }
       .playlist .inner .content .wrap .frame .item .pic {
         position: relative;
         width: 100%;
@@ -2101,6 +2014,8 @@ a {
           bottom: 15px;
           right: 15px;
           font: 12px/1 Consolas, "arial"; }
+      .playlist .inner .content .wrap .frame .item:hover {
+        transform: translateY(-10px); }
 .playlist .popup {
   position: fixed;
   top: 0;
@@ -2178,7 +2093,7 @@ a {
               border-radius: 50%;
               background: linear-gradient(30deg, transparent 40%, rgba(42, 41, 40, 0.85) 40%) no-repeat 100% 0, linear-gradient(60deg, rgba(42, 41, 40, 0.85) 60%, transparent 60%) no-repeat 0 100%, repeating-radial-gradient(#2a2928, #2a2928 4px, #B69CDC 5px, #2a2928 6px);
               background-size: 50% 100%, 100% 50%, 100% 100%;
-              animation: spin .7s infinite; }
+              animation: spin steps(30) 0.7s infinite; }
             .playlist .popup .inner .wrap .container .player .vinyl::before {
               position: absolute;
               top: 10px;
@@ -2304,17 +2219,5 @@ a {
         padding: 0px 20px 40px !important; }
       .playlist .popup .inner .wrap iframe {
         height: 230px !important; } }
-/*
-position: relative;
-width: calc(100% / 4 - 20px);
-height: 300px;
-border: 1px solid $subColor;
-background: $mainColor;
-margin: 10px;
-//border-radius: 10px;
-float: left;
-box-shadow: 5px 5px 0px $subColor;
-padding: 10px;
-*/
 
 /*# sourceMappingURL=style.css.map */

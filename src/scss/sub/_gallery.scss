@@ -5,6 +5,7 @@
                 content: "gallery";
             }
         }
+
         .content {
             .wrap {
                 width: 100%;
@@ -28,7 +29,6 @@
 
                         &.on {
                             background: $mainColor;
-                            //a { color: #fff; }
                         }
 
                         &.clicked {
@@ -53,7 +53,6 @@
                         width: calc(100% / 4 - 2vw);
                         height: 200px;
                         margin: 1vw;
-                        //border-radius: 10px;
                         float: left;
                         text-align: right;
                         cursor: pointer;
@@ -99,7 +98,6 @@
                                 span {
                                     word-break: break-all;
                                     color: #fff;
-                                    //background: rgba(0, 0, 0, 0.2);
                                 }
                             }
     
@@ -188,7 +186,6 @@
                     img {
                         width: calc(100%);
                         height: calc(100% - 35px);
-                        //border: 1px solid #bbb;
                         object-fit: cover;
                     }
                 }
@@ -233,7 +230,6 @@
                     width: 500px !important;
                     height: 350px !important;
                 }
-
             }
         }
     }
@@ -246,20 +242,18 @@
                 content: "gallery!" !important;
             }
         }
+
         .item {
             width: calc(100% / 1 - 2vw) !important;
             margin: 15px 1vw !important;
         }
 
         .popup {
-            .inner {
-                
+            .inner {            
                 .wrap {
                     width: calc(100% - 50px) !important;
                 }
-    
             }
         }
     }
-
 }

@@ -87,21 +87,9 @@
                             }
                         }
 
-                        /*&:hover {
+                        &:hover {
                             transform: translateY(-10px);
-
-                            /*p::after {
-                                display: inline-block;
-                                content: "👀";
-                                width: 25px;
-                                height: 25px;
-                                color: #000;
-                                margin-left: 5px;
-                                background: pink;
-                                border-radius: 50%;
-                                border: 1px solid #000;
-                            }
-                        }*/
+                        }
                     }
                 }
             }
@@ -156,7 +144,7 @@
                             color: #fff;
                             font: 14px/20px $enFont1;
                             cursor: pointer;
-                        }   //#b5c8f2
+                        }
                     }
                 }
     
@@ -199,7 +187,7 @@
                                 linear-gradient(60deg, rgba(42, 41, 40, .85) 60%, transparent 60%) no-repeat 0 100%,
                                 repeating-radial-gradient(#2a2928, #2a2928 4px, $mainColor 5px, #2a2928 6px);
                                 background-size: 50% 100%, 100% 50%, 100% 100%;
-                                animation: spin .7s infinite;
+                                animation: spin steps(30) .7s infinite;
                             }
                             
                             &::before {
@@ -276,7 +264,6 @@
                             background: #eee;
                             margin-bottom: 10px;
                             border: 1px solid #333;
-                            //border: 1px solid #9ca4ff;
                             box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
                         }
     
@@ -295,7 +282,6 @@
                                     width: 100%;
                                     height: 100%;
                                     display: block;
-                                    //animation: slidein ease-in 10s infinite;
                                 }
 
                                 span.highlight {
@@ -313,9 +299,7 @@
                                     padding-right: 3px;
                                 }
                             }
-    
                         }
-    
                     }
     
                     &::after {
@@ -390,7 +374,6 @@
         }
         
         .popup {
-
             .inner {
                 min-height: calc(645px + 200px );
                 
@@ -417,16 +400,3 @@
         }
     }
 }
-
-/*
-position: relative;
-width: calc(100% / 4 - 20px);
-height: 300px;
-border: 1px solid $subColor;
-background: $mainColor;
-margin: 10px;
-//border-radius: 10px;
-float: left;
-box-shadow: 5px 5px 0px $subColor;
-padding: 10px;
-*/

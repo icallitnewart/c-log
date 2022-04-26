@@ -20,13 +20,7 @@
                 min-width: 450px;
                 padding: 30px;
                 background: #d8c8f0;
-                //#DFDFE0;
-                //#d8c8f0;
-                //#d2cdc9;
-                //overflow-y: scroll;
                 border: 1px solid $subColor;
-                //#bbbbbd;
-                //box-shadow: 10px 10px 0px #4f4b47;
 
                 &::-webkit-scrollbar {
                     width: 3px;
@@ -70,7 +64,6 @@
                         .speechBubble .inner {
                             span {
                                 background: #c0c3e3;
-                                //#a2a7ee;
                             }
 
                             &::before {
@@ -98,7 +91,6 @@
 
                     .speechBubble {
                         display: flex;
-                        //align-items: center;
                         width: calc(80% - 50px);
                         max-width: 450px;
                         min-height: 50px;
@@ -152,7 +144,6 @@
             }
 
             .category {
-                //align-self: stretch;
                 position: relative;
                 width: calc(20% - 30px);
                 height: 550px;
@@ -182,7 +173,6 @@
                 li {
                     position: relative;
                     width: 100%;
-                    //max-width: 200px;
                     margin-bottom: 20px;
                     
                     span {
