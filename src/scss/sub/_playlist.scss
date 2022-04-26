@@ -329,6 +329,8 @@
 
 @media screen and (max-width: $tablet) {
     .playlist {
+        .inner .content >.wrap { padding-top: 0px !important; }
+
         .item {
             width: calc(100% / 2 - 3vw) !important;
             margin: 15px 1.5vw !important;
@@ -362,6 +364,8 @@
 
 @media screen and (max-width: $mobile) {
     .playlist {
+        .inner .content { padding: 50px 5vw !important; }
+
         .tab .addressBar {
             p::after {
                 content: "playlist!" !important;
@@ -384,6 +388,10 @@
         
                     .player {
                         width: 100% !important;
+
+                        .btns {
+                            padding: 20px 0px 0px !important;
+                        }
                     }
         
                     .video {

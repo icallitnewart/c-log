@@ -228,6 +228,7 @@
     .contact {
         .content>.wrap {
             width: 95% !important;
+            margin: 30px auto !important;
         }
     }
 }
@@ -261,17 +262,41 @@
 }
 
 @media screen and (max-width: $mobile) {
-    .contact {
-        .tab .addressBar {
-            p::after {
-                content: "contact page!" !important;
-            }
+#wrap .contact {
+    .tab .addressBar {
+        p::after {
+            content: "contact page!" !important;
         }
-        .content>.wrap {
+    }
+
+    .inner .content {
+        padding: 50px 5vw;
+
+        >.wrap {
+            height: auto !important;
+            box-shadow: none !important;
+
             .container {
-                padding: 30px 30px !important;
+                padding: 5vw 5vw 7vw !important;
 
                 .pic {
+                    width: 100% !important;
+                    height: 70px !important;
+                    margin-bottom: 20px;
+
+                    &::after {
+                        content: "WANT TO LEAVE A MESSAGE?";
+                        font: bold 18px/1 $enFont1;
+                        color: #d8c8f0;
+                        -webkit-text-stroke: 0.5px black;
+                    }
+
+                    img, a {
+                        display: none !important;
+                    }
+                }
+
+                h2, p {
                     display: none !important;
                 }
 
@@ -279,13 +304,14 @@
                     width: 100% !important;
                     padding: 20px !important;
                 }
-    
+
                 .formBox {
                     width: 100% !important;
-                    padding-left: 0px !important;
+                    height: auto !important;
+                    padding: 0px 10px !important;
                 }
-
             }
         }
     }
+}
 }

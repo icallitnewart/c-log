@@ -413,90 +413,175 @@
 }
 
 @media screen and (max-width: $tablet) {
-    #wrap .blog .inner .content > .wrap.postView {
-        padding: 20px 0px;
+#wrap .blog .inner .content > .wrap.postView {
+    padding: 20px 0px;
 
-        .inner.view {
-            .btns {
+    .inner.view {
+        padding: 20px 3vw 40px !important;
+
+        .titleBox {
+            .title {
+                padding: 0px 5px 0px 10px;
+                
+                h2 {
+                    margin-bottom: 5px;
+                    font-size: 20px !important;
+                    word-break: break-all;
+                }
+            }
+
+            .pic {
+                width: 75px;
+                height: 75px;
+
+                i {
+                    font-size: 40px;
+                }
+
+                &.react i {
+                    font-size: 30px !important;
+                }
+            }
+        }
+
+        .btns {
+            li {
+                &:nth-of-type(3) button {
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+
+    .inner.edit {
+        padding: 30px;
+        box-shadow: none;
+
+        .selectPic {
+            width: 100%;
+            height: 110px;
+            margin-bottom: 20px;
+            padding-right: 0px;
+            
+            &::after {
+                content: "";
+                display: block;
+                clear: both;
+            }
+
+            .pic {
+                width: 110px;
+                float: left;
+            }
+
+            p {
+                width: calc(100% - 110px);
+                float: left;
+                margin-top: 10px;
+                margin-bottom: 0px;
+            }
+
+            ul {
+                display: flex;
+                justify-content: center;
+                width: calc(100% - 110px);
+                float: left;
+                padding: 10px;
+
                 li {
-                    &:nth-of-type(3) button {
-                        margin-right: 10px;
+                    width: 50px;
+                    margin-right: 10px !important;
+                    margin-bottom: 0px !important;
+
+                    &:last-child {
+                        margin-right: 0px !important;
                     }
                 }
             }
         }
 
-        .inner.edit {
-            padding: 30px;
-            box-shadow: none;
+        .editor {
+            width: 100% !important;
+        }
 
-            .selectPic {
-                width: 100%;
-                height: 110px;
-                margin-bottom: 20px;
-                padding-right: 0px;
-                
-                &::after {
-                    content: "";
+        .btns {
+            width: 100%;
+            margin-left: 0px;
+        }
+    }
+}
+}
+
+@media screen and (max-width: $mobile) {
+#wrap .blog .inner .content > .wrap.postView {
+    .inner.view {
+        .titleBox {
+            .title {
+                .writer {
                     display: block;
-                    clear: both;
+                    width: 100%;
+                }
+            }
+        }
+
+        .contentBox {
+            width: 100%;
+            box-shadow: none;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .btns {    
+            li {
+                button {
+                    width: 80px !important;
+                }
+            }
+        }
+    }
+
+    .inner.edit {
+        padding: 20px 3vw 30px;
+
+        .selectPic {
+            height: auto;
+            margin-bottom: 0px;
+
+            .pic {
+                width: 80px;
+                height: 80px;
+                margin-bottom: 0px;
+                border: 2px solid #333;
+
+                i {
+                    font-size: 40px !important;
                 }
 
-                .pic {
-                    width: 110px;
-                    float: left;
-                }
-
-                p {
-                    width: calc(100% - 110px);
-                    float: left;
-                    margin-top: 10px;
-                    margin-bottom: 0px;
-                }
-
-                ul {
-                    display: flex;
-                    justify-content: center;
-                    width: calc(100% - 110px);
-                    float: left;
-                    padding: 10px;
-
-                    li {
-                        width: 50px;
-                        margin-right: 10px !important;
-                        margin-bottom: 0px !important;
-
-                        &:last-child {
-                            margin-right: 0px !important;
-                        }
-                    }
+                &.react i {
+                    font-size: 30px !important;
                 }
             }
 
-            .editor {
-                width: 100% !important;
+            p, ul {
+                width: calc(100% - 80px);
             }
 
-            .btns {
-                width: 100%;
-                margin-left: 0px;
+            p {
+                margin-top: 0px;
+            }
+
+            ul li {
+                margin-right: 5px !important;
+            }
+        }
+
+        .editor {
+            margin-bottom: 10px;
+
+            table tr td {
+                margin-bottom: 0px;
             }
         }
     }
 }
-
-@media screen and (max-width: $mobile) {
-    .postView {
-        .view {
-            padding: 25px !important;
-
-            .btns {    
-                li {
-                    button {
-                        width: 80px !important;
-                    }
-                }
-            }
-        }
-    }
 }

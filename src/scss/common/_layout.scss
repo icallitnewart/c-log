@@ -48,7 +48,7 @@
             .btnCall {
                 display: none !important;
                 position: absolute;
-                top: 50%; right: 25px;
+                top: 50%; right: 15px;
                 transform: translateY(-50%);
                 display: flex;
                 justify-content: flex-end;
@@ -57,7 +57,22 @@
                 cursor: pointer;
 
                 &.on {
+                    &::before {
+                        top: 50%;
+                        margin-top: -4px;
+                        transform: rotate(45deg);
+                    } 
                     
+                    &::after {
+                        width: 100%;
+                        bottom: 50%;
+                        margin-bottom: -4px;
+                        transform: rotate(-45deg);
+                    }
+
+                    span {
+                        opacity: 0;
+                    }
                 }
 
                 &::before, &::after {
@@ -71,6 +86,7 @@
                     border: 2px solid #333;
                     border-radius: 100px;
                     overflow: hidden;
+                    transition: all .5s, transform .5s .3s;
                 }
 
                 &::before {
@@ -94,6 +110,7 @@
                     border-radius: 100px;
                     box-sizing: content-box;
                     text-indent: -9999px;
+                    transition: .5s;
                 }
             }
 
@@ -188,18 +205,18 @@
                 height: 100vh;
                 background: $pointColor;
                 border-right: 2px solid #333;
-                transition: 1.5s;
+                transition: 1s;
 
                 &.on {
                     left: 0px;
                 }
 
                 h1 {
-                    margin: 70px 0px 50px;
+                    margin: 70px 0px 3vh;
 
                     a {
                         color: $pointColor;
-                        font-size: 50px;
+                        font-size: 30px;
                     }
                 }
 
@@ -357,7 +374,8 @@
 
                 h1 {
                     text-align: center;
-                    font: bold 40px/1 $enFont2;-webkit-text-stroke: 2px black;
+                    font: bold 40px/1 $enFont2;
+                    -webkit-text-stroke: 2px black;
                     color: $mainColor;
                     letter-spacing: 2px;
                     margin-bottom: 20px;
@@ -447,6 +465,18 @@
 
 @media screen and (max-width: $mobile) {
     #wrap {
+        header {
+            .inner .menuMobile #gnbMobile {
+                li {
+                    margin: 20px 0px;
+                    
+                    a {
+                        font-size: 40px;
+                    }
+                }
+            }
+        }
+
         main {
             padding: 100px 5px 30px;
 
@@ -454,6 +484,10 @@
                 p::before {
                     content: "Welcome to " !important;
                 }
+            }
+
+            .inner .content h1 {
+                font-size: 36px;
             }
         }
     }

@@ -449,23 +449,40 @@
         }
 
         >.inner .content {
-            .gridView article {
-                width: calc(100%) !important;
-                height: auto !important;
-                max-height: 390px !important;
-                margin: 15px 0px !important;
+            padding: 50px 3vw !important;
 
-                .pic {
-                    height: 150px !important;
+            .btns .viewType {
+                margin-right: 5px !important;
+            }
+
+            .gridView {
+                padding-right: 5px !important;
+
+                article {
+                    width: calc(100%) !important;
+                    height: auto !important;
+                    max-height: 390px !important;
+                    margin: 15px 0px !important;
+
+                    .pic {
+                        height: 150px !important;
+                    }
                 }
             }
 
             .list:not(.gridView) article {
                 .wrap {
+                    padding: 15px 0px 15px 10px !important;
+
                     .textBox {
+                        padding: 0px 10px !important;
                         h2 {
                             -webkit-line-clamp: 2 !important;
                             margin-bottom: 10px !important;
+                        }
+
+                        .likes, .date {
+                            display: none !important;
                         }
                     }
                 }

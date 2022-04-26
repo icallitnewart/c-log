@@ -56,13 +56,24 @@ a {
       display: none !important;
       position: absolute;
       top: 50%;
-      right: 25px;
+      right: 15px;
       transform: translateY(-50%);
       display: flex;
       justify-content: flex-end;
       width: 30px;
       height: 30px;
       cursor: pointer; }
+      #wrap header .inner .btnCall.on::before {
+        top: 50%;
+        margin-top: -4px;
+        transform: rotate(45deg); }
+      #wrap header .inner .btnCall.on::after {
+        width: 100%;
+        bottom: 50%;
+        margin-bottom: -4px;
+        transform: rotate(-45deg); }
+      #wrap header .inner .btnCall.on span {
+        opacity: 0; }
       #wrap header .inner .btnCall::before, #wrap header .inner .btnCall::after {
         position: absolute;
         right: 0%;
@@ -73,7 +84,8 @@ a {
         background: #bad0ef;
         border: 2px solid #333;
         border-radius: 100px;
-        overflow: hidden; }
+        overflow: hidden;
+        transition: all .5s, transform .5s .3s; }
       #wrap header .inner .btnCall::before {
         top: 0%; }
       #wrap header .inner .btnCall::after {
@@ -91,7 +103,8 @@ a {
         border: 2px solid #333;
         border-radius: 100px;
         box-sizing: content-box;
-        text-indent: -9999px; }
+        text-indent: -9999px;
+        transition: .5s; }
     #wrap header .inner .menuWeb {
       width: 100%; }
       #wrap header .inner .menuWeb .profile {
@@ -155,14 +168,14 @@ a {
       height: 100vh;
       background: #bad0ef;
       border-right: 2px solid #333;
-      transition: 1.5s; }
+      transition: 1s; }
       #wrap header .inner .menuMobile.on {
         left: 0px; }
       #wrap header .inner .menuMobile h1 {
-        margin: 70px 0px 50px; }
+        margin: 70px 0px 3vh; }
         #wrap header .inner .menuMobile h1 a {
           color: #bad0ef;
-          font-size: 50px; }
+          font-size: 30px; }
       #wrap header .inner .menuMobile #gnbMobile li {
         margin: 30px 0px; }
         #wrap header .inner .menuMobile #gnbMobile li a {
@@ -326,10 +339,16 @@ a {
     width: 100%;
     margin-left: 0px; } }
 @media screen and (max-width: 549px) {
+  #wrap header .inner .menuMobile #gnbMobile li {
+    margin: 20px 0px; }
+    #wrap header .inner .menuMobile #gnbMobile li a {
+      font-size: 40px; }
   #wrap main {
     padding: 100px 5px 30px; }
     #wrap main .tab .addressBar p::before {
-      content: "Welcome to " !important; } }
+      content: "Welcome to " !important; }
+    #wrap main .inner .content h1 {
+      font-size: 36px; } }
 .loading {
   display: flex;
   justify-content: center;
@@ -755,7 +774,8 @@ a {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: auto; }
+    height: auto;
+    margin-left: 0px; }
     .visual .wrap .title .computer {
       width: 80%;
       height: auto; }
@@ -783,7 +803,7 @@ a {
     width: 100%; } }
 @media screen and (max-width: 549px) {
   .visual .wrap {
-    padding: 0px 20px; }
+    padding: 0px 3vw; }
     .visual .wrap .title .computer {
       width: 100%; }
       .visual .wrap .title .computer .pic a {
@@ -969,23 +989,34 @@ a {
       order: 0;
       display: flex;
       flex-wrap: wrap;
+      justify-content: space-between;
       width: 100% !important;
       height: auto !important;
-      margin-left: 0px !important; }
+      margin-left: 0px !important;
+      padding: 0px 3vw; }
       .about > .inner .content > .wrap .category li {
         width: calc(100% / 3 - 20px) !important;
-        min-width: 120px;
-        margin-right: 20px !important; }
+        min-width: 120px; }
       .about > .inner .content > .wrap .category::before, .about > .inner .content > .wrap .category::after {
         display: none !important; } }
 @media screen and (max-width: 549px) {
   .tab .addressBar p::after {
     content: "about page!" !important; }
 
-  .about > .inner .content > .wrap .conversation .speechBubble {
-    width: calc(95% - 50px) !important; }
-  .about > .inner .content > .wrap .category li {
-    width: calc(100% / 2 - 20px) !important; } }
+  .about > .inner .content > .wrap {
+    padding: 3vw !important; }
+    .about > .inner .content > .wrap .conversation {
+      padding: 5vw; }
+      .about > .inner .content > .wrap .conversation li.question .speechBubble {
+        width: calc(100% - 50px);
+        padding-right: 10px;
+        padding-left: 20px; }
+      .about > .inner .content > .wrap .conversation li.answer .speechBubble {
+        width: calc(100% - 50px);
+        padding-left: 10px;
+        padding-right: 20px; }
+    .about > .inner .content > .wrap .category li {
+      width: calc(100% / 2 - 3vw) !important; } }
 #wrap .blog .inner .tab .addressBar p::after {
   content: "blog"; }
 #wrap .blog .inner .content {
@@ -1276,16 +1307,28 @@ a {
 @media screen and (max-width: 549px) {
   .blog .tab .addressBar p::after {
     content: "blog!" !important; }
-  .blog > .inner .content .gridView article {
-    width: calc(100%) !important;
-    height: auto !important;
-    max-height: 390px !important;
-    margin: 15px 0px !important; }
-    .blog > .inner .content .gridView article .pic {
-      height: 150px !important; }
-  .blog > .inner .content .list:not(.gridView) article .wrap .textBox h2 {
-    -webkit-line-clamp: 2 !important;
-    margin-bottom: 10px !important; } }
+  .blog > .inner .content {
+    padding: 50px 3vw !important; }
+    .blog > .inner .content .btns .viewType {
+      margin-right: 5px !important; }
+    .blog > .inner .content .gridView {
+      padding-right: 5px !important; }
+      .blog > .inner .content .gridView article {
+        width: calc(100%) !important;
+        height: auto !important;
+        max-height: 390px !important;
+        margin: 15px 0px !important; }
+        .blog > .inner .content .gridView article .pic {
+          height: 150px !important; }
+    .blog > .inner .content .list:not(.gridView) article .wrap {
+      padding: 15px 0px 15px 10px !important; }
+      .blog > .inner .content .list:not(.gridView) article .wrap .textBox {
+        padding: 0px 10px !important; }
+        .blog > .inner .content .list:not(.gridView) article .wrap .textBox h2 {
+          -webkit-line-clamp: 2 !important;
+          margin-bottom: 10px !important; }
+        .blog > .inner .content .list:not(.gridView) article .wrap .textBox .likes, .blog > .inner .content .list:not(.gridView) article .wrap .textBox .date {
+          display: none !important; } }
 #wrap .blog .inner .content > .wrap.postView {
   padding: 20px; }
   #wrap .blog .inner .content > .wrap.postView .inner {
@@ -1559,8 +1602,23 @@ a {
 @media screen and (max-width: 799px) {
   #wrap .blog .inner .content > .wrap.postView {
     padding: 20px 0px; }
-    #wrap .blog .inner .content > .wrap.postView .inner.view .btns li:nth-of-type(3) button {
-      margin-right: 10px; }
+    #wrap .blog .inner .content > .wrap.postView .inner.view {
+      padding: 20px 3vw 40px !important; }
+      #wrap .blog .inner .content > .wrap.postView .inner.view .titleBox .title {
+        padding: 0px 5px 0px 10px; }
+        #wrap .blog .inner .content > .wrap.postView .inner.view .titleBox .title h2 {
+          margin-bottom: 5px;
+          font-size: 20px !important;
+          word-break: break-all; }
+      #wrap .blog .inner .content > .wrap.postView .inner.view .titleBox .pic {
+        width: 75px;
+        height: 75px; }
+        #wrap .blog .inner .content > .wrap.postView .inner.view .titleBox .pic i {
+          font-size: 40px; }
+        #wrap .blog .inner .content > .wrap.postView .inner.view .titleBox .pic.react i {
+          font-size: 30px !important; }
+      #wrap .blog .inner .content > .wrap.postView .inner.view .btns li:nth-of-type(3) button {
+        margin-right: 10px; }
     #wrap .blog .inner .content > .wrap.postView .inner.edit {
       padding: 30px;
       box-shadow: none; }
@@ -1599,10 +1657,40 @@ a {
         width: 100%;
         margin-left: 0px; } }
 @media screen and (max-width: 549px) {
-  .postView .view {
-    padding: 25px !important; }
-    .postView .view .btns li button {
-      width: 80px !important; } }
+  #wrap .blog .inner .content > .wrap.postView .inner.view .titleBox .title .writer {
+    display: block;
+    width: 100%; }
+  #wrap .blog .inner .content > .wrap.postView .inner.view .contentBox {
+    width: 100%;
+    box-shadow: none;
+    padding: 15px;
+    margin-bottom: 20px; }
+  #wrap .blog .inner .content > .wrap.postView .inner.view .btns li button {
+    width: 80px !important; }
+  #wrap .blog .inner .content > .wrap.postView .inner.edit {
+    padding: 20px 3vw 30px; }
+    #wrap .blog .inner .content > .wrap.postView .inner.edit .selectPic {
+      height: auto;
+      margin-bottom: 0px; }
+      #wrap .blog .inner .content > .wrap.postView .inner.edit .selectPic .pic {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 0px;
+        border: 2px solid #333; }
+        #wrap .blog .inner .content > .wrap.postView .inner.edit .selectPic .pic i {
+          font-size: 40px !important; }
+        #wrap .blog .inner .content > .wrap.postView .inner.edit .selectPic .pic.react i {
+          font-size: 30px !important; }
+      #wrap .blog .inner .content > .wrap.postView .inner.edit .selectPic p, #wrap .blog .inner .content > .wrap.postView .inner.edit .selectPic ul {
+        width: calc(100% - 80px); }
+      #wrap .blog .inner .content > .wrap.postView .inner.edit .selectPic p {
+        margin-top: 0px; }
+      #wrap .blog .inner .content > .wrap.postView .inner.edit .selectPic ul li {
+        margin-right: 5px !important; }
+    #wrap .blog .inner .content > .wrap.postView .inner.edit .editor {
+      margin-bottom: 10px; }
+      #wrap .blog .inner .content > .wrap.postView .inner.edit .editor table tr td {
+        margin-bottom: 0px; } }
 .gallery .inner .tab .addressBar p::after {
   content: "gallery"; }
 .gallery .inner .content .wrap {
@@ -1928,7 +2016,8 @@ a {
 
 @media screen and (max-width: 1180px) {
   .contact .content > .wrap {
-    width: 95% !important; } }
+    width: 95% !important;
+    margin: 30px auto !important; } }
 @media screen and (max-width: 799px) {
   .contact .content > .wrap {
     width: 100% !important;
@@ -1942,18 +2031,35 @@ a {
       .contact .content > .wrap .container .formBox table {
         max-width: none !important; } }
 @media screen and (max-width: 549px) {
-  .contact .tab .addressBar p::after {
+  #wrap .contact .tab .addressBar p::after {
     content: "contact page!" !important; }
-  .contact .content > .wrap .container {
-    padding: 30px 30px !important; }
-    .contact .content > .wrap .container .pic {
-      display: none !important; }
-    .contact .content > .wrap .container .success {
-      width: 100% !important;
-      padding: 20px !important; }
-    .contact .content > .wrap .container .formBox {
-      width: 100% !important;
-      padding-left: 0px !important; } }
+  #wrap .contact .inner .content {
+    padding: 50px 5vw; }
+    #wrap .contact .inner .content > .wrap {
+      height: auto !important;
+      box-shadow: none !important; }
+      #wrap .contact .inner .content > .wrap .container {
+        padding: 5vw 5vw 7vw !important; }
+        #wrap .contact .inner .content > .wrap .container .pic {
+          width: 100% !important;
+          height: 70px !important;
+          margin-bottom: 20px; }
+          #wrap .contact .inner .content > .wrap .container .pic::after {
+            content: "WANT TO LEAVE A MESSAGE?";
+            font: bold 18px/1 Consolas;
+            color: #d8c8f0;
+            -webkit-text-stroke: 0.5px black; }
+          #wrap .contact .inner .content > .wrap .container .pic img, #wrap .contact .inner .content > .wrap .container .pic a {
+            display: none !important; }
+        #wrap .contact .inner .content > .wrap .container h2, #wrap .contact .inner .content > .wrap .container p {
+          display: none !important; }
+        #wrap .contact .inner .content > .wrap .container .success {
+          width: 100% !important;
+          padding: 20px !important; }
+        #wrap .contact .inner .content > .wrap .container .formBox {
+          width: 100% !important;
+          height: auto !important;
+          padding: 0px 10px !important; } }
 .playlist .inner .tab .addressBar p::after {
   content: "playlist"; }
 .playlist .inner .content .wrap {
@@ -2185,6 +2291,8 @@ a {
     overflow-y: scroll;
     left: 0px; } }
 @media screen and (max-width: 799px) {
+  .playlist .inner .content > .wrap {
+    padding-top: 0px !important; }
   .playlist .item {
     width: calc(100% / 2 - 3vw) !important;
     margin: 15px 1.5vw !important; }
@@ -2201,6 +2309,8 @@ a {
       .playlist .popup .inner .wrap iframe {
         height: 150px !important; } }
 @media screen and (max-width: 549px) {
+  .playlist .inner .content {
+    padding: 50px 5vw !important; }
   .playlist .tab .addressBar p::after {
     content: "playlist!" !important; }
   .playlist .item {
@@ -2214,6 +2324,8 @@ a {
       height: auto !important; }
       .playlist .popup .inner .wrap .player {
         width: 100% !important; }
+        .playlist .popup .inner .wrap .player .btns {
+          padding: 20px 0px 0px !important; }
       .playlist .popup .inner .wrap .video {
         width: 100% !important;
         padding: 0px 20px 40px !important; }
