@@ -1,7 +1,9 @@
-import { useRef, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 
 function Header() {
+	const location = useLocation();
+	const path = location.pathname;
 	const [ mobileMenu, setMobileMenu ] = useState(false);
 
 	const active = {
@@ -11,6 +13,11 @@ function Header() {
 	const activeMobile = {
 		color: "pink"
 	}
+
+	//라우터 경로 변동시 열려있는 모바일 사이드바 메뉴 닫기
+	useEffect(()=> {
+		if(mobileMenu) setMobileMenu(!mobileMenu);
+	}, [path]);
 
 	return(
 	<header>
