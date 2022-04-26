@@ -34,7 +34,7 @@ function Header() {
 				<ul id="gnb">
 					<li><NavLink activeStyle={active} exact to="/">HOME</NavLink></li>
 					<li><NavLink activeStyle={active} exact to="/about">ABOUT</NavLink></li>
-					<li><NavLink activeStyle={active} exact to="/blog">BLOG</NavLink></li>
+					<li><NavLink activeStyle={active} to="/blog">BLOG</NavLink></li>
 					<li><NavLink activeStyle={active} exact to="/gallery">GALLERY</NavLink></li>
 					<li><NavLink activeStyle={active} exact to="/playlist">PLAYLIST</NavLink></li>
 					<li><NavLink activeStyle={active} exact to="/contact">CONTACT</NavLink></li>
@@ -46,7 +46,7 @@ function Header() {
 				<ul id="gnbMobile">
 					<li><NavLink activeStyle={activeMobile} exact to="/">HOME</NavLink></li>
 					<li><NavLink activeStyle={activeMobile} exact to="/about">ABOUT</NavLink></li>
-					<li><NavLink activeStyle={activeMobile} exact to="/blog">BLOG</NavLink></li>
+					<li><NavLink activeStyle={activeMobile} to="/blog">BLOG</NavLink></li>
 					<li><NavLink activeStyle={activeMobile} exact to="/gallery">GALLERY</NavLink></li>
 					<li><NavLink activeStyle={activeMobile} exact to="/playlist">PLAYLIST</NavLink></li>
 					<li><NavLink activeStyle={activeMobile} exact to="/contact">CONTACT</NavLink></li>
