@@ -1,7 +1,9 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 
 function Header() {
+	const [ mobileMenu, setMobileMenu ] = useState(false);
+
 	const active = {
 		textDecoration: "underline"
 	};
@@ -9,16 +11,18 @@ function Header() {
 	const activeMobile = {
 		color: "pink"
 	}
-	
-	const sideMenu = useRef(null);
-	const btnSidebar = useRef(null);
 
 	return(
 	<header>
 		<div className="inner">
-			<h1><NavLink exact to="/">&lt;C-log/&gt;</NavLink></h1>
+			<h1>
+				<NavLink exact to="/">&lt;C-log/&gt;</NavLink>
+			</h1>
 
-			<div className="btnCall" onClick={showSideMenu} ref={btnSidebar}>
+			<div 
+				className={mobileMenu ? "btnCall on" : "btnCall"} 
+				onClick={()=> setMobileMenu(!mobileMenu)}
+			>
 				<span>메뉴호출</span>
 			</div>
 			
@@ -41,7 +45,7 @@ function Header() {
 				</ul>
 			</nav>
 
-			<nav className="menuMobile" ref={sideMenu}>
+			<nav className={mobileMenu ? "menuMobile on" : "menuMobile"}>
 				<h1><NavLink exact to="/">&lt;C-log/&gt;</NavLink></h1>
 				<ul id="gnbMobile">
 					<li><NavLink activeStyle={activeMobile} exact to="/">HOME</NavLink></li>
@@ -55,14 +59,6 @@ function Header() {
 		</div>
 	</header>
 	)
-
-	function showSideMenu() {
-		const menu = sideMenu.current;
-		const btnMenu = btnSidebar.current;
-
-		menu.classList.toggle("on");
-		btnMenu.classList.toggle("on");
-	}
 }
 
 export default Header;
