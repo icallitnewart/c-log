@@ -73,14 +73,14 @@
                             display: flex;
 
                             span {
-                                background: #c0c3e3;
+                                background: #d3d5ed;
                             }
 
                             &::before {
                                 left: auto;
                                 right: -11px;
                                 transform: rotate(-30deg);
-                                background: #c0c3e3;
+                                background: #d3d5ed;
                             }
 
                             &::after {
@@ -116,11 +116,11 @@
                                 padding: 15px 20px;
                                 margin-top: 3px;
                                 border: 1px solid #555;
-                                background: pink;
+                                background: #f4cad1;
                                 border-radius: 10px;
                                 word-break: break-all;
                                 font: 14px/1.5 $koFont;
-                                color: #333;
+                                color: #000;
                             }
 
                             &::before, &::after {
@@ -135,7 +135,7 @@
                             &::before {
                                 left: -11px;
                                 top: 23px;
-                                background: pink;
+                                background: #f4cad1;
                                 transform: rotate(30deg);
                                 border-bottom: 1px solid #555;
                             }
