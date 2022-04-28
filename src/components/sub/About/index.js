@@ -91,7 +91,7 @@ function About() {
 
                         return (
                             <li 
-                                key={index} 
+                                key={data.category + index} 
                                 className={
                                     isActive 
                                     ? `${Object.keys(item)} on`
