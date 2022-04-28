@@ -2079,7 +2079,6 @@ a {
       border: 1px solid #4219D7;
       box-shadow: 5px 5px 0px #4219D7;
       background: #B69CDC;
-      transition: .5s;
       cursor: pointer; }
       .playlist .inner .content .wrap .frame .item .pic {
         position: relative;
@@ -2127,7 +2126,8 @@ a {
           right: 15px;
           font: 12px/1 Consolas, "arial"; }
       .playlist .inner .content .wrap .frame .item:hover {
-        transform: translateY(-10px); }
+        transform: translate(-3px, -3px);
+        box-shadow: 8px 8px 0px #4219D7; }
 .playlist .popup {
   position: fixed;
   top: 0;
