@@ -978,51 +978,52 @@ a {
         background: #d8c8f0; }
 
 @media screen and (max-width: 1180px) {
-  .about > .inner .content > .wrap {
-    padding: 20px !important; }
-    .about > .inner .content > .wrap .conversation {
-      width: 70% !important; }
-    .about > .inner .content > .wrap .category {
-      width: calc(30% - 30px) !important; } }
+  #wrap .about > .inner .content > .wrap {
+    padding: 20px; }
+    #wrap .about > .inner .content > .wrap .conversation {
+      width: 70%; }
+    #wrap .about > .inner .content > .wrap .category {
+      width: calc(30% - 30px); } }
 @media screen and (max-width: 799px) {
-  .about > .inner .content {
-    padding: 20px 0px !important; }
-    .about > .inner .content > .wrap .conversation {
+  #wrap .about > .inner .content {
+    padding: 20px 0px; }
+    #wrap .about > .inner .content > .wrap .conversation {
       order: 1;
-      width: 100% !important;
+      width: 100%;
       min-width: 0px; }
-    .about > .inner .content > .wrap .category {
+    #wrap .about > .inner .content > .wrap .category {
       order: 0;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      width: 100% !important;
-      height: auto !important;
-      margin-left: 0px !important;
+      width: 100%;
+      height: auto;
+      margin-left: 0px;
       padding: 0px 3vw; }
-      .about > .inner .content > .wrap .category li {
-        width: calc(100% / 3 - 20px) !important;
+      #wrap .about > .inner .content > .wrap .category li {
+        width: calc(100% / 3 - 20px);
         min-width: 120px; }
-      .about > .inner .content > .wrap .category::before, .about > .inner .content > .wrap .category::after {
-        display: none !important; } }
+      #wrap .about > .inner .content > .wrap .category::before, #wrap .about > .inner .content > .wrap .category::after {
+        display: none; } }
 @media screen and (max-width: 549px) {
-  .tab .addressBar p::after {
-    content: "about page!" !important; }
-
-  .about > .inner .content > .wrap {
-    padding: 3vw !important; }
-    .about > .inner .content > .wrap .conversation {
+  #wrap .about > .inner .tab .addressBar p::after {
+    content: "about page!"; }
+  #wrap .about > .inner .content > .wrap {
+    padding: 3vw; }
+    #wrap .about > .inner .content > .wrap .conversation {
       padding: 5vw; }
-      .about > .inner .content > .wrap .conversation li.question .speechBubble {
+      #wrap .about > .inner .content > .wrap .conversation li .speechBubble span {
+        padding: 12px 15px; }
+      #wrap .about > .inner .content > .wrap .conversation li.question .speechBubble {
         width: calc(100% - 50px);
         padding-right: 10px;
         padding-left: 20px; }
-      .about > .inner .content > .wrap .conversation li.answer .speechBubble {
+      #wrap .about > .inner .content > .wrap .conversation li.answer .speechBubble {
         width: calc(100% - 50px);
         padding-left: 10px;
         padding-right: 20px; }
-    .about > .inner .content > .wrap .category li {
-      width: calc(100% / 2 - 3vw) !important; } }
+    #wrap .about > .inner .content > .wrap .category li {
+      width: calc(100% / 2 - 3vw); } }
 #wrap .blog .inner .tab .addressBar p::after {
   content: "blog"; }
 #wrap .blog .inner .content {
@@ -1298,43 +1299,43 @@ a {
           cursor: pointer; }
 
 @media screen and (max-width: 1399px) {
-  .blog > .inner .content {
-    padding: 50px 20px !important; }
-    .blog > .inner .content .gridView article {
-      width: calc(100% / 3 - 20px) !important; } }
+  #wrap .blog > .inner .content {
+    padding: 50px 20px; }
+    #wrap .blog > .inner .content > .wrap .list.gridView article {
+      width: calc(100% / 3 - 20px); } }
 @media screen and (max-width: 1180px) {
-  .blog > .inner .content .gridView article {
-    width: calc(100% / 3 - 2.5vw) !important;
-    margin-right: 2.5vw !important; } }
+  #wrap .blog > .inner .content > .wrap .list.gridView article {
+    width: calc(100% / 3 - 2.5vw);
+    margin-right: 2.5vw; } }
 @media screen and (max-width: 899px) {
-  .blog > .inner .content .gridView article {
-    width: calc(100% / 2 - 4vw) !important;
-    margin-right: 4vw !important; } }
+  #wrap .blog > .inner .content > .wrap .list.gridView article {
+    width: calc(100% / 2 - 4vw);
+    margin-right: 4vw; } }
 @media screen and (max-width: 549px) {
-  .blog .tab .addressBar p::after {
-    content: "blog!" !important; }
-  .blog > .inner .content {
-    padding: 50px 3vw !important; }
-    .blog > .inner .content .btns .viewType {
-      margin-right: 5px !important; }
-    .blog > .inner .content .gridView {
-      padding-right: 5px !important; }
-      .blog > .inner .content .gridView article {
-        width: calc(100%) !important;
-        height: auto !important;
-        max-height: 390px !important;
-        margin: 15px 0px !important; }
-        .blog > .inner .content .gridView article .pic {
-          height: 150px !important; }
-    .blog > .inner .content .list:not(.gridView) article .wrap {
-      padding: 15px 0px 15px 10px !important; }
-      .blog > .inner .content .list:not(.gridView) article .wrap .textBox {
-        padding: 0px 10px !important; }
-        .blog > .inner .content .list:not(.gridView) article .wrap .textBox h2 {
-          -webkit-line-clamp: 2 !important;
-          margin-bottom: 10px !important; }
-        .blog > .inner .content .list:not(.gridView) article .wrap .textBox .likes, .blog > .inner .content .list:not(.gridView) article .wrap .textBox .date {
-          display: none !important; } }
+  #wrap .blog > .inner .tab .addressBar p::after {
+    content: "blog!"; }
+  #wrap .blog > .inner .content {
+    padding: 50px 3vw; }
+    #wrap .blog > .inner .content > .wrap .btns .viewType {
+      margin-right: 5px; }
+    #wrap .blog > .inner .content > .wrap .list.gridView {
+      padding-right: 5px; }
+      #wrap .blog > .inner .content > .wrap .list.gridView article {
+        width: 100%;
+        height: auto;
+        max-height: 390px;
+        margin: 15px 0px; }
+        #wrap .blog > .inner .content > .wrap .list.gridView article > .wrap .pic {
+          height: 150px; }
+    #wrap .blog > .inner .content .list:not(.gridView) article .wrap {
+      padding: 15px 0px 15px 10px; }
+      #wrap .blog > .inner .content .list:not(.gridView) article .wrap .textBox {
+        padding: 0px 10px; }
+        #wrap .blog > .inner .content .list:not(.gridView) article .wrap .textBox h2 {
+          -webkit-line-clamp: 2;
+          margin-bottom: 10px; }
+        #wrap .blog > .inner .content .list:not(.gridView) article .wrap .textBox p .likes, #wrap .blog > .inner .content .list:not(.gridView) article .wrap .textBox p .date {
+          display: none; } }
 #wrap .blog .inner .content > .wrap.postView {
   padding: 20px; }
   #wrap .blog .inner .content > .wrap.postView .inner {
@@ -1609,12 +1610,12 @@ a {
   #wrap .blog .inner .content > .wrap.postView {
     padding: 20px 0px; }
     #wrap .blog .inner .content > .wrap.postView .inner.view {
-      padding: 20px 3vw 40px !important; }
+      padding: 20px 3vw 40px; }
       #wrap .blog .inner .content > .wrap.postView .inner.view .titleBox .title {
         padding: 0px 5px 0px 10px; }
         #wrap .blog .inner .content > .wrap.postView .inner.view .titleBox .title h2 {
           margin-bottom: 5px;
-          font-size: 20px !important;
+          font-size: 20px;
           word-break: break-all; }
       #wrap .blog .inner .content > .wrap.postView .inner.view .titleBox .pic {
         width: 75px;
@@ -1622,7 +1623,7 @@ a {
         #wrap .blog .inner .content > .wrap.postView .inner.view .titleBox .pic i {
           font-size: 40px; }
         #wrap .blog .inner .content > .wrap.postView .inner.view .titleBox .pic.react i {
-          font-size: 30px !important; }
+          font-size: 30px; }
       #wrap .blog .inner .content > .wrap.postView .inner.view .btns li:nth-of-type(3) button {
         margin-right: 10px; }
     #wrap .blog .inner .content > .wrap.postView .inner.edit {
@@ -1651,14 +1652,14 @@ a {
           width: calc(100% - 110px);
           float: left;
           padding: 10px; }
-          #wrap .blog .inner .content > .wrap.postView .inner.edit .selectPic ul li {
+          #wrap .blog .inner .content > .wrap.postView .inner.edit .selectPic ul li:nth-of-type(1n) {
             width: 50px;
-            margin-right: 10px !important;
-            margin-bottom: 0px !important; }
-            #wrap .blog .inner .content > .wrap.postView .inner.edit .selectPic ul li:last-child {
-              margin-right: 0px !important; }
+            margin-right: 10px;
+            margin-bottom: 0px; }
+            #wrap .blog .inner .content > .wrap.postView .inner.edit .selectPic ul li:nth-of-type(1n):last-child {
+              margin-right: 0px; }
       #wrap .blog .inner .content > .wrap.postView .inner.edit .editor {
-        width: 100% !important; }
+        width: 100%; }
       #wrap .blog .inner .content > .wrap.postView .inner.edit .btns {
         width: 100%;
         margin-left: 0px; } }
@@ -1672,7 +1673,7 @@ a {
     padding: 15px;
     margin-bottom: 20px; }
   #wrap .blog .inner .content > .wrap.postView .inner.view .btns li button {
-    width: 80px !important; }
+    width: 80px; }
   #wrap .blog .inner .content > .wrap.postView .inner.edit {
     padding: 20px 3vw 30px; }
     #wrap .blog .inner .content > .wrap.postView .inner.edit .selectPic {
@@ -1684,15 +1685,15 @@ a {
         margin-bottom: 0px;
         border: 2px solid #333; }
         #wrap .blog .inner .content > .wrap.postView .inner.edit .selectPic .pic i {
-          font-size: 40px !important; }
+          font-size: 40px; }
         #wrap .blog .inner .content > .wrap.postView .inner.edit .selectPic .pic.react i {
-          font-size: 30px !important; }
+          font-size: 30px; }
       #wrap .blog .inner .content > .wrap.postView .inner.edit .selectPic p, #wrap .blog .inner .content > .wrap.postView .inner.edit .selectPic ul {
         width: calc(100% - 80px); }
       #wrap .blog .inner .content > .wrap.postView .inner.edit .selectPic p {
         margin-top: 0px; }
-      #wrap .blog .inner .content > .wrap.postView .inner.edit .selectPic ul li {
-        margin-right: 5px !important; }
+      #wrap .blog .inner .content > .wrap.postView .inner.edit .selectPic ul li:nth-of-type(1n) {
+        margin-right: 5px; }
     #wrap .blog .inner .content > .wrap.postView .inner.edit .editor {
       margin-bottom: 10px; }
       #wrap .blog .inner .content > .wrap.postView .inner.edit .editor table tr td {
@@ -1837,32 +1838,32 @@ a {
           object-fit: cover; }
 
 @media screen and (max-width: 1180px) {
-  .gallery .item {
-    width: calc(100% / 3 - 2vw) !important; }
-  .gallery .popup {
+  #wrap .gallery > .inner .content > .wrap .frame .item {
+    width: calc(100% / 3 - 2vw); }
+  #wrap .gallery .popup {
     z-index: 1000;
     width: 100%;
     margin-left: 0px;
     overflow-y: scroll; }
-    .gallery .popup .inner {
+    #wrap .gallery .popup .inner {
       min-height: calc(450px + 200px); } }
 @media screen and (max-width: 799px) {
-  .gallery .item {
-    width: calc(100% / 2 - 3vw) !important;
-    margin: 1.5vw !important; }
-  .gallery .popup .inner {
+  #wrap .gallery > .inner .content > .wrap .frame .item {
+    width: calc(100% / 2 - 3vw);
+    margin: 1.5vw; }
+  #wrap .gallery .popup .inner {
     min-height: calc(350px + 200px); }
-    .gallery .popup .inner .wrap {
-      width: 500px !important;
-      height: 350px !important; } }
+    #wrap .gallery .popup .inner .wrap {
+      width: 500px;
+      height: 350px; } }
 @media screen and (max-width: 549px) {
-  .gallery .tab .addressBar p::after {
-    content: "gallery!" !important; }
-  .gallery .item {
-    width: calc(100% / 1 - 2vw) !important;
-    margin: 15px 1vw !important; }
-  .gallery .popup .inner .wrap {
-    width: calc(100% - 50px) !important; } }
+  #wrap .gallery > .inner .tab .addressBar p::after {
+    content: "gallery!"; }
+  #wrap .gallery > .inner .content > .wrap .frame .item {
+    width: calc(100% / 1 - 2vw);
+    margin: 15px 1vw; }
+  #wrap .gallery .popup .inner > .wrap {
+    width: calc(100% - 50px); } }
 #wrap .contact > .inner .tab .addressBar p::after {
   content: "contact"; }
 #wrap .contact > .inner .content {
@@ -2021,51 +2022,57 @@ a {
                   margin-bottom: 15px; }
 
 @media screen and (max-width: 1180px) {
-  .contact .content > .wrap {
-    width: 95% !important;
-    margin: 30px auto !important; } }
+  #wrap .contact > .inner .content > .wrap {
+    width: 95%;
+    margin: 30px auto; } }
 @media screen and (max-width: 799px) {
-  .contact .content > .wrap {
-    width: 100% !important;
-    box-shadow: 5px 5px 0px #444 !important; }
-    .contact .content > .wrap .container {
-      padding: 30px 30px 30px 20px !important; }
-      .contact .content > .wrap .container .success {
-        padding: 20px 0px 0px 20px !important; }
-      .contact .content > .wrap .container .formBox h2 {
-        font-size: 1.1em !important; }
-      .contact .content > .wrap .container .formBox table {
-        max-width: none !important; } }
+  #wrap .contact > .inner .content > .wrap {
+    width: 100%;
+    box-shadow: 5px 5px 0px #444; }
+    #wrap .contact > .inner .content > .wrap .container {
+      padding: 30px 30px 30px 20px; }
+      #wrap .contact > .inner .content > .wrap .container .success {
+        padding: 20px 0px 0px 20px; }
+      #wrap .contact > .inner .content > .wrap .container .formBox h2 {
+        font-size: 1.1em; }
+      #wrap .contact > .inner .content > .wrap .container .formBox fieldset table {
+        max-width: none; } }
 @media screen and (max-width: 549px) {
-  #wrap .contact .tab .addressBar p::after {
-    content: "contact page!" !important; }
-  #wrap .contact .inner .content {
+  #wrap .contact > .inner .tab .addressBar p::after {
+    content: "contact page!"; }
+  #wrap .contact > .inner .content {
     padding: 50px 5vw; }
-    #wrap .contact .inner .content > .wrap {
-      height: auto !important;
-      box-shadow: none !important; }
-      #wrap .contact .inner .content > .wrap .container {
-        padding: 5vw 5vw 7vw !important; }
-        #wrap .contact .inner .content > .wrap .container .pic {
-          width: 100% !important;
-          height: 70px !important;
+    #wrap .contact > .inner .content > .wrap {
+      height: auto;
+      box-shadow: none; }
+      #wrap .contact > .inner .content > .wrap .container {
+        padding: 5vw 5vw 7vw; }
+        #wrap .contact > .inner .content > .wrap .container .pic {
+          width: 100%;
+          height: 70px;
           margin-bottom: 20px; }
-          #wrap .contact .inner .content > .wrap .container .pic::after {
+          #wrap .contact > .inner .content > .wrap .container .pic::after {
             content: "WANT TO LEAVE A MESSAGE?";
             font: bold 18px/1 Consolas;
             color: #d8c8f0;
             -webkit-text-stroke: 0.5px black; }
-          #wrap .contact .inner .content > .wrap .container .pic img, #wrap .contact .inner .content > .wrap .container .pic a {
-            display: none !important; }
-        #wrap .contact .inner .content > .wrap .container h2, #wrap .contact .inner .content > .wrap .container p {
-          display: none !important; }
-        #wrap .contact .inner .content > .wrap .container .success {
-          width: 100% !important;
-          padding: 20px !important; }
-        #wrap .contact .inner .content > .wrap .container .formBox {
-          width: 100% !important;
-          height: auto !important;
-          padding: 0px 10px !important; } }
+          #wrap .contact > .inner .content > .wrap .container .pic img, #wrap .contact > .inner .content > .wrap .container .pic a {
+            display: none; }
+        #wrap .contact > .inner .content > .wrap .container .success {
+          width: 100%;
+          padding: 10px 10px 20px; }
+          #wrap .contact > .inner .content > .wrap .container .success h2 {
+            font: bold 24px/1.3 Consolas;
+            margin-bottom: 20px; }
+          #wrap .contact > .inner .content > .wrap .container .success p {
+            padding: 0px;
+            word-break: break-all; }
+        #wrap .contact > .inner .content > .wrap .container .formBox {
+          width: 100%;
+          height: auto;
+          padding: 0px 10px; }
+          #wrap .contact > .inner .content > .wrap .container .formBox h2, #wrap .contact > .inner .content > .wrap .container .formBox p {
+            display: none; } }
 .playlist .inner .tab .addressBar p::after {
   content: "playlist"; }
 .playlist .inner .content .wrap {
@@ -2291,51 +2298,51 @@ a {
           clear: both; }
 
 @media screen and (max-width: 1180px) {
-  .playlist .popup {
+  #wrap .playlist .popup {
     width: 100%;
     z-index: 1000;
     overflow-y: scroll;
     left: 0px; } }
 @media screen and (max-width: 799px) {
-  .playlist .inner .content > .wrap {
-    padding-top: 0px !important; }
-  .playlist .item {
-    width: calc(100% / 2 - 3vw) !important;
-    margin: 15px 1.5vw !important; }
-  .playlist .popup .inner {
+  #wrap .playlist > .inner .content > .wrap {
+    padding-top: 0px; }
+    #wrap .playlist > .inner .content > .wrap .frame .item {
+      width: calc(100% / 2 - 3vw);
+      margin: 15px 1.5vw; }
+  #wrap .playlist .popup > .inner {
     min-height: calc(350px + 200px); }
-    .playlist .popup .inner .wrap {
-      width: 500px !important;
-      height: 350px !important; }
-      .playlist .popup .inner .wrap .player {
-        width: 40% !important; }
-      .playlist .popup .inner .wrap .video {
-        width: 60% !important;
-        padding: 50px 20px 30px 0px !important; }
-      .playlist .popup .inner .wrap iframe {
-        height: 150px !important; } }
+    #wrap .playlist .popup > .inner .wrap {
+      width: 500px;
+      height: 350px; }
+      #wrap .playlist .popup > .inner .wrap .container .player {
+        width: 40%; }
+      #wrap .playlist .popup > .inner .wrap .container .video {
+        width: 60%;
+        padding: 50px 20px 30px 0px; }
+        #wrap .playlist .popup > .inner .wrap .container .video iframe {
+          height: 150px; } }
 @media screen and (max-width: 549px) {
-  .playlist .inner .content {
-    padding: 50px 5vw !important; }
-  .playlist .tab .addressBar p::after {
-    content: "playlist!" !important; }
-  .playlist .item {
-    width: calc(100% / 1 - 3vw) !important;
-    margin: 15px 1.5vw !important; }
-  .playlist .popup .inner {
+  #wrap .playlist > .inner .tab .addressBar p::after {
+    content: "playlist!"; }
+  #wrap .playlist > .inner .content {
+    padding: 50px 5vw; }
+    #wrap .playlist > .inner .content > .wrap .frame .item {
+      width: calc(100% / 1 - 3vw);
+      margin: 15px 1.5vw; }
+  #wrap .playlist .popup > .inner {
     min-height: calc(645px + 200px ); }
-    .playlist .popup .inner .wrap {
-      width: calc(100% - 20px) !important;
+    #wrap .playlist .popup > .inner .wrap {
+      width: calc(100% - 20px);
       margin: 0 auto;
-      height: auto !important; }
-      .playlist .popup .inner .wrap .player {
-        width: 100% !important; }
-        .playlist .popup .inner .wrap .player .btns {
-          padding: 20px 0px 0px !important; }
-      .playlist .popup .inner .wrap .video {
-        width: 100% !important;
-        padding: 0px 20px 40px !important; }
-      .playlist .popup .inner .wrap iframe {
-        height: 230px !important; } }
+      height: auto; }
+      #wrap .playlist .popup > .inner .wrap .container .player {
+        width: 100%; }
+        #wrap .playlist .popup > .inner .wrap .container .player .btns {
+          padding: 20px 0px 0px; }
+      #wrap .playlist .popup > .inner .wrap .container .video {
+        width: 100%;
+        padding: 0px 20px 40px; }
+        #wrap .playlist .popup > .inner .wrap .container .video iframe {
+          height: 230px; } }
 
 /*# sourceMappingURL=style.css.map */

@@ -407,86 +407,90 @@
 
 
 @media screen and (max-width: 1399px) {
-    .blog {
-        >.inner .content {
-            padding: 50px 20px !important;
+#wrap .blog {
+    >.inner .content {
+        padding: 50px 20px;
 
-            .gridView article {
-                width: calc(100% / 3 - 20px) !important;
-            }
+        >.wrap .list.gridView article {
+            width: calc(100% / 3 - 20px);
         }
     }
+}
 }
 
 @media screen and (max-width: $web) {
-    .blog {
-        >.inner .content {
-            .gridView article {
-                width: calc(100% / 3 - 2.5vw) !important;
-                margin-right: 2.5vw !important;
-            }
+#wrap .blog {
+    >.inner .content {
+        >.wrap .list.gridView article {
+            width: calc(100% / 3 - 2.5vw);
+            margin-right: 2.5vw;
         }
     }
+}
 }
 
 @media screen and (max-width: 899px) {
-    .blog {
-        >.inner .content {
-            .gridView article {
-                width: calc(100% / 2 - 4vw) !important;
-                margin-right: 4vw !important;
-            }
+#wrap .blog {
+    >.inner .content {
+        >.wrap .list.gridView article {
+            width: calc(100% / 2 - 4vw);
+            margin-right: 4vw;
         }
     }
 }
+}
 
 @media screen and (max-width: $mobile) {
-    .blog {
-        .tab .addressBar {
-            p::after {
-                content: "blog!" !important;
-            }
+#wrap .blog >.inner {
+    .tab .addressBar {
+        p::after {
+            content: "blog!";
         }
+    }
 
-        >.inner .content {
-            padding: 50px 3vw !important;
+    .content {
+        padding: 50px 3vw;
 
+        >.wrap {
             .btns .viewType {
-                margin-right: 5px !important;
+                margin-right: 5px;
             }
 
-            .gridView {
-                padding-right: 5px !important;
+            .list.gridView {
+                padding-right: 5px;
 
                 article {
-                    width: calc(100%) !important;
-                    height: auto !important;
-                    max-height: 390px !important;
-                    margin: 15px 0px !important;
+                    width: 100%;
+                    height: auto;
+                    max-height: 390px;
+                    margin: 15px 0px;
 
-                    .pic {
-                        height: 150px !important;
+                    >.wrap .pic {
+                        height: 150px;
                     }
                 }
             }
+        }
 
-            .list:not(.gridView) article {
-                .wrap {
-                    padding: 15px 0px 15px 10px !important;
+        .list:not(.gridView) article {
+            .wrap {
+                padding: 15px 0px 15px 10px;
 
-                    .textBox {
-                        padding: 0px 10px !important;
-                        h2 {
-                            -webkit-line-clamp: 2 !important;
-                            margin-bottom: 10px !important;
-                        }
+                .textBox {
+                    padding: 0px 10px;
 
-                        .likes, .date {
-                            display: none !important;
-                        }
+                    h2 {
+                        -webkit-line-clamp: 2;
+                        margin-bottom: 10px;
+                    }
+
+                    p .likes, p .date {
+                        display: none;
                     }
                 }
             }
         }
     }
+    
+}
 }

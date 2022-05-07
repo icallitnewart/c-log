@@ -225,63 +225,63 @@
 
 
 @media screen and (max-width: $web) {
-    .contact {
-        .content>.wrap {
-            width: 95% !important;
-            margin: 30px auto !important;
-        }
+#wrap .contact {
+    >.inner .content >.wrap {
+        width: 95%;
+        margin: 30px auto;
     }
+}
 }
 
 @media screen and (max-width: $tablet) {
-    .contact {
-        .content>.wrap {
-            width: 100% !important;
-            box-shadow: 5px 5px 0px #444 !important;
+#wrap .contact {
+    >.inner .content >.wrap {
+        width: 100%;
+        box-shadow: 5px 5px 0px #444;
 
-            .container {
-                padding: 30px 30px 30px 20px !important;
+        .container {
+            padding: 30px 30px 30px 20px;
 
-                .success {
-                    padding: 20px 0px 0px 20px !important;
-                }
-    
-                .formBox {
-                    h2 {
-                        font-size: 1.1em !important;
-                    }
-    
-                    table {
-                        max-width: none !important;
-                    }
-                }
-
+            .success {
+                padding: 20px 0px 0px 20px;
             }
+
+            .formBox {
+                h2 {
+                    font-size: 1.1em;
+                }
+
+                fieldset table {
+                    max-width: none;
+                }
+            }
+
         }
     }
 }
+}
 
 @media screen and (max-width: $mobile) {
-#wrap .contact {
+#wrap .contact >.inner {
     .tab .addressBar {
         p::after {
-            content: "contact page!" !important;
+            content: "contact page!";
         }
     }
 
-    .inner .content {
+    .content {
         padding: 50px 5vw;
 
         >.wrap {
-            height: auto !important;
-            box-shadow: none !important;
+            height: auto;
+            box-shadow: none;
 
             .container {
-                padding: 5vw 5vw 7vw !important;
+                padding: 5vw 5vw 7vw;
 
                 .pic {
-                    width: 100% !important;
-                    height: 70px !important;
+                    width: 100%;
+                    height: 70px;
                     margin-bottom: 20px;
 
                     &::after {
@@ -292,23 +292,33 @@
                     }
 
                     img, a {
-                        display: none !important;
+                        display: none;
                     }
                 }
 
-                h2, p {
-                    display: none !important;
-                }
-
                 .success {
-                    width: 100% !important;
-                    padding: 20px !important;
+                    width: 100%;
+                    padding: 10px 10px 20px;
+
+                    h2 {
+                        font: bold 24px/1.3 $enFont1;
+                        margin-bottom: 20px;
+                    }
+
+                    p {
+                        padding: 0px;
+                        word-break: break-all;
+                    }
                 }
 
                 .formBox {
-                    width: 100% !important;
-                    height: auto !important;
-                    padding: 0px 10px !important;
+                    width: 100%;
+                    height: auto;
+                    padding: 0px 10px;
+                    
+                    h2, p {
+                        display: none;
+                    }
                 }
             }
         }

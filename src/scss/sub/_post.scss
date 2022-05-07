@@ -417,7 +417,7 @@
     padding: 20px 0px;
 
     .inner.view {
-        padding: 20px 3vw 40px !important;
+        padding: 20px 3vw 40px;
 
         .titleBox {
             .title {
@@ -425,7 +425,7 @@
                 
                 h2 {
                     margin-bottom: 5px;
-                    font-size: 20px !important;
+                    font-size: 20px;
                     word-break: break-all;
                 }
             }
@@ -439,7 +439,7 @@
                 }
 
                 &.react i {
-                    font-size: 30px !important;
+                    font-size: 30px;
                 }
             }
         }
@@ -488,20 +488,20 @@
                 float: left;
                 padding: 10px;
 
-                li {
+                li:nth-of-type(1n) {
                     width: 50px;
-                    margin-right: 10px !important;
-                    margin-bottom: 0px !important;
+                    margin-right: 10px;
+                    margin-bottom: 0px;
 
                     &:last-child {
-                        margin-right: 0px !important;
+                        margin-right: 0px;
                     }
                 }
             }
         }
 
         .editor {
-            width: 100% !important;
+            width: 100%;
         }
 
         .btns {
@@ -534,7 +534,7 @@
         .btns {    
             li {
                 button {
-                    width: 80px !important;
+                    width: 80px;
                 }
             }
         }
@@ -554,11 +554,11 @@
                 border: 2px solid #333;
 
                 i {
-                    font-size: 40px !important;
+                    font-size: 40px;
                 }
 
                 &.react i {
-                    font-size: 30px !important;
+                    font-size: 30px;
                 }
             }
 
@@ -570,8 +570,8 @@
                 margin-top: 0px;
             }
 
-            ul li {
-                margin-right: 5px !important;
+            ul li:nth-of-type(1n) {
+                margin-right: 5px;
             }
         }
 

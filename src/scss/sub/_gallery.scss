@@ -197,63 +197,63 @@
 
 
 @media screen and (max-width: $web) {
-    .gallery {
-        .item {
-            width: calc(100% / 3 - 2vw) !important;
-        }
+#wrap .gallery {
+    >.inner .content >.wrap .frame .item {
+        width: calc(100% / 3 - 2vw);
+    }
 
-        .popup {
-            z-index: 1000;
-            width: 100%;
-            margin-left: 0px;
-            overflow-y: scroll;
+    .popup {
+        z-index: 1000;
+        width: 100%;
+        margin-left: 0px;
+        overflow-y: scroll;
 
-            .inner {
-                min-height: calc(450px + 200px);
-            }
+        .inner {
+            min-height: calc(450px + 200px);
         }
     }
+}
 }
 
 @media screen and (max-width: $tablet) {
-    .gallery {
-        .item {
-            width: calc(100% / 2 - 3vw) !important;
-            margin: 1.5vw !important;
-        }
-        
-        .popup {
-            .inner {
-                min-height: calc(350px + 200px);
-                
-                .wrap {
-                    width: 500px !important;
-                    height: 350px !important;
-                }
+#wrap .gallery {
+    >.inner .content >.wrap .frame .item {
+        width: calc(100% / 2 - 3vw);
+        margin: 1.5vw;
+    }
+    
+    .popup {
+        .inner {
+            min-height: calc(350px + 200px);
+            
+            .wrap {
+                width: 500px;
+                height: 350px;
             }
         }
     }
 }
+}
 
 @media screen and (max-width: $mobile) {
-    .gallery {
+#wrap .gallery {
+    >.inner {
         .tab .addressBar {
             p::after {
-                content: "gallery!" !important;
+                content: "gallery!";
             }
         }
 
-        .item {
-            width: calc(100% / 1 - 2vw) !important;
-            margin: 15px 1vw !important;
+        .content >.wrap .frame .item {
+            width: calc(100% / 1 - 2vw);
+            margin: 15px 1vw;
         }
+    } 
 
-        .popup {
-            .inner {            
-                .wrap {
-                    width: calc(100% - 50px) !important;
-                }
-            }
+    .popup {
+        .inner >.wrap {   
+            width: calc(100% - 50px);
         }
     }
+}
 }
