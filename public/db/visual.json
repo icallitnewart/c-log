@@ -3,38 +3,33 @@
         [
             {
                 "type" : "Home",
-                "en" : "Greetings! Thanks for visiting <C-log/>. This website is a blog of an aspiring front-end developer. You can see what I've learned while studying, and there are also places to rest and heal as a break from studying. If you would like to know more about each page of this website, please click on the folders located around the computer picture!",
-                "ko" : "안녕하세요! <C-log/>에 오신 것을 환영합니다. 이 홈페이지는 프론트엔드 개발자 지망생의 개인 블로그입니다. 제가 코딩 공부를 하며 배운 것들을 기록한 글들을 보실 수 있으며, 그 외에 코딩하다가 힐링하며 쉴 수 있는 코너들이 마련되어 있습니다. 각 페이지에 대해 알고 싶으시면 컴퓨터 그림 옆의 폴더를 눌러보시길 바랍니다! *사용 스킬: HTML, CSS, JavaScript, React, Redux"
+                "en" : "Greetings! Welcome to <C-log/>. This website is a personal homepage of an aspiring front-end developer and built using React. If you would like to know more about each page of this website, please click on the folders located around the computer picture!",
+                "ko" : "안녕하세요! <C-log/>에 오신 것을 환영합니다. 이 사이트는 프론트엔드 개발자 지망생의 개인 홈페이지이며, React를 이용해 제작되었습니다. 각 페이지에 대해 알고 싶으시다면 컴퓨터 그림 주변의 폴더를 눌러보시길 바랍니다!"
             },
             {
                 "type" : "About",
-                "en" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos autem soluta magni nobis quibusdam corrupti necessitatibus adipisci obcaecati laudantium corporis inventore sit possimus asperiores tempore suscipit, eum, vero voluptatem? Quis!",
-                "ko" : "About 페이지 설명입니다. About 페이지 설명입니다.About 페이지 설명입니다.About 페이지 설명입니다.About 페이지 설명입니다.About 페이지 설명입니다.About 페이지 설명입니다.About 페이지 설명입니다.About 페이지 설명입니다."
+                "en" : "In the About page, you can find out information about me as well as detailed descriptions on each page of this website. Using the concept of online chat, it takes the form of an interview, with questions and answers.",
+                "ko" : "About 페이지에선 저에 대한 정보와 이 사이트의 각 페이지에 대한 자세한 설명을 읽으실 수 있습니다. 인터뷰처럼 묻고 답하기 형식이며, 채팅창 컨셉으로 꾸며졌습니다."
             },
             {
                 "type" : "Blog",
-                "en" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos autem soluta magni nobis quibusdam corrupti necessitatibus adipisci obcaecati laudantium corporis inventore sit possimus asperiores tempore suscipit, eum, vero voluptatem? Quis!",
-                "ko" : "Blog 페이지 설명입니다. Blog 페이지 설명입니다.Blog 페이지 설명입니다.Blog 페이지 설명입니다.Blog 페이지 설명입니다.Blog 페이지 설명입니다.Blog 페이지 설명입니다.Blog 페이지 설명입니다."
+                "en" : "The Blog page is the place where I write what I’ve learned while studying coding. CRUD operations are implemented via local storage. Also, posts can be classified according to four categories: HTML, CSS, JS and React.",
+                "ko" : "Blog 페이지는 제가 코딩 공부를 하다가 배운 것을 기록한 글들이 올라오는 공간입니다. 로컬스토리지로 CRUD 기능을 구현하였으며, HTML, CSS, JS, React 총 4개의 카테고리로 분류해서 보실 수 있습니다."
             },
             {
                 "type" : "Gallery",
-                "en" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos autem soluta magni nobis quibusdam corrupti necessitatibus adipisci obcaecati laudantium corporis inventore sit possimus asperiores tempore suscipit, eum, vero voluptatem? Quis!",
-                "ko" : "Gallery 페이지 설명입니다. Gallery 페이지 설명입니다. Gallery 페이지 설명입니다. Gallery 페이지 설명입니다. Gallery 페이지 설명입니다. Gallery 페이지 설명입니다. Gallery 페이지 설명입니다. "
+                "en" : "The purpose of the Gallery page is to provide a space where one may rest as a break from studying coding. The gallery contains the photos of animals as well as the most liked ones. You can choose from three categories: popular, cats and dogs.",
+                "ko" : "Gallery 페이지는 코딩 공부하다가 잠깐 휴식을 취하며 힐링할 수 있도록 마련된 코너입니다. 인기 사진들 및 동물 사진들을 모아놓은 갤러리이며, popular, cats, dogs 총 세개의 카테고리를 선택하실 수 있습니다."
             },
             {
                 "type" : "Playlist",
-                "en" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos autem soluta magni nobis quibusdam corrupti necessitatibus adipisci obcaecati laudantium corporis inventore sit possimus asperiores tempore suscipit, eum, vero voluptatem? Quis!",
-                "ko" : "Playlist 페이지 설명입니다.Playlist 페이지 설명입니다.Playlist 페이지 설명입니다.Playlist 페이지 설명입니다.Playlist 페이지 설명입니다.Playlist 페이지 설명입니다.Playlist 페이지 설명입니다.Playlist 페이지 설명입니다."
+                "en" : "The Playlist page lets you enjoy a playlist of Lo-fi music that is nice to listen to while coding. If you click on the thumbnail, you can watch a youtube video.",
+                "ko" : "Playlist 페이지에서는 코딩하면서 듣기 좋은 Lo-fi 음악들을 모아놓은 플레이리스트를 즐기실 수 있습니다. 썸네일을 클릭하시면 유튜브 영상을 보실 수 있습니다."
             },
             {
                 "type" : "Contact",
-                "en" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos autem soluta magni nobis quibusdam corrupti necessitatibus adipisci obcaecati laudantium corporis inventore sit possimus asperiores tempore suscipit, eum, vero voluptatem? Quis!",
-                "ko" : "Contact 페이지 설명입니다. Contact 페이지 설명입니다. Contact 페이지 설명입니다. Contact 페이지 설명입니다. Contact 페이지 설명입니다. Contact 페이지 설명입니다. Contact 페이지 설명입니다. "
-            },
-            {
-                "type" : "Study",
-                "en" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos autem soluta magni nobis quibusdam corrupti necessitatibus adipisci obcaecati laudantium corporis inventore sit possimus asperiores tempore suscipit, eum, vero voluptatem? Quis!",
-                "ko" : "Study 페이지 설명입니다. Study 페이지 설명입니다. Study 페이지 설명입니다. Study 페이지 설명입니다. Study 페이지 설명입니다. Study 페이지 설명입니다. Study 페이지 설명입니다. Study 페이지 설명입니다. "
+                "en" : "You can leave me a message in the Contact page. If you write your name, email address and message, it will be delivered to my email address. A reply will be sent to your email address within 2-3 days.",
+                "ko" : "Contact 페이지에서 저에게 하고 싶으신 말씀을 남기실 수 있습니다. 이름, 이메일 주소, 내용을 적어 보내주시면 저의 메일로 전달되며 적어주신 이메일 주소로 2-3일 내에 답장을 드리도록 하겠습니다."
             }
         ]
         
