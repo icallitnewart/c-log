@@ -1,95 +1,112 @@
 {
     "data" : [
         {
-            "title" : "1Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, exercitationem?",
+            "title" : "DOCTYPE",
             "index" : 1,
-            "writer" : "Alice Campbell",
+            "writer" : "icallitnewart",
             "date" : "2022/01/01 15:38",
             "category" : "HTML",
             "likes" : 24,
-            "content" : " Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, voluptatem enim. Perferendis sed laudantium recusandae sunt quisquam veniam cumque? Incidunt optio quae ratione aspernatur voluptatum natus. Perspiciatis optio ea quibusdam?"
+            "content" : "<h2 id=doctype->💬 DOCTYPE이란?</h2><p>DOCTYPE이란 Document Type의 약어로, 페이지의 HTML 버전을 웹 브라우저에 알려주는 선언문이다.<h3 id=->✅ 특징</h3><ul><li>DOCTYPE은 태그를 정의하기 전에 선언해야 한다.</li><li>HTML5 표준에 대한 DOCTYPE 선언은 다음과 같다. <code>&lt;!DOCTYPE html></code></li></ul>"
         },
         {
-            "title" : "2Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, exercitationem?",
+            "title" : "CSS 단위 비교",
             "index" : 2,
-            "writer" : "Lorem ipsum.",
+            "writer" : "icallitnewart",
             "date" : "2022/01/03 20:25",
             "category" : "CSS",
             "likes" : 12,
-            "content" : " Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, voluptatem enim. Perferendis sed laudantium recusandae sunt quisquam veniam cumque? Incidunt optio quae ratione aspernatur voluptatum natus. Perspiciatis optio ea quibusdam?"
+            "content" : "<h2 id=css->CSS 단위 종류</h2><h3 id=1->✅ %</h3><ul><li>기준점: <strong>부모 요소</strong>의 너비, 높이</li></ul><h3 id=2-vw-vh>✅ vw, vh</h3><ul><li>기준점: <strong>뷰포트</strong></li><li><strong>vw (viewport width)</strong><br/>⇒ 1vw = 뷰포트 너비의 1%</li><li><strong>vh (viewport height)</strong><br/>⇒ 1vh = 뷰포트 높이의 1%</li></ul><h3 id=3-em-rem>✅ em, rem</h3><ul><li>기준점: <strong>상위 요소</strong></li><li><strong>em</strong><br/>⇒ 1em = <strong>부모</strong> 요소의 폰트 사이즈 * 1</li><li><strong>rem (root em)</strong><br/>⇒ 1rem = <strong>최상위</strong> 요소(보통 html 태그)의 폰트 사이즈 * 1<br/>⇒ 부모 요소에 따라 변하는 em에 비해 광범위한 최상위 요소를 기준으로 하는 rem이 접근성 면에서 더 편리함.</li></ul><h3 id=4-vmin-vmax>✅ vmin, vmax</h3><ul><li><strong>뷰포트</strong>의 너비 또는 높이를 기준으로 <strong>최대값, 최소값</strong> 지정</li><li>📄 예시<ol><li>브라우저의 크기: 너비 1000px / 높이 500px<br/>⇒ 1vmin = 5px / 1vmax = 10px</li><li>브라우저의 크기: 너비 700px / 높이 1200px<br/>⇒ 1vmin = 7px / 1vmax =12px</li></ol></li><li>참고: IE 9-11에선 지원 X</li></ul>"
         },
         {
-            "title" : "3Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, exercitationem?",
+            "title" : "const, let, var",
             "index" : 3,
-            "writer" : "Lorem ipsum.",
+            "writer" : "icallitnewart",
             "date" : "2022/01/07 12:39",
             "category" : "JS",
             "likes" : 57,
-            "content" : " Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, voluptatem enim. Perferendis sed laudantium recusandae sunt quisquam veniam cumque? Incidunt optio quae ratione aspernatur voluptatum natus. Perspiciatis optio ea quibusdam?"
+            "content" : "<h2 id=->변수 선언 방식 비교</h2><h3 id=1-var>✅ var</h3><ul><li><strong>함수</strong> 레벨 스코프</li><li>선언 전에 사용 가능 (에러X)</li><li><strong>선언과 동시에 초기화</strong>가 이루어짐</li><li>호이스팅되면서 <strong>초기값이 없으면 자동으로 undefined를 초기값</strong>으로 하여 메모리에 할당</li><li>즉, 선언 전에 접근을 해도 undefined로 초기화가 된 상태이므로 선언 전에 사용해도 에러가 나지 않는다.<pre><code class=lang-jsx><span class=hljs-built_in>console</span>.log(a); <span class=hljs-comment>// undefined</span><br/><span class=hljs-keyword>var</span> a;</code></pre></li><li>같은 이름의 변수 <strong>중복 선언 가능</strong> (에러X)</li><li>변수 선언시 초기값 할당 필수 아님</li><li><strong>재할당 가능</strong></li></ul><h3 id=2-let>✅ let</h3><ul><li><strong>블록</strong> 레벨 스코프</li><li>선언 전에 사용 불가</li><li><strong>선언과 초기화 단계가 분리</strong>되어 진행</li><li>호이스팅되면서 초기값이 없으면 변수를 위한 메모리 공간이 존재하지 않기 때문에 <em>ReferenceError</em> 참조 에러 발생 ⇒ <strong>Temporal Dead Zone</strong><pre><code class=lang-jsx>console.<span class=hljs-built_in>log</span>(a); <span class=hljs-comment>// Uncaught ReferenceError: a is not defined</span><br/><span class=hljs-comment>//호이스팅되어 스코프에 변수가 등록되었지만 초기화가 되어있지 않으므로 에러 발생</span><br/><span class=hljs-keyword>let</span> a = <span class=hljs-number>1</span>; <span class=hljs-comment>//변수 선언문에 도달하여 초기화 발생</span><br/>console.<span class=hljs-built_in>log</span>(a); <span class=hljs-comment>// 1</span></code></pre></li><li>같은 이름의 변수 <strong>중복 선언 불가</strong></li><li>변수 선언시 초기값 할당 필수 아님</li><li><strong>재할당 가능</strong></li></ul><h3 id=3-const>✅ const</h3><ul><li><strong>블록</strong> 레벨 스코프</li><li>선언 전에 사용 불가</li><li>호이스팅되면서 초기값이 없으면 변수를 위한 메모리 공간이 존재하지 않기 때문에 <em>ReferenceError</em> 참조 에러 발생 ⇒ <strong>Temporal Dead Zone</strong><pre><code class=lang-jsx>console.<span class=hljs-built_in>log</span>(a); <span class=hljs-comment>// Uncaught ReferenceError: a is not defined</span><br/><span class=hljs-keyword>const</span> a = <span class=hljs-number>1</span>;</code></pre></li><li>같은 이름의 변수 <strong>중복 선언 불가</strong></li><li>변수 선언시 <strong>초기값 할당 필수</strong><pre><code class=lang-jsx><span class=hljs-keyword>const</span> a;<br/>console.<span class=hljs-built_in>log</span>(a); <span class=hljs-comment>// Uncaught SyntaxError: Missing initializer in const declaration</span></code></pre></li><li><strong>재할당 불가</strong></li></ul><h3 id=-hoisting->✳Hoisting이란?</h3><p>var, let, const, function, class 등 모든 선언문을 해당 스코프의 선두로 옮긴 것처럼 동작하는 특성이다.</p><h3 id=-temporal-dead-zone->✳Temporal Dead Zone이란?</h3><p>일시적인 사각지대라는 의미로, 선언 단계에서 초기화 시작 전까지의 구간을 가르킨다.</p>"
         },
         {
-            "title" : "4Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, exercitationem?",
+            "title" : "시멘틱 태그(Semantic Tag)",
             "index" : 4,
-            "writer" : "Lorem ipsum.",
+            "writer" : "icallitnewart",
             "date" : "2022/01/09 17:44",
-            "category" : "REACT",
+            "category" : "HTML",
             "likes" : 33,
-            "content" : " Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, voluptatem enim. Perferendis sed laudantium recusandae sunt quisquam veniam cumque? Incidunt optio quae ratione aspernatur voluptatum natus. Perspiciatis optio ea quibusdam?"
+            "content" : "<h2 id=-semantic-tag->💬 시멘틱 태그(Semantic Tag)란?</h2><p>시멘틱 태그(Semantic Tag)란 말 그대로 <strong>의미를 갖고 있는 태그</strong>를 뜻한다. <code>&lt;div&gt;</code>태그처럼 사이트의 레이아웃을 설계하기 위한 태그지만, 아무런 의미가 없어서 내용을 유추할 수 없는 <code>&lt;div&gt;</code>태그와는 달리 태그 이름 자체가 내용을 정의하므로 <strong>HTML의 구조를 파악하기 용이</strong>하다.</p><h3 id=->👍🏻 장점</h3><ol><li><strong>검색엔진최적화(SEO: Search Engine Optimization)</strong><br/>시맨틱 태그를 통해 웹 페이지 내의 정보를 의미 단위로 잘 구분함으로써 검색 엔진이 웹 문서의 내용을 쉽게 검색할 수 있게 도와준다.</li><li><strong>웹 접근성</strong><br/>시각장애가 있는 사용자가 이용하는 웹 보조기구(스크린리더) 환경에서 페이지를 탐색하는데 도움이 된다.</li><li><strong>유지보수의 용이성</strong><br/>태그의 이름만 보고도 직관적으로 어떤 내용인지 파악할 수 있으므로 코드의 가독성이 좋기 때문에 관리하기가 더 수월하다.</li></ol><h3 id=->✅ 종류</h3><ul><li><strong>header</strong> : 머리글, 제목 등으로 페이지를 소개</li><li><strong>nav</strong> : 사이트 내 다른 페이지로의 이동을 가능하게 하는 네비게이션 링크</li><li><strong>section</strong> : 컨텐츠를 주제별로 나누어 섹션을 구분하는 용도로 사용</li><li><strong>article</strong> : 텍스트 위주의 페이지(ex. 기사)를 구성할 때 사용</li><li><strong>main</strong> : 문서의 본문에 해당하는 컨텐츠를 정의</li><li><strong>figure</strong> : 사진, 도표, 비디오 등 독립적인 콘텐츠를 정의</li><li><strong>aside</strong> : 사이드 위치의 공간을 활용하며, 본문 외의 부수적인 내용을 표현</li><li><strong>footer</strong> : 제작 정보 및 저작권 정보 표시</li></ul>"
         },
         {
-            "title" : "5Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, exercitationem?",
+            "title" : "display 속성",
             "index" : 5,
-            "writer" : "Lorem ipsum.",
+            "writer" : "icallitnewart",
             "date" : "2022/01/12 09:42",
-            "category" : "JS",
-            "likes" : 124,
-            "content" : " Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, voluptatem enim. Perferendis sed laudantium recusandae sunt quisquam veniam cumque? Incidunt optio quae ratione aspernatur voluptatum natus. Perspiciatis optio ea quibusdam?"
-        },
-        {
-            "title" : "6Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, exercitationem?",
-            "index" : 6,
-            "writer" : "Lorem ipsum.",
-            "date" : "2022/01/16 18:33",
             "category" : "CSS",
-            "likes" : 88,
-            "content" : " Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, voluptatem enim. Perferendis sed laudantium recusandae sunt quisquam veniam cumque? Incidunt optio quae ratione aspernatur voluptatum natus. Perspiciatis optio ea quibusdam?"
+            "likes" : 124,
+            "content" : "<h2 id=-block->✅ 블록(block)</h2><ul><li><strong>자동 줄바꿈</strong> (새로운 라인에서 시작)</li><li>넓이값 미지정시 해당 라인의 <strong>모든 너비(100%)</strong>를 차지</li><li>넓이와 높이값 <strong>지정 가능</strong></li><li><strong>블록 요소와 인라인 요소 태그</strong> 모두를 감쌀 수 있음</ul><h2 id=-inline->✅ 인라인(inline)</h2><ul><li>자동 줄바꿈 안됨 (옆으로 붙음)</li><li>태그로 감싼 텍스트의 넓이와 높이가 태그의 크기</li><li>넓이와 높이값 <strong>변경 불가</strong></li><li><strong>인라인 요소 태그</strong>만 감쌀 수 있음</li></ul><h2 id=-inline-block->✅ 인라인 블록(inline-block)</h2><ul><li>자동 줄바꿈 안됨</li><li>크기 미지정시 태그의 내용물 크기가 태그의 크기</li><li>넓이와 높이값 <strong>지정 가능</strong></li><li>즉, <strong>인라인의 특성</strong>을 그대로 가지고 가지만 예외적으로 <strong>크기만 변경 가능</strong></li></ul>"
         },
         {
-            "title" : "7Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, exercitationem?",
+            "title" : "undefined, null, undeclared",
+            "index" : 6,
+            "writer" : "icallitnewart",
+            "date" : "2022/01/16 18:33",
+            "category" : "JS",
+            "likes" : 88,
+            "content" : "<h2 id=1-undefined->💬 undefined란?</h2><p>변수가 <strong>선언되었으나 초기화만</strong> 되었을 뿐 아무런 값도 할당되지 않은 상태</p><pre><code class=lang-jsx><span class=hljs-keyword>let</span> a;<br/>console.<span class=hljs-built_in>log</span>(a);  <span class=hljs-comment>// undefined</span></code></pre><h2 id=2-null->💬 null이란?</h2><p>변수를 선언하고 임의적으로 <strong>빈값을 할당</strong>한 상태</p><pre><code class=lang-jsx><span class=hljs-keyword>let</span> a = <span class=hljs-built_in>null</span>;<br/>console.<span class=hljs-built_in>log</span>(a);  <span class=hljs-comment>// null</span></code></pre><h2 id=3-undeclared->💬 undeclared란?</h2><p>변수의 <strong>선언조차 되어있지 않은</strong> 상태</p><pre><code class=lang-jsx>console.<span class=hljs-built_in>log</span>(<span class=hljs-keyword>a</span>); <span class=hljs-comment> // Uncaught ReferenceError: a is not defined</span></code></pre>"
+        },
+        {
+            "title" : "srcset",
             "index" : 7,
-            "writer" : "Lorem ipsum.",
+            "writer" : "icallitnewart",
             "date" : "2022/01/18 11:21",
             "category" : "HTML",
             "likes" : 72,
-            "content" : " Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, voluptatem enim. Perferendis sed laudantium recusandae sunt quisquam veniam cumque? Incidunt optio quae ratione aspernatur voluptatum natus. Perspiciatis optio ea quibusdam?"
+            "content" : "<h2 id=srcset->💬 srcset이란?</h2><p>srcset은 <strong>기기의 디스플레이 너비에 따라 다른 해상도의 이미지를 제공할 때 사용</strong>하는 속성이다. 저사양 기기에는 저해상도의 이미지를 제공하여 쓸데없는 데이터 낭비를 방지하거나, 고사양 디스플레이를 가진 기기에는 고품질의 이미지를 제공함으로써 사용자 경험을 향상시킬 수 있다.</p><h3 id=->📄 사용 예시</h3><pre><code class=lang-jsx>&lt;img srcset=<span class=hljs-string>'images/sample_small.jpg 500w,</span>images/sample_medium.jpg <span class=hljs-number>1000</span>w, images/sample_large.jpg <span class=hljs-number>2000</span>w<span class=hljs-string>' </span> src=<span class=hljs-string>'images/sample.jpg'</span> alt=<span class=hljs-string>'sample image'</span> />"
         },
         {
-            "title" : "8Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, exercitationem?",
+            "title" : "aria-label과 aria-labelledby",
             "index" : 8,
-            "writer" : "Lorem ipsum.",
+            "writer" : "icallitnewart",
             "date" : "2022/01/21 13:25",
-            "category" : "REACT",
+            "category" : "CSS",
             "likes" : 66,
-            "content" : " Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, voluptatem enim. Perferendis sed laudantium recusandae sunt quisquam veniam cumque? Incidunt optio quae ratione aspernatur voluptatum natus. Perspiciatis optio ea quibusdam?"
+            "content" : "<h2 id=aria-label->💬 aria-label이란?</h2><p>화면에 현재 요소를 정의할 레이블(<strong>설명할 텍스트</strong>)이 <strong>없을</strong> 경우, 설명용 텍스트를 담아주는 용도로 사용하는 속성이다.</p><h3 id=->✅ 특징</h3><ol><li>모든 태그에 사용 가능</li><li>이미지를 사용할 경우 대체 텍스트 역할</li></ol><h3 id=->📄 사용 예시</h3><pre><code class=lang-jsx>&lt;<span class=hljs-keyword>button</span> aria-label=<span class=hljs-string>'Close'</span> <span class=hljs-keyword>onclick</span>=<span class=hljs-string>'myDialog.close()'</span>>X&lt;/<span class=hljs-keyword>button</span>></code></pre><h2 id=aria-labelledby->💬 aria-labelledby란?</h2><p>화면에 현재 요소를 <strong>설명할 텍스트</strong>가 <strong>있을</strong> 경우 해당 <strong>텍스트와 연결할 때</strong> 사용하는 속성이다.</p><h3 id=->✅ 특징</h3><ol><li>숨겨져 있는 텍스트 요소(display: none)에서 사용 가능</li><li>모든 태그에 사용 가능</li></ol><h3 id=->📄 사용 예시</h3><pre><code class=lang-jsx><span class=hljs-tag>&lt;<span class=hljs-name>span</span> <span class=hljs-attr>id</span>=<span class=hljs-string>'hb-label'</span> <span class=hljs-attr>style</span>=<span class=hljs-string>'display: none'</span>></span>Hobbies<span class=hljs-tag>&lt;/<span class=hljs-name>span</span>></span><br/><span class=hljs-tag>&lt;<span class=hljs-name>div</span> <span class=hljs-attr>role</span>=<span class=hljs-string>'radiogroup'</span> <span class=hljs-attr>aria-labelledby</span>=<span class=hljs-string>'hb-label'</span>></span><br/><span class=hljs-tag>&lt;<span class=hljs-name>div</span>></span><br/><span class=hljs-tag>&lt;<span class=hljs-name>input</span> <span class=hljs-attr>type</span>=<span class=hljs-string>'radio'</span> <span class=hljs-attr>name</span>=<span class=hljs-string>'hobby'</span> <span class=hljs-attr>id</span>=<span class=hljs-string>'hobby1'</span>></span><br/><span class=hljs-tag>&lt;<span class=hljs-name>label</span> <span class=hljs-attr>for</span>=<span class=hljs-string>'hobby1'</span>></span>Game<span class=hljs-tag>&lt;/<span class=hljs-name>label</span>></span><br/><span class=hljs-tag>&lt;/<span class=hljs-name>div</span>></span><br/><span class=hljs-tag>&lt;<span class=hljs-name>div</span>></span><br/><span class=hljs-tag>&lt;<span class=hljs-name>input</span> <span class=hljs-attr>type</span>=<span class=hljs-string>'radio'</span> <span class=hljs-attr>name</span>=<span class=hljs-string>'hobby'</span> <span class=hljs-attr>id</span>=<span class=hljs-string>'hobby2'</span>></span><br/><span class=hljs-tag>&lt;<span class=hljs-name>label</span> <span class=hljs-attr>for</span>=<span class=hljs-string>'hobby2'</span>></span>Music<span class=hljs-tag>&lt;/<span class=hljs-name>label</span>></span><br/><span class=hljs-tag>&lt;/<span class=hljs-name>div</span>></span><br/><span class=hljs-tag>&lt;<span class=hljs-name>div</span>></span><br/><span class=hljs-tag>&lt;<span class=hljs-name>input</span> <span class=hljs-attr>type</span>=<span class=hljs-string>'radio'</span> <span class=hljs-attr>name</span>=<span class=hljs-string>'hobby'</span> <span class=hljs-attr>id</span>=<span class=hljs-string>'hobby3'</span>></span><br/><span class=hljs-tag>&lt;<span class=hljs-name>label</span> <span class=hljs-attr>for</span>=<span class=hljs-string>'hobby3'</span>></span>Movie<span class=hljs-tag>&lt;/<span class=hljs-name>label</span>></span><br/><span class=hljs-tag>&lt;/<span class=hljs-name>div</span>></span><br/><span class=hljs-tag>&lt;<span class=hljs-name>div</span>></span><br/><span class=hljs-tag>&lt;<span class=hljs-name>input</span> <span class=hljs-attr>type</span>=<span class=hljs-string>'radio'</span> <span class=hljs-attr>name</span>=<span class=hljs-string>'hobby'</span> <span class=hljs-attr>id</span>=<span class=hljs-string>'hobby4'</span>></span><br/><span class=hljs-tag>&lt;<span class=hljs-name>label</span> <span class=hljs-attr>for</span>=<span class=hljs-string>'hobby4'</span>></span>Sports<span class=hljs-tag>&lt;/<span class=hljs-name>label</span>></span><br/><span class=hljs-tag>&lt;/<span class=hljs-name>div</span>></span><br/><span class=hljs-tag>&lt;/<span class=hljs-name>div</span>></span></code></pre>"
         },
         {
-            "title" : "9Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, exercitationem?",
+            "title" : "변수 선언, 초기화, 할당",
             "index" : 9,
-            "writer" : "Lorem ipsum.",
+            "writer" : "icallitnewart",
             "date" : "2022/01/25 16:45",
             "category" : "JS",
             "likes" : 38,
-            "content" : "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi consectetur ut ullam incidunt, officiis officia facilis doloribus assumenda fugiat minima inventore doloremque ratione tempora libero nam quisquam sit perspiciatis id corrupti perferendis sed culpa excepturi. Consequuntur, numquam consectetur? In ipsa cumque, pariatur nihil reiciendis voluptate laudantium autem aut quia voluptas nostrum, iure neque ipsam dolorem. Dicta labore eligendi, maxime quod maiores magni laborum. Earum mollitia numquam eaque facilis perspiciatis nulla sapiente nihil qui, perferendis totam quibusdam facere nemo velit officiis laboriosam in neque laudantium architecto, dolor non! Voluptatem eveniet, neque accusantium ea quas officiis sequi, deserunt perspiciatis eligendi quaerat nobis repudiandae aspernatur aliquid omnis et ab cum dolorum placeat necessitatibus obcaecati itaque voluptates. Aut deleniti delectus eos labore deserunt accusamus mollitia pariatur nihil modi explicabo quod consectetur rem, porro dolores veniam. Ad corporis maiores facere excepturi eius eveniet magni ullam, qui ratione repellat sequi architecto quaerat ex reprehenderit earum culpa sit vero porro velit? Ratione vel, blanditiis placeat suscipit id asperiores ut nulla facere temporibus, possimus laborum, minus quidem doloribus! Delectus aut doloribus accusantium molestias adipisci quaerat optio atque earum voluptas veniam dolorem qui, aspernatur exercitationem non animi necessitatibus accusamus obcaecati consectetur cumque eaque ipsum commodi. Autem obcaecati fuga repellat! Enim vero eius corrupti amet minima, repellendus ea commodi itaque. Tenetur magnam iure perspiciatis harum sapiente, distinctio, laboriosam, reiciendis voluptates odio eligendi numquam in impedit. Quasi nam voluptas eos quaerat unde, non ipsa deserunt quos. Nisi mollitia at velit quas fuga libero iusto dolore quae laudantium in culpa eaque dicta nobis ad, eos similique amet, sed <br />rerum commodi explicabo dolorem itaque! Dolores commodi distinctio dignissimos nulla expedita quidem, ad blanditiis enim qui sit exercitationem est optio quos adipisci, nobis, quia placeat at excepturi harum delectus praesentium provident suscipit! Ducimus necessitatibus explicabo accusamus possimus nemo delectus consectetur, dolor iure dignissimos commodi?"
+            "content" : "<h2 id=-declaration->💬 변수 선언(Declaration)이란?</h2><p>변수 선언 키워드(var, let, const)를 이용하여 변수 이름을 선언하면, 다음과 같이 값을 저장하기 위한 준비를 한다.</p><ol><li><strong>메모리 공간</strong>을 확보</li><li>변수 <strong>이름</strong>과 확보한 <strong>메모리 공간의 주소</strong>를 <strong>연결</strong></li></ol><p>즉, <strong>변수 이름을 실행 컨텍스트에 등록하여 자바스크립트 엔진에 변수의 존재를 알린다.</strong></p><h2 id=-initialization->💬 변수 초기화(Initialization)란?</h2><p>값을 저장하기 위한 메모리 공간이 확보되면, 자동으로 <strong>undefined를 할당</strong>하여 초기화된다.</p><h2 id=-assignment->💬 변수 할당(Assignment)이란?</h2><p>undefined로 <strong>초기화된 변수에 사용자가 새로운 값을 지정</strong>하여 할당한다. (단, undefined가 할당된 공간에 새로운 값을 덮어씌우는 것이 아니라 새로운 메모리 공간을 확보하고 그곳에 지정한 값을 저장한다.)</p>"
         },
         {
-            "title" : "10Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, exercitationem?",
+            "title" : "리액트의 개념, 특징 및 장점",
             "index" : 10,
-            "writer" : "Lorem ipsum.",
+            "writer" : "icallitnewart",
             "date" : "2022/01/30 05:08",
             "category" : "REACT",
             "likes" : 22,
-            "content" : " Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, voluptatem enim. Perferendis sed laudantium recusandae sunt quisquam veniam cumque? Incidunt optio quae ratione aspernatur voluptatum natus. Perspiciatis optio ea quibusdam?"
+            "content" : "<h2 id=->💬 개념</h2><p>리액트란 SPA(Single Page Application)의 UI(User Interface)를 구축하기 위한 자바스크립트 프론트엔드 라이브러리이다.</p><h3 id=->💡 작동 원리</h3><p>리액트는 실제 DOM을 조작하는 대신, DOM의 사본이라고 할 수 있는 <strong>가상 DOM을 생성해 브라우저가 이를 렌더링하는 방식</strong>을 따른다. 동적으로 데이터가 변경되었을 때 새로 생성된 가상 DOM과 이전에 저장된 가상 DOM을 비교하여 <strong>변경된 부분의 DOM만을 업데이트</strong>한다. (⇒ <strong>조화<em>reconciliation</em></strong> 과정)</p><h2 id=->✅ 특징</h2><ul><li>자바스크립트에서 HTML을 사용하게 해주는 문법인 <strong>JSX</strong>(Javascript XML)를 사용한다.</li><li><strong>단방향 데이터 바인딩</strong>을 사용한다.</li><li><strong>가상 DOM(Virtual DOM)</strong>을 사용한다.</li><li><strong>컴포넌트(Component) 기반</strong>이다.</li></ul><h2 id=->👍🏻 장점</h2><ul><li>가상 DOM을 사용하여 <strong>UI를 더 빠르게 렌더링</strong>할 수 있다. (가상 DOM은 메모리에 가상으로 존재하는 DOM으로, 자바스크립트 객체이기 때문에 작동 성능이 일반적인 DOM보다 빠르다.) 따라서 <strong>동적인 UI에 최적화</strong>되어 있다.</li><li><strong>서버 사이드</strong>와 <strong>클라이언트 사이드 렌더링</strong> 지원이 가능하다.</li><li><strong>컴포넌트 기반</strong>이기 때문에 코드 <strong>가독성</strong>이 높고 간단하여 <strong>유지 보수가 쉽다</strong>. 또한 컴포넌트는 <strong>확장성, 결합성, 재사용성</strong>의 이점이 있다.</li><li>다른 프레임워크나 라이브러리와 혼합하여 사용할 수 있다.</li></ul>"
+        },
+        {
+            "title" : "== vs ===",
+            "index" : 11,
+            "writer" : "icallitnewart",
+            "date" : "2022/02/01 14:08",
+            "category" : "JS",
+            "likes" : 22,
+            "content" : "<h2 id=->✅ 동등연산자 (이중 등호)</h2><ul><li>동등연산자는 <strong>==(이중등호)</strong>를 이용하여 <strong>추상적 같음</strong>을 비교한다.</li><li>두 값을 비교할 때 비교하려는 값의 데이터 타입이 다르면 <strong>자동으로 형변환</strong>하여 같음을 비교한다.<pre><code class=lang-jsx><span class=hljs-string>''</span> == <span class=hljs-number>0</span>  <span class=hljs-comment>// true</span><br/><span class=hljs-string>'0'</span> == <span class=hljs-number>0</span>  <span class=hljs-comment>// true</span><br/><span class=hljs-literal>null</span> == <span class=hljs-literal>undefined</span>  <span class=hljs-comment>// true</span></code></pre></li></ul><h2 id=->✅ 일치연산자 (삼중 등호)</h2><ul><li>일치연산자는 <strong>===(삼중 등호)</strong>를 이용하여 <strong>엄격한 같음</strong>을 비교한다.</li><li>두 값을 비교할 때 비교하려는 값의 데이터 타입이 달라도 형변환을 하지 않는다.<pre><code class=lang-jsx><span class=hljs-string>''</span> === <span class=hljs-number>0</span> <span class=hljs-comment>// false</span><br/><span class=hljs-string>'0'</span> === <span class=hljs-number>0</span>  <span class=hljs-comment>// false</span><br/><span class=hljs-literal>null</span> === <span class=hljs-literal>undefined</span>  <span class=hljs-comment>// false</span> </code></pre></li></ul>"
+        },
+        {
+            "title" : "cookie, sessionStorage, localStorage",
+            "index" : 12,
+            "writer" : "icallitnewart",
+            "date" : "2022/02/16 16:30",
+            "category" : "JS",
+            "likes" : 36,
+            "content" : "<h2 id=cookie-sessionstorage-localstorage>Cookie, sessionStorage, localStorage</h2><p>데이터베이스를 사용하지 않고 브라우저에 객체(key-value) 형식으로 데이터를 임시적인 용도로 저장할 수 있는 저장소이다.</p><h3 id=cookie>✅ Cookie</h3><ul><li>용도: 서버/클라이언트 측에서 읽기 위한 사용자 정보를 저장 (예: 로그인 상태 유지, 팝업 “오늘은 더 이상 보지 않기” 체크, 쇼핑몰 장바구니 저장, 최근 검색어)</li><li>생성방법<br/>1) 서버 측에서 <strong>Set-Cookie 헤더</strong>를 사용<br/>2) <strong>브라우저</strong>에서 직접 생성</li><li>만료: <strong>수동</strong>으로 설정</li><li>용량: <strong>4kb</strong></li><li>접근성: <strong>모든 윈도우</strong>에서 접근 가능</li><li>보안: <strong>사용자의 하드에 저장</strong>되어 <strong>보안 위험</strong>이 있음 (클라이언트가 저장된 값을 임의로 수정 가능)</li><li>그 외 특징<ul><li><strong>매번 서버로 전송</strong>됨</li><li>HTTP 요청이 있을 경우 Cookie 헤더를 통해 <strong>자동 전송</strong>됨</li><li>이름, 값, 만료 날짜, 경로 정보가 있어야 함</li><li>같은 도메인 상에서 쿠키 값은 공유됨</li></ul></li></ul><h3 id=sessionstorage>✅ sessionStorage</h3><ul><li>용도: <strong>잠시 동안</strong> 필요한 정보 저장 (예: 일회성 로그인, 입력 폼 저장)</li><li>생성방법: <strong>브라우저</strong>에서 생성</li><li>만료: <strong>브라우저 탭을 닫을 때</strong> 만료</li><li>용량: <strong>5mb</strong></li><li>접근성: <strong>같은 탭</strong>에서만 접근 가능</li><li>보안: 쿠키보다 <strong>보안이 우수</strong> (단, 클라이언트가 저장된 값을 임의로 수정 가능)</li></ul><h3 id=localstorage>✅ localStorage</h3><ul><li>용도: <strong>지속적으로</strong> 필요한 정보 저장 (예: 자동 로그인)</li><li>생성방법: <strong>브라우저</strong>에서 생성</li><li>만료: <strong>영구적</strong></li><li>용량: <strong>5mb</strong></li><li>접근성: <strong>모든 윈도우</strong>에서 접근 가능</li><li>보안: 쿠키보다 <strong>보안이 우수</strong> (단, 클라이언트가 저장된 값을 임의로 수정 가능)</li></ul>"
         }
-        
     ]
 }
