@@ -104,7 +104,7 @@ const PostList = ({ loading, posts, history, no, callData }) => {
                                         <span>{post.category}</span>
                                     </div>
                                     <div className="textBox">
-                                        <h2>{post.title}</h2>
+                                        <h2><span>{post.title}</span></h2>
                                         <p>
                                             <span className="writer">{post.writer}</span>
                                             <span className="date">{post.date}</span>
