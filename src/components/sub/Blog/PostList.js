@@ -110,7 +110,7 @@ const PostList = ({ loading, posts, history, no, callData }) => {
                                             <span className="date">{post.date}</span>
                                             <span className={(post.isLiked) ? "likes on" : "likes"}><i className="fas fa-heart"></i> {post.likes}</span>
                                         </p>
-                                        <div dangerouslySetInnerHTML={ {__html: post.content} }></div>
+                                        <div>{post.content.replace(/(<([^>]+)>)/ig, " ")}</div>
                                     </div>
                                 </div>
                                 </article>
