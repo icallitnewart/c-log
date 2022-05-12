@@ -100,7 +100,7 @@ function About() {
                                 }
                             >
                                 <div className="pic">
-                                    <img src={`${process.env.PUBLIC_URL}/img/${isQuestion ? "your" : "my"}img.png`} alt={isQuestion ? "상대방 프로필 이미지" : "나의 프로필 이미지"} />
+                                    <img src={`${process.env.PUBLIC_URL}/img/${isQuestion ? "your" : "my"}profile.png`} alt={isQuestion ? "상대방 프로필 이미지" : "나의 프로필 이미지"} />
                                 </div>
                                 <div className="speechBubble">
                                     <div className="inner">
