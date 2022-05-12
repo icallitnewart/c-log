@@ -173,12 +173,12 @@
 
                 ul {
                     list-style-type:  disc !important;   
-                    margin: 5px 0px 5px 40px;
+                    margin: 5px 0px 5px 30px;
                 }
 
                 ol {
                     list-style-type: decimal !important;
-                    margin: 5px 0px 5px 40px;
+                    margin: 5px 0px 5px 30px;
                 }
 
                 pre > code {
@@ -261,11 +261,11 @@
                     margin-bottom: 20px;
 
                     &.react i {
-                        font-size: clamp(40px, 5vw, 70px) !important;
+                        font-size: clamp(40px, 5vw, 70px);
                     }
 
                     i {
-                        font-size: clamp(50px, 6em, 80px) !important;
+                        font-size: clamp(50px, 6em, 80px);
                         margin-bottom: 3px;
                     }
 
@@ -396,16 +396,22 @@
                                 ul {
                                     list-style-type:  disc !important;
                                     list-style-position: inside;    
+                                    margin: 5px 0px 10px 10px;
                                 }
 
                                 ol {
                                     list-style-type: decimal !important;
                                     list-style-position: inside;  
+                                    margin: 5px 0px 10px 10px;
                                 }
 
                                 .ck.ck-toolbar {
                                     border: none !important;
                                     background: #fcdee2;
+                                }
+
+                                .ck.ck-content {
+                                    padding: 5px 20px;
                                 }
                             }
 
@@ -601,11 +607,12 @@
     }
 
     .inner.edit {
+        width: 100%;
         padding: 20px 3vw 30px;
 
         .selectPic {
             height: auto;
-            margin-bottom: 0px;
+            margin-bottom: 10px;
 
             .pic {
                 width: 80px;
@@ -628,10 +635,31 @@
 
             p {
                 margin-top: 0px;
+
+                span {
+                }
             }
 
-            ul li:nth-of-type(1n) {
-                margin-right: 5px;
+            ul {
+                padding: 5px;
+
+                li:nth-of-type(1n) {
+                    margin-right: 5px;
+
+                    &.react i {
+                        font-size: clamp(15px, 5vw, 40px);
+                    }
+
+                    i {
+                        margin-bottom: 0px;
+                        font-size: clamp(25px, 7vw, 50px);
+
+                    }
+
+                    span {
+                        display: none;
+                    }
+                }
             }
         }
 

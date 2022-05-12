@@ -1476,10 +1476,10 @@ a {
         color: #333; }
       #wrap .blog .inner .content > .wrap.postView .inner.view .contentBox ul {
         list-style-type: disc !important;
-        margin: 5px 0px 5px 40px; }
+        margin: 5px 0px 5px 30px; }
       #wrap .blog .inner .content > .wrap.postView .inner.view .contentBox ol {
         list-style-type: decimal !important;
-        margin: 5px 0px 5px 40px; }
+        margin: 5px 0px 5px 30px; }
       #wrap .blog .inner .content > .wrap.postView .inner.view .contentBox pre > code {
         width: 90%;
         padding: 15px;
@@ -1536,9 +1536,9 @@ a {
           border: 3px solid #333;
           margin-bottom: 20px; }
           #wrap .blog .inner .content > .wrap.postView .inner.edit .selectPic .pic.react i {
-            font-size: clamp(40px, 5vw, 70px) !important; }
+            font-size: clamp(40px, 5vw, 70px); }
           #wrap .blog .inner .content > .wrap.postView .inner.edit .selectPic .pic i {
-            font-size: clamp(50px, 6em, 80px) !important;
+            font-size: clamp(50px, 6em, 80px);
             margin-bottom: 3px; }
           #wrap .blog .inner .content > .wrap.postView .inner.edit .selectPic .pic span {
             display: inline-block;
@@ -1626,13 +1626,17 @@ a {
               border: 1px solid #333; }
               #wrap .blog .inner .content > .wrap.postView .inner.edit .editor table tr td.ckeditor ul {
                 list-style-type: disc !important;
-                list-style-position: inside; }
+                list-style-position: inside;
+                margin: 5px 0px 10px 10px; }
               #wrap .blog .inner .content > .wrap.postView .inner.edit .editor table tr td.ckeditor ol {
                 list-style-type: decimal !important;
-                list-style-position: inside; }
+                list-style-position: inside;
+                margin: 5px 0px 10px 10px; }
               #wrap .blog .inner .content > .wrap.postView .inner.edit .editor table tr td.ckeditor .ck.ck-toolbar {
                 border: none !important;
                 background: #fcdee2; }
+              #wrap .blog .inner .content > .wrap.postView .inner.edit .editor table tr td.ckeditor .ck.ck-content {
+                padding: 5px 20px; }
       #wrap .blog .inner .content > .wrap.postView .inner.edit .btns {
         display: flex;
         justify-content: center;
@@ -1738,10 +1742,11 @@ a {
   #wrap .blog .inner .content > .wrap.postView .inner.view .btns li button {
     width: 80px; }
   #wrap .blog .inner .content > .wrap.postView .inner.edit {
+    width: 100%;
     padding: 20px 3vw 30px; }
     #wrap .blog .inner .content > .wrap.postView .inner.edit .selectPic {
       height: auto;
-      margin-bottom: 0px; }
+      margin-bottom: 10px; }
       #wrap .blog .inner .content > .wrap.postView .inner.edit .selectPic .pic {
         width: 80px;
         height: 80px;
@@ -1755,8 +1760,17 @@ a {
         width: calc(100% - 80px); }
       #wrap .blog .inner .content > .wrap.postView .inner.edit .selectPic p {
         margin-top: 0px; }
-      #wrap .blog .inner .content > .wrap.postView .inner.edit .selectPic ul li:nth-of-type(1n) {
-        margin-right: 5px; }
+      #wrap .blog .inner .content > .wrap.postView .inner.edit .selectPic ul {
+        padding: 5px; }
+        #wrap .blog .inner .content > .wrap.postView .inner.edit .selectPic ul li:nth-of-type(1n) {
+          margin-right: 5px; }
+          #wrap .blog .inner .content > .wrap.postView .inner.edit .selectPic ul li:nth-of-type(1n).react i {
+            font-size: clamp(15px, 5vw, 40px); }
+          #wrap .blog .inner .content > .wrap.postView .inner.edit .selectPic ul li:nth-of-type(1n) i {
+            margin-bottom: 0px;
+            font-size: clamp(25px, 7vw, 50px); }
+          #wrap .blog .inner .content > .wrap.postView .inner.edit .selectPic ul li:nth-of-type(1n) span {
+            display: none; }
     #wrap .blog .inner .content > .wrap.postView .inner.edit .editor {
       margin-bottom: 10px; }
       #wrap .blog .inner .content > .wrap.postView .inner.edit .editor table tr td {
