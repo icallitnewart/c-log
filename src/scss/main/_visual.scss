@@ -232,7 +232,6 @@
                     }
                 }
 
-
                 .textBox {
                     width: 100%;
                     height: calc(100% - 30px);
@@ -248,6 +247,13 @@
                         border-left: 3px inset rgba(255, 255, 255, 0.5);
                         background: #333;
                         padding: 15px 20px;
+
+                        h3 {
+                            font: 26px/1.5 $koFont;
+                            letter-spacing: 3px;
+                            color: $pointColor;
+                            text-align: right;
+                        }
 
                         .cursor {
                             display: inline-block;

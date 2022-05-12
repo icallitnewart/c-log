@@ -116,13 +116,14 @@ function Prompt() {
                 </div>
                 <div className="textBox">
                     <div>
-                    <p className="ko">
-                        {txt.ko}
-                    </p>
-                    <p className="en">
-                        {txt.en}
-                        <span className={cursor ? "cursor on" : ""}></span>
-                    </p>
+                        <h3>{type.toUpperCase()}</h3>
+                        <p className="ko">
+                            {txt.ko}
+                        </p>
+                        <p className="en">
+                            {txt.en}
+                            <span className={cursor ? "cursor on" : ""}></span>
+                        </p>
                     </div>
                 </div>
             </div>

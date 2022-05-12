@@ -639,6 +639,11 @@ a {
           border-left: 3px inset rgba(255, 255, 255, 0.5);
           background: #333;
           padding: 15px 20px; }
+          .visual .wrap .promptBox .prompt .textBox > div h3 {
+            font: 26px/1.5 NeoDunggeunmo;
+            letter-spacing: 3px;
+            color: #bad0ef;
+            text-align: right; }
           .visual .wrap .promptBox .prompt .textBox > div .cursor {
             display: inline-block;
             height: 14px;
