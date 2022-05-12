@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Tab from "../../common/Tab";
+import Dialogue from "./Dialogue";
+import Category from "./Category";
 
 const publicURL = process.env.PUBLIC_URL;
 
@@ -10,18 +12,7 @@ function About() {
         items: []
     });
     const [ activeEffect, setActiveEffect ] = useState(null);
-    const category = [ "Intro", "About me", "Blog", "Gallery", "Playlist", "Contact" ];
 
-    //카테고리 버튼 클릭시
-    const clickTab =(e)=> {
-
-        //클릭한 카테고리의 내용이 이미 보여지고 있는 상태라면 작동 불가 
-        const targetCategory = e.currentTarget.querySelector("span").innerText;
-        if(data.category===targetCategory) return;
-
-        //카테고리에 따른 데이터 불러오기
-        callData(targetCategory);
-    }
 
     //데이터 호출
     const callData = async(category)=> {
@@ -78,54 +69,24 @@ function About() {
     }, [data, activeEffect]);
 
     return(
-    <main className="about">
-    	<div className="inner">
-            <Tab />
-            <section className="content">
-                <h1>ABOUT</h1>
-                <div className="wrap">
-                    <ul className="conversation">
-                    {activeEffect && data.items.map((item, index)=> {
-                        //말풍선 모션 이펙트 적용 여부
-                        const isActive =  (activeEffect.indexOf(index) === -1) ? false : true;
-                        const isQuestion = Object.keys(item)[0]==="question" ? true : false;
-
-                        return (
-                            <li 
-                                key={data.category + index} 
-                                className={
-                                    isActive 
-                                    ? `${Object.keys(item)} on`
-                                    : Object.keys(item)
-                                }
-                            >
-                                <div className="pic">
-                                    <img src={`https://icallitnewart.github.io/c-log/img/${isQuestion ? "your" : "my"}profile.png`} alt={isQuestion ? "상대방 프로필 이미지" : "나의 프로필 이미지"} />
-                                </div>
-                                <div className="speechBubble">
-                                    <div className="inner">
-                                    <span>{Object.values(item)}</span>
-                                    </div>
-                                </div>
-                            </li>
-                        )
-                    })}
-                    </ul>
-                    <ul className="category">
-                        {category.map((item, index)=>
-                            <li 
-                                key={index} 
-                                onClick={clickTab} 
-                                className={(data.category === item) ? "on" : ""}
-                            >
-                                <span>{item}</span>
-                            </li>
-                        )}
-                    </ul>
-                </div>
-            </section>
-        </div>
-    </main>
+        <main className="about">
+            <div className="inner">
+                <Tab />
+                <section className="content">
+                    <h1>ABOUT</h1>
+                    <div className="wrap">
+                        <Dialogue 
+                            activeEffect={activeEffect}
+                            data={data}
+                        />
+                        <Category 
+                            data={data}
+                            callData={callData}
+                        />
+                    </div>
+                </section>
+            </div>
+        </main>
     )
 }
 
