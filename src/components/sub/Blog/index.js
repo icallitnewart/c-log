@@ -42,12 +42,14 @@ function Blog({ history, match }) {
             <section className="content">
                 <h1>BLOG</h1>
 				{(!loading && no)
-				? 	<Post 
+				? 	// URL: /blog/~ (포스트 내용 보기, 작성, 수정)
+					<Post 
 						post={posts[posts.length - no]} 
 						no={no} 
 						history={history} 
 					/>
-				: 	<PostList 
+				: 	// URL: /blog (포스트 목록 보기)
+					<PostList 
 						loading={loading} 
 						posts={posts} 
 						history={history} 
