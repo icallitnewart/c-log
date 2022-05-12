@@ -117,10 +117,16 @@ a {
           position: relative;
           margin-bottom: 20px; }
           #wrap header .inner .menuWeb .profile .pic .pic2 {
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
             width: 150px;
             height: 150px;
             background: #bad0ef;
             box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2); }
+            #wrap header .inner .menuWeb .profile .pic .pic2 img {
+              width: 95%;
+              height: 95%; }
           #wrap header .inner .menuWeb .profile .pic::before {
             position: absolute;
             bottom: -5px;
@@ -850,6 +856,9 @@ a {
       display: flex;
       margin-bottom: 20px;
       transform: translateY(30px); }
+      .about .inner .content > .wrap .conversation li .pic img {
+        width: 100%;
+        height: 100%; }
       .about .inner .content > .wrap .conversation li.on {
         transition: 1s;
         opacity: 1;
@@ -859,23 +868,23 @@ a {
         .about .inner .content > .wrap .conversation li.question .speechBubble .inner {
           justify-content: flex-start; }
         .about .inner .content > .wrap .conversation li.question .pic {
-          background: #bad0ef; }
+          background: #f6cea4; }
       .about .inner .content > .wrap .conversation li.answer {
         justify-content: flex-end; }
         .about .inner .content > .wrap .conversation li.answer .speechBubble .inner {
           justify-content: flex-end; }
         .about .inner .content > .wrap .conversation li.answer .pic {
           order: 1;
-          background: #f6cea4; }
+          background: #bad0ef; }
         .about .inner .content > .wrap .conversation li.answer .speechBubble .inner {
           display: flex; }
           .about .inner .content > .wrap .conversation li.answer .speechBubble .inner span {
-            background: #d3d5ed; }
+            background: #f4cad1; }
           .about .inner .content > .wrap .conversation li.answer .speechBubble .inner::before {
             left: auto;
             right: -11px;
             transform: rotate(-30deg);
-            background: #d3d5ed; }
+            background: #f4cad1; }
           .about .inner .content > .wrap .conversation li.answer .speechBubble .inner::after {
             left: auto;
             right: -18px;
@@ -900,7 +909,7 @@ a {
             padding: 15px 20px;
             margin-top: 3px;
             border: 1px solid #555;
-            background: #f4cad1;
+            background: #d3d5ed;
             border-radius: 10px;
             word-break: break-all;
             font: 14px/1.5 NeoDunggeunmo;
@@ -914,7 +923,7 @@ a {
           .about .inner .content > .wrap .conversation li .speechBubble .inner::before {
             left: -11px;
             top: 23px;
-            background: #f4cad1;
+            background: #d3d5ed;
             transform: rotate(30deg);
             border-bottom: 1px solid #555; }
           .about .inner .content > .wrap .conversation li .speechBubble .inner::after {

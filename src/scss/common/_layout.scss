@@ -129,10 +129,18 @@
                         margin-bottom: 20px;
         
                         .pic2 {
+                            display: flex;
+                            justify-content: flex-end;
+                            align-items: flex-end;
                             width: 150px;
                             height: 150px;
                             background: $pointColor;
                             box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2);
+
+                            img {
+                                width: 95%;
+                                height: 95%;
+                            }
                         }
         
                         &::before {
