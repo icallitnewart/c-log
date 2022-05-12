@@ -36,7 +36,9 @@ function Header() {
 			<nav className="menuWeb">
 				<div className="profile">
 					<div className="pic">
-						<div className="pic2"></div>
+						<div className="pic2">
+							<img src={`${process.env.PUBLIC_URL}/img/myimg.png`} alt="나의 프로필 이미지" />
+						</div>
 					</div>
 					<h2>Front-end Developer</h2>
 					<span>@icallitnewart</span>
