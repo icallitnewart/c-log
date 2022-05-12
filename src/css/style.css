@@ -1289,7 +1289,7 @@ a {
     display: flex;
     padding: 10px 0px 40px;
     justify-content: center; }
-    #wrap .blog .inner .content > .wrap .pagination > span {
+    #wrap .blog .inner .content > .wrap .pagination > button {
       display: inline-flex;
       justify-content: center;
       align-items: center;
@@ -1301,9 +1301,13 @@ a {
       background: #B69CDC;
       box-shadow: 2px 2px 0px #5e5b6b;
       cursor: pointer; }
-      #wrap .blog .inner .content > .wrap .pagination > span i {
+      #wrap .blog .inner .content > .wrap .pagination > button i {
         color: #bad0ef;
-        -webkit-text-stroke: 1px #555; }
+        -webkit-text-stroke: 1px #555;
+        font-size: 18px; }
+      #wrap .blog .inner .content > .wrap .pagination > button.on {
+        transform: translate(2px, 2px);
+        box-shadow: none; }
     #wrap .blog .inner .content > .wrap .pagination ul {
       display: flex;
       align-items: center; }
@@ -1333,7 +1337,7 @@ a {
   #wrap .blog > .inner .content > .wrap .list.gridView article {
     width: calc(100% / 3 - 2.5vw);
     margin-right: 2.5vw; } }
-@media screen and (max-width: 899px) {
+@media screen and (max-width: 799px) {
   #wrap .blog > .inner .content > .wrap .list.gridView article {
     width: calc(100% / 2 - 4vw);
     margin-right: 4vw; } }

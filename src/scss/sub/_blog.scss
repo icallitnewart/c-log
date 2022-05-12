@@ -370,7 +370,7 @@
                 padding: 10px 0px 40px;
                 justify-content: center;
 
-                >span {
+                >button {
                     display: inline-flex;
                     justify-content: center;
                     align-items: center;
@@ -386,6 +386,12 @@
                     i {
                         color: $pointColor;
                         -webkit-text-stroke: 1px #555; 
+                        font-size: 18px;
+                    }
+
+                    &.on {
+                        transform: translate(2px, 2px);
+                        box-shadow: none;
                     }
                 }
 
@@ -446,7 +452,7 @@
 }
 }
 
-@media screen and (max-width: 899px) {
+@media screen and (max-width: $tablet) {
 #wrap .blog {
     >.inner .content {
         >.wrap .list.gridView article {
