@@ -1,10 +1,11 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import Masonry from 'react-masonry-component';
 
 import Loading from "../../common/Loading";
 import Tab from "../../common/Tab";
 import Popup from "./Popup";
+import Category from "./Category";
 
 const masonryOptions = {
 	fitWidth: false, 
@@ -21,8 +22,6 @@ function Gallery() {
 		isVisible: false,
 		index: null
 	});
-	const category = useRef(null);
-	const types = [ "popular", "cats", "dogs" ];
 
 	//데이터 호출
 	const getFlickr = async(type)=> {
@@ -63,7 +62,7 @@ function Gallery() {
 
 		setLoading(false);
 		setEnableClick(true);
-	}
+	};
 
 	useEffect(()=> {
 		getFlickr(activeType);
@@ -76,49 +75,43 @@ function Gallery() {
 			<section className="content">
 				<h1>GALLERY</h1>
 				<div className="wrap">
-					<ul className="category" ref={category}>
-						{types.map((type, index)=>
-							<li key={index}
-								className={activeType === type ? "on clicked" : ""}>
-								<a href="#" 
-									onClick={(e)=> {
-										e.preventDefault();
-										getFlickr(type);
-										setActiveType(type);
-								}}>{type}</a>
-							</li>
-						)}
-					</ul>
-					{ loading 
-						? <Loading />
-						:   <>
-							<Masonry
-								className={"frame"} 
-								elementType={"div"} 
-								disableImagesLoaded= {false}
-								updateOnEachImageLoad= {false}
-								options= {masonryOptions}
-							> 
-							{
-								images.map((img, index)=> {
-									let imgSrc = `https://live.staticflickr.com/${img.server}/${img.id}_${img.secret}_m.jpg`;
+					<Category 
+						activeType={activeType}
+						setActiveType={setActiveType}
+						getFlickr={getFlickr}
+					/>
+					{loading 
+					? <Loading />
+					: 	<>
+						<Masonry
+							className={"frame"} 
+							elementType={"div"} 
+							disableImagesLoaded= {false}
+							updateOnEachImageLoad= {false}
+							options= {masonryOptions}
+						> 
+						{images.map((img, index)=> {
+							let imgSrc = `https://live.staticflickr.com/${img.server}/${img.id}_${img.secret}_m.jpg`;
 
-									return(
-									<article className="item" key={index} onClick={()=> setPopup({
+							return (
+								<article 
+									className="item" 
+									key={index} 
+									onClick={()=> setPopup({
 										isVisible: true,
 										index
-									})}>
-										<img src={imgSrc} alt={img.title} />
-										<div className="desc">
-											<p><span>{img.title}</span></p>
-											<span>{img.owner}</span>
-										</div>
-									</article>
-									)
-								})
-							}
-							</Masonry>
-							</>
+									})}
+								>
+									<img src={imgSrc} alt={img.title} />
+									<div className="desc">
+										<p><span>{img.title}</span></p>
+										<span>{img.owner}</span>
+									</div>
+								</article>
+							)
+						})}
+						</Masonry>
+						</>
 					}
 				</div>
 			</section>
