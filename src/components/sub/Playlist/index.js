@@ -44,15 +44,15 @@ function Playlist() {
 	}, []);
 
 	return(
-	<main className="playlist">
-		<div className="inner">
-			<Tab />
-			<section className="content">
-				<h1>PLAYLIST</h1>
-				<div className="wrap">
-					{ loading ? <Loading />
-						: ( 
-							<>
+		<main className="playlist">
+			<div className="inner">
+				<Tab />
+				<section className="content">
+					<h1>PLAYLIST</h1>
+					<div className="wrap">
+						{loading 
+						? 	<Loading />
+						: 	<>
 							<Masonry
 								className={"frame"} 
 								elementType={"div"} 
@@ -60,44 +60,39 @@ function Playlist() {
 								updateOnEachImageLoad= {false}
 								options= {masonryOptions}
 							> 
-							{
-								items.map((item, index)=> {
-								return(
-									<article className="item" key={index} onClick={()=>setPopup({
-										isVisible: true,
-										index
-									})}>
-										<div className="pic">
-											<img src={item.snippet.thumbnails.medium.url} alt="" />
-											<ul>
-												<li><span></span></li>
-												<li><span></span></li>
-												<li><span></span></li>
-											</ul>
-										</div>
-										<div className="textBox">
-											<p>{item.snippet.title}</p>
-											<span>{item.snippet.videoOwnerChannelTitle}</span>
-										</div>
-									</article>
-								)
-								})
-							}
+							{items.map((item, index)=> 
+								<article className="item" key={index} onClick={()=>setPopup({
+									isVisible: true,
+									index
+								})}>
+									<div className="pic">
+										<img src={item.snippet.thumbnails.medium.url} alt="" />
+										<ul>
+											<li><span></span></li>
+											<li><span></span></li>
+											<li><span></span></li>
+										</ul>
+									</div>
+									<div className="textBox">
+										<p>{item.snippet.title}</p>
+										<span>{item.snippet.videoOwnerChannelTitle}</span>
+									</div>
+								</article>
+							)}
 							</Masonry>
 							</>
-						)
-					}
-				</div>
-			</section>
-		</div>
-		{ (popup.isVisible) &&
-			<Popup 
-				items={items} 
-				popup={popup}
-				setPopup={setPopup} 
-			/> 
-		}
-	</main>
+						}
+					</div>
+				</section>
+			</div>
+			{(popup.isVisible) &&
+				<Popup 
+					items={items} 
+					popup={popup}
+					setPopup={setPopup} 
+				/> 
+			}
+		</main>
 	)
 }
 
