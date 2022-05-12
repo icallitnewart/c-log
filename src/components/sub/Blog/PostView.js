@@ -10,7 +10,7 @@ function PostView({
     //글 삭제 함수
     const deletePost = (postIndex)=> {
         //확인창 띄우기
-        if(!window.confirm("Do you really want to delete the post?")) return;
+        if(!window.confirm("정말 삭제하시겠습니까?")) return;
 
         const localItems = getLocalItems();
         const removeItem = localItems.filter((item)=> item.index !== postIndex);
@@ -21,7 +21,7 @@ function PostView({
         //각 항목의 데이터값을 로컬스토리지 posts에 저장 
         localStorage.setItem('posts', JSON.stringify(removeItem));
 
-        alert("Your post has been deleted!");
+        alert("포스트가 삭제되었습니다.");
 
         history.push("/blog");
     };
