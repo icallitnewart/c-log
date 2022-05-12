@@ -4,22 +4,18 @@
             "category" : "Intro",
             "items" : [
                 {
-                    "question" : "Intro Question1",
+                    "question" : "반갑습니다😀 C-log는 무슨 사이트인가요?",
                     "answer" : [
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi dolorum a quod tempore veniam cupiditate nostrum impedit saepe provident quas.",
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi dolorum a quod tempore veniam cupiditate nostrum impedit saepe provident quas."
+                        "안녕하세요! C-log에 오신 것을 환영합니다🙋‍♀️",
+                        "C-log는 코딩 블로그를 테마로 한 프론트엔드 개발자 지망생의 개인 홈페이지입니다.",
+                        "블로그 외에도 재밌는 즐길거리가 마련되어 있으니 둘러보세요! 전체적인 분위기도 레트로 컨셉으로 색다르게 꾸며보았답니다😉"
                     ]
                 },
                 {
-                    "question" : "Intro Question2",
+                    "question" : "흥미롭네요😎 홈페이지의 구성은 어떻게 되어있나요?",
                     "answer" : [
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi dolorum a quod tempore veniam cupiditate nostrum impedit saepe provident quas."
-                    ]
-                },
-                {
-                    "question" : "Intro Question3",
-                    "answer" : [
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi dolorum a quod tempore veniam cupiditate nostrum impedit saepe provident quas."
+                        "오른쪽 (모바일 기기에선 윗쪽) 탭 메뉴를 눌러보시면 각 페이지에 대한 설명을 읽으실 수 있어요!",
+                        "더불어 저에 대해 알고 싶으시다면 About me 탭 메뉴를 눌러보시기 바랍니다😃"
                     ]
                 }
             ] 
@@ -28,21 +24,26 @@
             "category" : "About me",
             "items" : [
                 {
-                    "question" : "About Question1",
+                    "question" : "프론트엔드 개발자를 지망하고 있다고 하셨는데, 사용하시는 기술 스택이나 특별히 관심있는 분야는 어떤 것이 있나요?",
                     "answer" : [
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi dolorum a quod tempore veniam cupiditate nostrum impedit saepe provident quas."
+                        "제가 사용하는 기술 스택은 HTML5, CSS3, SCSS, JavaScript, React 및 Redux입니다.",
+                        "그 외에도 현재 Typescript를 공부하고 있으며, 백엔드 분야에도 관심이 있어 Node.js와 Mongo DB도 학습 중입니다!",
+                        "그리고 개인적으로 인터랙티브한 UI/UX 쪽에도 흥미가 있어서 라이브러리를 이용하지 않고 CSS, JS를 이용해 직접 다양한 애니메이션 이펙트를 구현해 보는 것을 좋아합니다."
                     ]
                 },
                 {
-                    "question" : "About Question2",
+                    "question" : "향후 어떤 개발자가 되고 싶으신가요?",
                     "answer" : [
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi dolorum a quod tempore veniam cupiditate nostrum impedit saepe provident quas."
+                        "일단 무엇보다도 프론트엔드 개발자가 가장 신경써야 할 요소는 웹 성능 최적화라고 생각합니다. 아직은 신입 개발자로서 부족한 점이 많지만, 성능을 고려해 코드를 설계하는 것을 목표로 열심히 공부 중입니다!✍🏻",
+                        "그 외에도 인터랙티브 웹과 백엔드 등 다양한 분야에 관심이 있어서 기회가 된다면 새로운 분야에도 도전해보고 싶습니다. 그리하여 궁극적으로는 미래의 트렌드에 발맞춰 사람들의 삶을 좀 더 흥미롭고 편안하게 해주는 서비스를 개발해보는 것이 저의 개발자로서의 장기적인 목표입니다."
                     ]
                 },
                 {
-                    "question" : "About Question3",
+                    "question" : "실제 성격이 궁금해요! 당신은 어떤 사람인가요?",
                     "answer" : [
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi dolorum a quod tempore veniam cupiditate nostrum impedit saepe provident quas."
+                        "미래의 사람들은 어떤 생활을 하고 있을지 상상하는 것을 좋아해서 새로운 기술에 대해 관심이 많은 편이고, 새로운 것을 배우길 좋아합니다.",
+                        "좀 더 효율적으로 일하는 것을 추구하며, 문제가 생겼을 경우엔 방법을 연구하여 끝내 이를 해결해낼 때 큰 만족감을 느끼는 편입니다.",
+                        "사람들과 의사소통할 때엔 어떻게 하면 타인의 기분을 배려하면서 의사를 잘 전달할 수 있을지에 대해 많이 신경쓰는 편입니다."
                     ]
                 }
             ] 
@@ -51,21 +52,23 @@
             "category" : "Blog",
             "items" : [
                 {
-                    "question" : "Blog Question1",
+                    "question" : "Blog 페이지에는 어떤 글들이 올라오나요?",
                     "answer" : [
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi dolorum a quod tempore veniam cupiditate nostrum impedit saepe provident quas."
+                        "주로 프론트엔드 개발자가 알아야 할 기본 개념들이나 개발하다가 맞닥뜨린 문제점을 해결한 방법 등 제가 코딩 공부하다가 배운 점들을 기록하는 글들이 올라옵니다😎"
                     ]
                 },
                 {
-                    "question" : "Blog Question2",
+                    "question" : "이 페이지는 어떤 방식으로 제작하셨나요?",
                     "answer" : [
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi dolorum a quod tempore veniam cupiditate nostrum impedit saepe provident quas."
+                        "제가 작성한 블로그 글들은 JSON 파일에 저장해서 가져오는 방식이고, 방문자가 직접 작성하는 글들은 로컬 스토리지를 이용해 구현한 CRUD 방식이 적용됩니다."
                     ]
                 },
                 {
-                    "question" : "Blog Question3",
+                    "question" : "그 외엔 어떤 기능이 있나요?",
                     "answer" : [
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi dolorum a quod tempore veniam cupiditate nostrum impedit saepe provident quas."
+                        "새로운 글 작성시 총 4개의 카테고리(HTML, CSS, JS, REACT) 중 하나를 선택할 수 있고, 상단의 카테고리 메뉴 버튼을 눌러보시면 카테고리 별로 나눠서 글을 열람하실 수 있답니다!",
+                        "그리고 오른쪽 상단에 위치한 목록 유형 버튼을 통해 그리드뷰 또는 리스트뷰 타입을 선택해서 목록을 정렬하실 수 있습니다.",
+                        "따로 백엔드가 연결되어 있진 않아서 한계점😢이 있긴 하지만, 좋아요 버튼 기능도  구현되어 있습니다."
                     ]
                 }
             ] 
@@ -73,21 +76,15 @@
             "category" : "Gallery",
             "items" : [
                 {
-                    "question" : "Gallery Question1",
+                    "question" : "Gallery 페이지에는 어떤 사진들이 올라오나요?",
                     "answer" : [
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi dolorum a quod tempore veniam cupiditate nostrum impedit saepe provident quas."
+                        "이 곳의 사진들은 코딩과는 직접적인 연관이 없지만, 열심히 코딩에 집중하다가 쉬면서 힐링할 수 있도록 분위기를 환기시키는 사진들로 이루어져있습니다! 사람들이 좋아하는 사진들과 귀여운 동물🐶 사진들을 보실 수 있습니다."
                     ]
                 },
                 {
-                    "question" : "Gallery Question2",
+                    "question" : "동물들이 참 귀엽네요😄 이 사진들은 어떤 API를 통해 가져오셨나요?",
                     "answer" : [
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi dolorum a quod tempore veniam cupiditate nostrum impedit saepe provident quas."
-                    ]
-                },
-                {
-                    "question" : "Gallery Question3",
-                    "answer" : [
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi dolorum a quod tempore veniam cupiditate nostrum impedit saepe provident quas."
+                        "Flickr API를 이용하였습니다. Cats나 Dogs 카테고리의 사진들은 제가 개인적으로 저장한 갤러리 리스트에서 가져왔고, Popular 카테고리는 인기 사진 목록으로 매일 새로운 사진 데이터로 업데이트됩니다."
                     ]
                 }
             ] 
@@ -96,21 +93,16 @@
             "category" : "Playlist",
             "items" : [
                 {
-                    "question" : "Playlist Question1",
+                    "question" : "Playlist 페이지는 어떤 공간인가요?",
                     "answer" : [
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi dolorum a quod tempore veniam cupiditate nostrum impedit saepe provident quas."
+                        "이 공간은 코딩을 하면서 듣기 좋은 음악들을 모아놓은 곳입니다! 살짝 감성🦄 한 스푼 탄 듯한 분위기의 Lo-fi 음악들로 제 취향이 많이 반영된 플리랍니다🎵"
                     ]
                 },
                 {
-                    "question" : "Playlist Question2",
+                    "question" : "어떤 취향이신지 확실히 알겠네요!😄 API는 무엇을 사용하셨나요?",
                     "answer" : [
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi dolorum a quod tempore veniam cupiditate nostrum impedit saepe provident quas."
-                    ]
-                },
-                {
-                    "question" : "Playlist Question3",
-                    "answer" : [
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi dolorum a quod tempore veniam cupiditate nostrum impedit saepe provident quas."
+                        "Youtube API를 이용해 제 개인 플레이리스트를 가져왔습니다.",
+                        "원하시는 썸네일을 눌러보시면 해당하는 영상이 Modal 팝업창으로 뜨게 됩니다.  돌아가는 LP판🧿 밑에 위치한 재생▶ 또는 중지⏸ 버튼을 누르면 유튜브 영상을 제어할 수 있답니다!"
                     ]
                 }
             ] 
@@ -119,21 +111,16 @@
             "category" : "Contact",
             "items" : [
                 {
-                    "question" : "Contact Question1",
+                    "question" : "개인적으로 연락을 드리고 싶은데, Contact 페이지에서 글을 작성하면 되나요?",
                     "answer" : [
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi dolorum a quod tempore veniam cupiditate nostrum impedit saepe provident quas."
+                        "네, 맞습니다! 보내시는 분의 이름, 이메일 주소, 하고싶으신 말씀을 적고 Send 버튼을 눌러주시면 됩니다."
                     ]
                 },
                 {
-                    "question" : "Contact Question2",
+                    "question" : "그럼 실제로 작성된 내용이 홈페이지 주인의 이메일로 전송되는 건가요?",
                     "answer" : [
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi dolorum a quod tempore veniam cupiditate nostrum impedit saepe provident quas."
-                    ]
-                },
-                {
-                    "question" : "Contact Question3",
-                    "answer" : [
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi dolorum a quod tempore veniam cupiditate nostrum impedit saepe provident quas."
+                        "네! emailJS를 이용해 이메일 전송 기능을 구현하였기 때문에 작성하신 내용은 제 이메일로 전송됩니다.",
+                        "그러니 답장을 받고 싶으신 경우 꼭 정확한 이메일 주소를 작성해주시기 바랍니다.😊"
                     ]
                 }
             ] 
